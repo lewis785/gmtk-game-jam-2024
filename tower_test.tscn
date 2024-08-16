@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmyhkwp0cgnxg"]
+
+[ext_resource type="PackedScene" uid="uid://c01peygpfgfh8" path="res://scenes/tower/tower.tscn" id="1_a02pk"]
+[ext_resource type="Texture2D" uid="uid://csdynh80y1g2m" path="res://icon.svg" id="2_55mft"]
+
+[node name="MainTest" type="Node2D"]
+
+[node name="Tower" parent="." node_paths=PackedStringArray("test_target") instance=ExtResource("1_a02pk")]
+position = Vector2(486, 313)
+test_target = NodePath("../TestTarget")
+
+[node name="TestTarget" type="Sprite2D" parent="."]
+position = Vector2(965, 160)
+texture = ExtResource("2_55mft")

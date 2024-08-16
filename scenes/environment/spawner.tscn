@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0r5b10b4kdxx"]
+
+[ext_resource type="Texture2D" uid="uid://col7etfkwvpwo" path="res://assets/environment/objects/spawner.png" id="1_0xe5r"]
+
+[node name="Spawner" type="Node2D"]
+
+[node name="Spawner" type="Sprite2D" parent="."]
+texture = ExtResource("1_0xe5r")

@@ -1,8 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://furvkvmh3lqt"]
+[gd_scene load_steps=3 format=3 uid="uid://furvkvmh3lqt"]
 
 [ext_resource type="Texture2D" uid="uid://bpm13gh43nc38" path="res://assets/environment/objects/target.png" id="1_nd13w"]
+[ext_resource type="PackedScene" uid="uid://bekel8al0ejto" path="res://scenes/components/health_component.tscn" id="2_1bcm2"]
 
 [node name="Target" type="Node2D"]
+
+[node name="HealthComponent" parent="." instance=ExtResource("2_1bcm2")]
+position = Vector2(139, 119)
+base_health = 2000.0
 
 [node name="Target" type="Sprite2D" parent="."]
 texture = ExtResource("1_nd13w")

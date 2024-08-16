@@ -14,6 +14,7 @@ test_target = NodePath("../TestTarget/TestTarget")
 
 [node name="TestTarget" type="RigidBody2D" parent="."]
 position = Vector2(932, 418)
+scale = Vector2(1.04876, 1.05601)
 
 [node name="TestTarget" type="Sprite2D" parent="TestTarget"]
 texture = ExtResource("2_c2auk")

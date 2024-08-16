@@ -1,7 +1,50 @@
-[gd_scene load_steps=4 format=3 uid="uid://c01peygpfgfh8"]
+[gd_scene load_steps=10 format=3 uid="uid://c01peygpfgfh8"]
 
-[ext_resource type="Texture2D" uid="uid://csdynh80y1g2m" path="res://icon.svg" id="1_afncx"]
 [ext_resource type="Script" path="res://scenes/tower/tower.gd" id="1_hmn3u"]
+[ext_resource type="Texture2D" uid="uid://duhd1dupd8s0r" path="res://assets/tower/Tower1Shooting-Sheet.png" id="2_jnobj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ffx6g"]
+atlas = ExtResource("2_jnobj")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtioa"]
+atlas = ExtResource("2_jnobj")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbr8l"]
+atlas = ExtResource("2_jnobj")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m24ax"]
+atlas = ExtResource("2_jnobj")
+region = Rect2(768, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8wql2"]
+atlas = ExtResource("2_jnobj")
+region = Rect2(1024, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hy8qg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ffx6g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rtioa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbr8l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m24ax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8wql2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xmrch"]
 radius = 481.037
@@ -10,8 +53,10 @@ radius = 481.037
 script = ExtResource("1_hmn3u")
 test_target = NodePath("")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_afncx")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_hy8qg")
+autoplay = "default"
+frame_progress = 0.608367
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 unique_name_in_owner = true

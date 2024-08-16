@@ -53,6 +53,9 @@ right={
 [layer_names]
 
 2d_physics/layer_1="world"
+2d_physics/layer_2="enemies"
+2d_physics/layer_3="towers"
+2d_physics/layer_4="bullet"
 
 [rendering]
 

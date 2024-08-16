@@ -20,6 +20,3 @@ func _on_timer_timeout() -> void:
 		var new_bullet : Bullet = bullet.instantiate()
 		add_child(new_bullet)
 		new_bullet.look_at(collisions[0].position)
-	else:
-		print("no bodies")
-	

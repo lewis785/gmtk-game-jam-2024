@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var save_path = "res://config.cfg"
+@onready var save_path = "res://save-config.cfg"
 @onready var config = ConfigFile.new()
 @onready var load_response = config.load(save_path)
 
@@ -11,8 +11,8 @@ var music_muted: bool
 var fx_muted: bool
 
 func _ready() -> void:
-	music_muted = config.load_value("sound", "music_muted", false)
-	fx_muted = config.load_value("sound", "fx_muted", false)
+	music_muted = config.get_value("sound", "music_muted", false)
+	fx_muted = config.get_value("sound", "fx_muted", false)
 	
 func _save_value(section, key, value):
 	config.set_value(section, key, value)

@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://kbl5o7jivp5n"]
+[gd_scene load_steps=9 format=4 uid="uid://kbl5o7jivp5n"]
 
 [ext_resource type="Texture2D" uid="uid://qvrolilpsm0t" path="res://assets/environment/terrain/grass1.png" id="1_fcpbm"]
 [ext_resource type="PackedScene" uid="uid://b0r5b10b4kdxx" path="res://scenes/environment/spawner.tscn" id="2_bk1vw"]
 [ext_resource type="Texture2D" uid="uid://e16qu1dg8a0e" path="res://assets/environment/terrain/Grass-to-dirt1.png" id="2_vtgk5"]
 [ext_resource type="PackedScene" uid="uid://furvkvmh3lqt" path="res://scenes/environment/target.tscn" id="3_8hld4"]
+[ext_resource type="PackedScene" uid="uid://bie2pjul8rsmp" path="res://scenes/environment/spawn_manager.tscn" id="5_3f50j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u4bfj"]
 texture = ExtResource("1_fcpbm")
@@ -34,3 +35,6 @@ position = Vector2(64, 60)
 
 [node name="Target" parent="." instance=ExtResource("3_8hld4")]
 position = Vector2(1842, 1005)
+
+[node name="SpawnManager" parent="." node_paths=PackedStringArray("spawner") instance=ExtResource("5_3f50j")]
+spawner = NodePath("../Spawner")

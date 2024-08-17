@@ -1,13 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://c3n2071ceb8pn"]
+[gd_scene load_steps=7 format=3 uid="uid://c3n2071ceb8pn"]
 
 [ext_resource type="Texture2D" uid="uid://csdynh80y1g2m" path="res://icon.svg" id="1_plfj0"]
 [ext_resource type="Script" path="res://scenes/enemies/enemy.gd" id="1_rfqcv"]
 [ext_resource type="PackedScene" uid="uid://bekel8al0ejto" path="res://scenes/components/health_component.tscn" id="3_hepo6"]
+[ext_resource type="PackedScene" uid="uid://b1qedipcdvfcc" path="res://scenes/components/hitbox.tscn" id="4_7lduf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y65dh"]
 size = Vector2(123, 125)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k1a8l"]
+size = Vector2(140, 139)
+
 [node name="Enemy" type="RigidBody2D"]
+collision_layer = 2
 collision_mask = 0
 gravity_scale = 0.0
 script = ExtResource("1_rfqcv")
@@ -21,6 +26,15 @@ texture = ExtResource("1_plfj0")
 
 [node name="HealthComponent" parent="." instance=ExtResource("3_hepo6")]
 position = Vector2(96.6766, 328.701)
+
+[node name="Hitbox" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_7lduf")]
+collision_layer = 2
+health_component = NodePath("../HealthComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(1, 0.5)
+shape = SubResource("RectangleShape2D_k1a8l")
+debug_color = Color(0.885887, 0.302521, 0.357986, 0.42)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="damaged" from="HealthComponent" to="." method="_on_health_component_damaged"]

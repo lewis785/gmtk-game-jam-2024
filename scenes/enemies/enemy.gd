@@ -31,8 +31,6 @@ func _set_movement(spawn_location : PathFollow2D):
 	
 func _on_health_component_damaged(damage):
 	print("Enemy hit")
-	health_component.damaged.emit()
 
 func _on_health_component_died():
 	print("Enemy died")
-	health_component.died.emit()

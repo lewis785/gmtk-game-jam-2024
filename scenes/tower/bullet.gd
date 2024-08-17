@@ -13,13 +13,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	position += (Vector2.RIGHT.rotated(rotation) * speed * delta)
 
-func _on_body_entered(body: Node) -> void:
-	var health = body.find_child("HealthComponent")
-	if health:
-		_deal_damage(health)
-	queue_free()
-
-func _deal_damage(target_health: HealthComponent):
-	var attack : Attack = Attack.new()
-	attack.damage = damage
-	target_health.damage(attack)
+func _on_area_entered(body: Area2D) -> void:
+	if body is Hitbox:
+		var attack : Attack = Attack.new()
+		attack.damage = damage
+		body.damage(attack)
+		queue_free()

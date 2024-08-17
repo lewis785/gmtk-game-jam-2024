@@ -2,7 +2,7 @@ extends CanvasLayer
 
 @onready var build_button: Button = %BuildButton
 
-@export var tower : Tower
+@export var selected_tower : Tower
 @export var target : Target
 @export var coin_manager: MoneyCoordinator
 
@@ -25,13 +25,15 @@ func _process(delta: float) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	# Mouse in viewport coordinates.
 	if is_valid_to_place(event):
-			var new_tower = tower.scene.instantiate()
+			var new_tower = selected_tower.scene.instantiate()
 			new_tower.position = _ghost.get_global_mouse_position()
 			get_parent().add_child(new_tower)
+			if new_tower.has_method("initialize"):
+				new_tower.initialize(selected_tower)
 
 func _on_build_button_toggled(toggled_on: bool) -> void:
 	if toggled_on:
-		_ghost = tower.ghost_scene.instantiate()
+		_ghost = selected_tower.ghost_scene.instantiate()
 		get_parent().add_child(_ghost) # Replace with function body.
 	else:
 		if _ghost:

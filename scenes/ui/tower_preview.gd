@@ -5,6 +5,7 @@ extends Control
 @onready var cost_label: Label = %CostLabel
 @onready var health_label: Label = %HealthLabel
 @onready var tower_sprite: TextureRect = %TowerSprite
+@onready var tower_label: Label = %TowerLabel
 
 @export var tower : Tower
 
@@ -15,6 +16,7 @@ func _ready() -> void:
 	cost_label.text = str(tower.price)
 	health_label.text = str(tower.max_health)
 	tower_sprite.texture = tower.icon
+	tower_label.text = tower.name
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

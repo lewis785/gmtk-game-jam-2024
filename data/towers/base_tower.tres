@@ -11,7 +11,7 @@ region = Rect2(0, 0, 256, 256)
 
 [resource]
 script = ExtResource("2_fdn1j")
-name = "Basic Tower"
+name = "Archer Tower"
 icon = SubResource("AtlasTexture_joc6k")
 scene = ExtResource("1_d8uch")
 ghost_scene = ExtResource("1_21n7k")

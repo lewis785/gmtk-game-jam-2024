@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Tower" load_steps=6 format=3 uid="uid://bgar4e4ukw7e7"]
+
+[ext_resource type="PackedScene" uid="uid://df1j7j6qtyxc8" path="res://scenes/tower/tower_ghost.tscn" id="1_aebif"]
+[ext_resource type="Texture2D" uid="uid://duhd1dupd8s0r" path="res://assets/tower/Tower1Shooting-Sheet.png" id="2_yvok7"]
+[ext_resource type="PackedScene" uid="uid://c01peygpfgfh8" path="res://scenes/tower/tower.tscn" id="3_het0e"]
+[ext_resource type="Script" path="res://model/tower.gd" id="4_p23mi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_joc6k"]
+atlas = ExtResource("2_yvok7")
+region = Rect2(0, 0, 256, 256)
+
+[resource]
+script = ExtResource("4_p23mi")
+name = "Wizard Tower"
+icon = SubResource("AtlasTexture_joc6k")
+scene = ExtResource("3_het0e")
+ghost_scene = ExtResource("1_aebif")
+price = 5
+shoot_frequency = 3.0
+damage = 4.0
+max_health = 60.0

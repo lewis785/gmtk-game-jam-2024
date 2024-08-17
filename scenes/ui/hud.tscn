@@ -1,18 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://dcs4uq757auua"]
+[gd_scene load_steps=6 format=3 uid="uid://dcs4uq757auua"]
 
 [ext_resource type="Script" path="res://scenes/ui/hud.gd" id="1_ctr55"]
-[ext_resource type="Resource" uid="uid://6y2rwctvjk3" path="res://data/towers/base_tower.tres" id="2_3nqk0"]
 [ext_resource type="Texture2D" uid="uid://cjsd0oimewuss" path="res://assets/sprites/coins.png" id="3_4m7of"]
 [ext_resource type="Texture2D" uid="uid://dpvrvvanrieql" path="res://assets/sprites/heart.png" id="3_p8ku2"]
+[ext_resource type="PackedScene" uid="uid://ctghttdswbn7c" path="res://scenes/ui/tower_preview.tscn" id="4_wiqxe"]
+[ext_resource type="Resource" uid="uid://bgar4e4ukw7e7" path="res://data/towers/totally_different_tower.tres" id="5_vijuq"]
 
 [node name="Hud" type="CanvasLayer"]
 script = ExtResource("1_ctr55")
-tower = ExtResource("2_3nqk0")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="BuildButton" type="Button" parent="."]
 unique_name_in_owner = true
-offset_right = 8.0
-offset_bottom = 8.0
+offset_right = 256.0
+offset_bottom = 145.0
 theme_override_font_sizes/font_size = 100
 toggle_mode = true
 text = "Build"
@@ -21,8 +27,8 @@ text = "Build"
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -150.0
-offset_bottom = 67.0
+offset_left = -466.0
+offset_bottom = 99.0
 grow_horizontal = 0
 theme_override_constants/margin_top = 32
 theme_override_constants/margin_right = 64
@@ -56,5 +62,26 @@ texture = ExtResource("3_p8ku2")
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
 text = "100"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -90.0
+offset_top = -164.0
+offset_right = 90.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TowerPreview2" parent="HBoxContainer" instance=ExtResource("4_wiqxe")]
+layout_mode = 2
+
+[node name="TowerPreview" parent="HBoxContainer" instance=ExtResource("4_wiqxe")]
+layout_mode = 2
+tower = ExtResource("5_vijuq")
 
 [connection signal="toggled" from="BuildButton" to="." method="_on_build_button_toggled"]

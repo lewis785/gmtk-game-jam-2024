@@ -197,8 +197,7 @@ autoplay = "move_down"
 speed_scale = 5.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(7, 4)
-rotation = 1.5708
+rotation = 3.14159
 shape = SubResource("CapsuleShape2D_cm2d3")
 
 [node name="HealthComponent" parent="." instance=ExtResource("3_hepo6")]
@@ -211,8 +210,7 @@ collision_layer = 2
 health_component = NodePath("../HealthComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(7, 4)
-rotation = 1.5708
+rotation = 3.14159
 shape = SubResource("CapsuleShape2D_7espm")
 debug_color = Color(0.885887, 0.302521, 0.357986, 0.42)
 

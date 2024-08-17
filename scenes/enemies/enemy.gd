@@ -6,6 +6,7 @@ class_name Enemy
 @onready var nav : NavigationAgent2D = $NavigationAgent2D
 @onready var attack_timer: Timer = %AttackTimer
 @onready var hitbox: Hitbox = %Hitbox
+@onready var col: CollisionShape2D = $CollisionShape2D
 @onready var animated_sprite_2d = $AnimatedSprite2D
 
 @export var speed = 300
@@ -38,15 +39,21 @@ func set_target(target : Node2D):
 
 func set_sprite_direction(direction: Vector2):
 	 # Check if there is significant movement
-	if direction.length() > 0.1:
+	if direction.length() > 0.3:
 		if abs(direction.x) > abs(direction.y):
 			# Horizontal movement
+			hitbox.set_rotation(PI/2)
+			col.set_rotation(PI/2)
+			
 			if direction.x > 0:
 				animated_sprite_2d.play("move_right")
 			else:
 				animated_sprite_2d.play("move_left")
 		else:
 			# Vertical movement
+			hitbox.set_rotation(PI)
+			col.set_rotation(PI)
+			
 			if direction.y > 0:
 				animated_sprite_2d.play("move_down")
 			else:

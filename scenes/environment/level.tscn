@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://kbl5o7jivp5n"]
+[gd_scene load_steps=28 format=4 uid="uid://kbl5o7jivp5n"]
 
 [ext_resource type="Texture2D" uid="uid://d20pgnle7f1da" path="res://assets/environment/terrain/grass-mud.png" id="1_0br83"]
 [ext_resource type="Texture2D" uid="uid://clmxlckxahx8t" path="res://assets/environment/terrain/walls.png" id="2_20wxo"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://bie2pjul8rsmp" path="res://scenes/environment/spawn_manager.tscn" id="5_3f50j"]
 [ext_resource type="PackedScene" uid="uid://fqfglpb571i5" path="res://scenes/environment/camera.tscn" id="6_ayoyc"]
 [ext_resource type="PackedScene" uid="uid://dcs4uq757auua" path="res://scenes/ui/hud.tscn" id="7_v5tkc"]
-[ext_resource type="PackedScene" uid="uid://bekel8al0ejto" path="res://scenes/components/health_component.tscn" id="8_7x1nq"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ha4is"]
 vertices = PackedVector2Array(32, 32, -32, 32, -32, -32, 32, -32)
@@ -255,6 +254,3 @@ position = Vector2(1886, 91)
 [node name="Camera" parent="." instance=ExtResource("6_ayoyc")]
 
 [node name="Hud" parent="." instance=ExtResource("7_v5tkc")]
-
-[node name="HealthComponent" parent="." instance=ExtResource("8_7x1nq")]
-max_health = 100.0

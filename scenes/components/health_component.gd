@@ -7,7 +7,6 @@ signal died()
 signal healed(heal: int)
 
 @export var max_health: float = 0.0;
-
 var health: float = 0.0
 
 func _ready():

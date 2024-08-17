@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://furvkvmh3lqt" path="res://scenes/environment/target.tscn" id="3_8hld4"]
 [ext_resource type="PackedScene" uid="uid://cynqh8t87mfih" path="res://scenes/coordinators/money_coordinator.tscn" id="3_pnov0"]
 [ext_resource type="PackedScene" uid="uid://bie2pjul8rsmp" path="res://scenes/environment/spawn_manager.tscn" id="5_3f50j"]
-[ext_resource type="PackedScene" path="res://scenes/environment/camera.tscn" id="6_ayoyc"]
+[ext_resource type="PackedScene" uid="uid://fqfglpb571i5" path="res://scenes/environment/camera.tscn" id="6_ayoyc"]
 [ext_resource type="PackedScene" uid="uid://dcs4uq757auua" path="res://scenes/ui/hud.tscn" id="7_v5tkc"]
 [ext_resource type="PackedScene" uid="uid://bekel8al0ejto" path="res://scenes/components/health_component.tscn" id="8_7x1nq"]
 
@@ -243,9 +243,10 @@ income = 10
 spawner = NodePath("../Spawner")
 spawn_period = 0.5
 
-[node name="Spawner" parent="." instance=ExtResource("2_bk1vw")]
+[node name="Spawner" parent="." node_paths=PackedStringArray("target") instance=ExtResource("2_bk1vw")]
 position = Vector2(96, 48)
 spawn_rate = 1.0
+target = NodePath("../Target")
 
 [node name="Target" parent="." instance=ExtResource("3_8hld4")]
 visible = false

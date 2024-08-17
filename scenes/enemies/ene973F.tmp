@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://c3n2071ceb8pn"]
+
+[ext_resource type="Texture2D" uid="uid://csdynh80y1g2m" path="res://icon.svg" id="1_plfj0"]
+[ext_resource type="Script" path="res://scenes/enemies/enemy.gd" id="1_rfqcv"]
+[ext_resource type="PackedScene" uid="uid://bekel8al0ejto" path="res://scenes/components/health_component.tscn" id="3_hepo6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y65dh"]
+size = Vector2(123, 125)
+
+[node name="Enemy" type="RigidBody2D"]
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource("1_rfqcv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 1.5)
+shape = SubResource("RectangleShape2D_y65dh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_plfj0")
+
+[node name="HealthComponent" parent="." instance=ExtResource("3_hepo6")]
+position = Vector2(96.6766, 328.701)

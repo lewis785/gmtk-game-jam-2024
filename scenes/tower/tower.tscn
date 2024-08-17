@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://scenes/tower/tower.gd" id="1_hmn3u"]
 [ext_resource type="Texture2D" uid="uid://duhd1dupd8s0r" path="res://assets/tower/Tower1Shooting-Sheet.png" id="2_jnobj"]
 [ext_resource type="PackedScene" uid="uid://bekel8al0ejto" path="res://scenes/components/health_component.tscn" id="3_1u6n7"]
-[ext_resource type="PackedScene" uid="uid://b1qedipcdvfcc" path="res://scenes/components/hitbox.tscn" id="4_vuwh2"]
-[ext_resource type="PackedScene" uid="uid://dne1upf2xrhew" path="res://scenes/components/health_bar.tscn" id="5_xx66n"]
+[ext_resource type="PackedScene" path="res://scenes/components/hitbox.tscn" id="4_vuwh2"]
+[ext_resource type="PackedScene" path="res://scenes/components/health_bar.tscn" id="5_xx66n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ffx6g"]
 atlas = ExtResource("2_jnobj")

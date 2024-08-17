@@ -4,7 +4,7 @@ extends CanvasLayer
 
 @export var tower_types : Array[Tower]
 
-@export var target : Target
+@export var level : Level
 @export var coin_manager: MoneyCoordinator
 
 @onready var health_amount: Label = $MarginContainer/Stats/Health/HealthAmount
@@ -14,11 +14,15 @@ extends CanvasLayer
 const TOWER_PREVIEW = preload("res://scenes/ui/tower_preview.tscn")
 
 var _ghost
+var target : Target
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	target = level.target
+	
 	update_health_bar(0.0)
 	update_coin_amount(0.0)
+	
 	target.health_component.damaged.connect(update_health_bar)
 	coin_manager.gold_changed.connect(update_coin_amount)
 

@@ -4,9 +4,12 @@ class_name Enemy
 
 @onready var health_component : HealthComponent = $HealthComponent
 @onready var nav : NavigationAgent2D = $NavigationAgent2D
+@onready var attack_timer: Timer = %AttackTimer
+@onready var hitbox: Hitbox = %Hitbox
 
 @export var speed = 300
 @export var accel = 7
+@export var damage = 5
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -31,3 +34,27 @@ func _on_health_component_damaged(damage):
 
 func _on_health_component_died():
 	queue_free()
+
+
+func _on_hitbox_area_entered(body: Node2D) -> void:
+	print("body enetered")
+	if body is Hitbox:
+		print("It's a hitbox, staeting timer")
+		attack_timer.start()
+
+
+func _on_attack_timer_timeout() -> void:
+	print("Timer...")
+	var bodies = hitbox.get_overlapping_areas()
+	for body in bodies:
+		print("body..")
+		if body is Hitbox:
+			print("Found hitbox from timer")
+			_deal_attack_damage(body)
+			return
+	attack_timer.stop()
+	
+func _deal_attack_damage(body: Hitbox):
+	var attack = Attack.new()
+	attack.damage = damage
+	body.damage(attack)

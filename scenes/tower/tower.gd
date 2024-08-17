@@ -19,3 +19,12 @@ func _on_timer_timeout() -> void:
 		var new_bullet : Bullet = bullet.instantiate()
 		add_child(new_bullet)
 		new_bullet.look_at(collisions[0].global_position)
+
+
+func _on_health_component_damaged(damage: int) -> void:
+	print("Tower taking damage")
+
+
+func _on_health_component_died() -> void:
+	print("Tower died...")
+	queue_free() # Replace with function body.

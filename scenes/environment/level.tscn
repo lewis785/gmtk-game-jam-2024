@@ -239,6 +239,7 @@ spawn_rate = 0.3
 target = NodePath("../Target")
 
 [node name="Target" parent="." instance=ExtResource("3_8hld4")]
+visible = false
 position = Vector2(1886, 91)
 
 [node name="SpawnManager" parent="." node_paths=PackedStringArray("spawner") instance=ExtResource("5_3f50j")]

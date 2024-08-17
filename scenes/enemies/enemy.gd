@@ -6,16 +6,21 @@ class_name Enemy
 @onready var nav : NavigationAgent2D = $NavigationAgent2D
 @onready var attack_timer: Timer = %AttackTimer
 @onready var hitbox: Hitbox = %Hitbox
+@onready var animated_sprite_2d = $AnimatedSprite2D
 
 @export var speed = 300
 @export var accel = 7
 @export var damage = 5
+
+var dead = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 	
 func _physics_process(delta):
+	if dead:
+		return
 	
 	if nav.target_position:
 		var direction = Vector3()
@@ -33,7 +38,9 @@ func _on_health_component_damaged(damage):
 	pass
 
 func _on_health_component_died():
-	queue_free()
+	if !dead:
+		dead = true
+		animated_sprite_2d.play("die")
 
 
 func _on_hitbox_area_entered(body: Node2D) -> void:
@@ -53,3 +60,8 @@ func _deal_attack_damage(body: Hitbox):
 	var attack = Attack.new()
 	attack.damage = damage
 	body.damage(attack)
+
+func _on_animated_sprite_2d_animation_finished():
+	print(animated_sprite_2d.animation)
+	if animated_sprite_2d.animation == "die":
+		queue_free()

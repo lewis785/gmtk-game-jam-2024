@@ -35,4 +35,5 @@ func is_valid_to_place(event: InputEvent) -> bool:
 	 and event.button_index == MOUSE_BUTTON_LEFT \
 	 and build_button.button_pressed \
 	 and _ghost \
-	 and _ghost.get_overlapping_areas().size() == 0 
+	 and _ghost.get_overlapping_areas().size() == 0 \
+	 and _ghost.get_overlapping_bodies().size() == 0 

@@ -1,13 +1,33 @@
-[gd_scene load_steps=3 format=3 uid="uid://furvkvmh3lqt"]
+[gd_scene load_steps=7 format=3 uid="uid://furvkvmh3lqt"]
 
+[ext_resource type="Script" path="res://scenes/environment/target.gd" id="1_hiu24"]
 [ext_resource type="Texture2D" uid="uid://bpm13gh43nc38" path="res://assets/environment/objects/target.png" id="1_nd13w"]
 [ext_resource type="PackedScene" uid="uid://bekel8al0ejto" path="res://scenes/components/health_component.tscn" id="2_1bcm2"]
+[ext_resource type="PackedScene" path="res://scenes/components/hitbox.tscn" id="4_a4bnx"]
 
-[node name="Target" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_t4si5"]
+radius = 50.01
 
-[node name="HealthComponent" parent="." instance=ExtResource("2_1bcm2")]
-position = Vector2(139, 119)
-base_health = 2000.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_u4aaq"]
+radius = 54.0
+
+[node name="Target" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_hiu24")
 
 [node name="Target" type="Sprite2D" parent="."]
 texture = ExtResource("1_nd13w")
+
+[node name="PhysicalCollision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_t4si5")
+
+[node name="HealthComponent" parent="." instance=ExtResource("2_1bcm2")]
+max_health = 200.0
+
+[node name="Hitbox" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_a4bnx")]
+health_component = NodePath("../HealthComponent")
+
+[node name="HitboxCollision" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("CircleShape2D_u4aaq")
+debug_color = Color(0.889146, 0.304826, 0.315233, 0.42)

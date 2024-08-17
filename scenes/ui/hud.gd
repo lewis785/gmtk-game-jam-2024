@@ -3,12 +3,16 @@ extends CanvasLayer
 @onready var build_button: Button = %BuildButton
 
 @export var tower : Tower
+@export var target : Target
+
+@onready var health_amount: Label = $MarginContainer/Health/HealthAmount
 
 var _ghost
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	update_health_bar(0.0)
+	target.health_component.damaged.connect(update_health_bar)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -36,3 +40,6 @@ func is_valid_to_place(event: InputEvent) -> bool:
 	 and build_button.button_pressed \
 	 and _ghost \
 	 and _ghost.is_placement_valid()
+
+func update_health_bar(_damage: float):
+	health_amount.text = str(target.health_component.health)

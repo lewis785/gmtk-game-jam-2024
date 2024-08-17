@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bmyhkwp0cgnxg"]
+[gd_scene load_steps=6 format=3 uid="uid://bmyhkwp0cgnxg"]
 
 [ext_resource type="PackedScene" uid="uid://c01peygpfgfh8" path="res://scenes/tower/tower.tscn" id="1_nns5h"]
 [ext_resource type="Texture2D" uid="uid://csdynh80y1g2m" path="res://icon.svg" id="2_c2auk"]
 [ext_resource type="PackedScene" uid="uid://bekel8al0ejto" path="res://scenes/components/health_component.tscn" id="3_7awh6"]
+[ext_resource type="PackedScene" uid="uid://c3n2071ceb8pn" path="res://scenes/enemies/enemy.tscn" id="4_0mmwe"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e04f2"]
 radius = 74.0068
@@ -14,7 +15,7 @@ position = Vector2(486, 313)
 test_target = NodePath("../TestTarget/TestTarget")
 
 [node name="TestTarget" type="RigidBody2D" parent="."]
-position = Vector2(856, 556)
+position = Vector2(1342, 556)
 collision_layer = 2
 
 [node name="TestTarget" type="Sprite2D" parent="TestTarget"]
@@ -25,3 +26,6 @@ position = Vector2(2, 1)
 shape = SubResource("CircleShape2D_e04f2")
 
 [node name="HealthComponent" parent="TestTarget" instance=ExtResource("3_7awh6")]
+
+[node name="Enemy" parent="." instance=ExtResource("4_0mmwe")]
+position = Vector2(930, 86)

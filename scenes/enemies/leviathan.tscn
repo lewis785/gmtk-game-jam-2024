@@ -1,0 +1,100 @@
+[gd_scene load_steps=14 format=3 uid="uid://bawjl4tei4nye"]
+
+[ext_resource type="Script" path="res://scenes/enemies/enemy.gd" id="1_1ljxa"]
+[ext_resource type="Texture2D" uid="uid://bgdynl2yle2x0" path="res://assets/enemies/Leviathan1.png" id="2_it5h1"]
+[ext_resource type="Texture2D" uid="uid://cwydo6msqajxc" path="res://assets/enemies/Leviathan1Death-Sheet.png" id="3_0cyho"]
+[ext_resource type="PackedScene" uid="uid://bekel8al0ejto" path="res://scenes/components/health_component.tscn" id="4_jc2q7"]
+[ext_resource type="PackedScene" path="res://scenes/components/hitbox.tscn" id="5_sjkm5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ft8w"]
+atlas = ExtResource("3_0cyho")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sejsq"]
+atlas = ExtResource("3_0cyho")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3alrm"]
+atlas = ExtResource("3_0cyho")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_noe1i"]
+atlas = ExtResource("3_0cyho")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_by2im"]
+atlas = ExtResource("3_0cyho")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bv24m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_it5h1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ft8w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sejsq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3alrm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_noe1i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_by2im")
+}],
+"loop": false,
+"name": &"die",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_it5h1")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w8hsv"]
+size = Vector2(102, 112)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fdry8"]
+size = Vector2(106, 116)
+
+[node name="Leviathan" type="CharacterBody2D"]
+script = ExtResource("1_1ljxa")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_bv24m")
+animation = &"die"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_w8hsv")
+debug_color = Color(0.587233, 0.544561, 0.198447, 0.42)
+
+[node name="HealthComponent" parent="." instance=ExtResource("4_jc2q7")]
+
+[node name="Hitbox" parent="." instance=ExtResource("5_sjkm5")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_fdry8")
+debug_color = Color(0.669779, 0.462112, 0.579049, 0.42)
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+navigation_layers = 2
+
+[node name="AttackTimer" type="Timer" parent="."]
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="damaged" from="HealthComponent" to="." method="_on_health_component_damaged"]
+[connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

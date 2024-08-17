@@ -4,8 +4,8 @@ class_name Enemy
 
 @onready var health_component : HealthComponent = $HealthComponent
 @onready var nav : NavigationAgent2D = $NavigationAgent2D
-@onready var attack_timer: Timer = %AttackTimer
-@onready var hitbox: Hitbox = %Hitbox
+@onready var attack_timer: Timer = $AttackTimer
+@onready var hitbox: Hitbox = $Hitbox
 @onready var col: CollisionShape2D = $CollisionShape2D
 @onready var animated_sprite_2d = $AnimatedSprite2D
 

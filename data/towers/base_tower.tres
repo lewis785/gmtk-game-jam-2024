@@ -1,12 +1,21 @@
-[gd_resource type="Resource" script_class="Tower" load_steps=4 format=3 uid="uid://6y2rwctvjk3"]
+[gd_resource type="Resource" script_class="Tower" load_steps=6 format=3 uid="uid://6y2rwctvjk3"]
 
 [ext_resource type="PackedScene" uid="uid://df1j7j6qtyxc8" path="res://scenes/tower/tower_ghost.tscn" id="1_21n7k"]
 [ext_resource type="PackedScene" uid="uid://c01peygpfgfh8" path="res://scenes/tower/tower.tscn" id="1_d8uch"]
+[ext_resource type="Texture2D" uid="uid://duhd1dupd8s0r" path="res://assets/tower/Tower1Shooting-Sheet.png" id="2_8neyf"]
 [ext_resource type="Script" path="res://model/tower.gd" id="2_fdn1j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_joc6k"]
+atlas = ExtResource("2_8neyf")
+region = Rect2(0, 0, 256, 256)
 
 [resource]
 script = ExtResource("2_fdn1j")
 name = "Basic Tower"
+icon = SubResource("AtlasTexture_joc6k")
 scene = ExtResource("1_d8uch")
 ghost_scene = ExtResource("1_21n7k")
 price = 5
+shoot_frequency = 1.0
+damage = 10.0
+max_health = 100.0

@@ -20,16 +20,10 @@ extends Resource
 ## Cost to build the tower
 @export var price:int = 5
 
-# TODO: maybe a "placement type" or something -> small towers free form, 
-#       big towers on specific locations?
-
-# These things could be here to keep things together? 
-# But maybe restricts us on how different towers can work, so would be better
-# just on the tower scripts with default values there
-#@export var shoot_frequency:float = 1.0
-#@export var damage: float = 1.0
-#@export var bullet:PackedScene
-#@export var max_health:float = 100.0
+# TODO: have a min and max for these, so it scales with the size?
+@export var shoot_frequency:float = 1.0
+@export var damage: float = 10.0
+@export var max_health:float = 100.0
 
 
 

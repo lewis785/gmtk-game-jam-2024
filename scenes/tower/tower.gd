@@ -4,9 +4,6 @@ var bullet = preload("res://scenes/tower/bullet.tscn")
 @export var test_target : Sprite2D
 @onready var collision_shape_2d: CollisionShape2D = %CollisionShape2D
 
-func initialize(tower: Tower):
-	tower.
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.

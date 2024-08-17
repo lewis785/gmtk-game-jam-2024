@@ -2,7 +2,7 @@ extends Node2D
 
 class_name HealthComponent
 
-signal damaged(damage: int, crit: bool)
+signal damaged(damage: int)
 signal died()
 signal healed(heal: int)
 
@@ -17,8 +17,7 @@ func _ready():
 func damage(value: Attack):
 	var damage = _calculate_damage(value)
 	health -= damage
-	
-	damaged.emit(damage, value.crit)
+	damaged.emit(damage)
 
 	if health <= 0:
 		died.emit()
@@ -26,11 +25,10 @@ func damage(value: Attack):
 func heal(amount: int):
 	healed.emit(amount)
 	health = min(health + amount, max_health)	
-	
+
 func full_heal():
 	heal(max_health - health)
 
 func _calculate_damage(attack: Attack):
 	var damage = attack.damage
 	return damage
-	

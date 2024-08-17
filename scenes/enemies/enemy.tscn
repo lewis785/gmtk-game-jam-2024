@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c3n2071ceb8pn"]
+[gd_scene load_steps=5 format=3 uid="uid://c3n2071ceb8pn"]
 
 [ext_resource type="Texture2D" uid="uid://csdynh80y1g2m" path="res://icon.svg" id="1_plfj0"]
 [ext_resource type="Script" path="res://scenes/enemies/enemy.gd" id="1_rfqcv"]
 [ext_resource type="PackedScene" uid="uid://bekel8al0ejto" path="res://scenes/components/health_component.tscn" id="3_hepo6"]
-[ext_resource type="Script" path="res://scenes/components/health_component.gd" id="4_lmpd7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y65dh"]
 size = Vector2(123, 125)
@@ -22,4 +21,7 @@ texture = ExtResource("1_plfj0")
 
 [node name="HealthComponent" parent="." instance=ExtResource("3_hepo6")]
 position = Vector2(96.6766, 328.701)
-script = ExtResource("4_lmpd7")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="damaged" from="HealthComponent" to="." method="_on_health_component_damaged"]
+[connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]

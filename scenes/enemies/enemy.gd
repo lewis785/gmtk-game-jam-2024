@@ -11,11 +11,7 @@ class_name Enemy
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
+	
 func _physics_process(delta):
 	
 	if nav.target_position:
@@ -29,8 +25,7 @@ func _physics_process(delta):
 
 func set_target(target : Node2D):
 	nav.target_position = target.global_position
-
-
+	
 func _on_health_component_damaged(damage):
 	pass
 

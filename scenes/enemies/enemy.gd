@@ -39,25 +39,26 @@ func set_target(target : Node2D):
 
 func set_sprite_direction(direction: Vector2):
 	 # Check if there is significant movement
-	if direction.length() > 0.3:
-		if abs(direction.x) > abs(direction.y):
-			# Horizontal movement
-			hitbox.set_rotation(PI/2)
-			col.set_rotation(PI/2)
-			
-			if direction.x > 0:
-				animated_sprite_2d.play("move_right")
+	if animated_sprite_2d.animation == "move_right" or animated_sprite_2d.animation == "move_left" or animated_sprite_2d.animation ==  "move_down" or animated_sprite_2d.animation ==  "move_up":
+		if direction.length() > 0.3:
+			if abs(direction.x) > abs(direction.y):
+				# Horizontal movement
+				hitbox.set_rotation(PI/2)
+				col.set_rotation(PI/2)
+				
+				if direction.x > 0:
+					animated_sprite_2d.play("move_right")
+				else:
+					animated_sprite_2d.play("move_left")
 			else:
-				animated_sprite_2d.play("move_left")
-		else:
-			# Vertical movement
-			hitbox.set_rotation(PI)
-			col.set_rotation(PI)
-			
-			if direction.y > 0:
-				animated_sprite_2d.play("move_down")
-			else:
-				animated_sprite_2d.play("move_up")
+				# Vertical movement
+				hitbox.set_rotation(PI)
+				col.set_rotation(PI)
+				
+				if direction.y > 0:
+					animated_sprite_2d.play("move_down")
+				else:
+					animated_sprite_2d.play("move_up")
 
 func _on_health_component_damaged(damage):
 	pass

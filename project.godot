@@ -88,7 +88,9 @@ ZoomCamOut={
 [layer_names]
 
 2d_physics/layer_1="world"
+2d_navigation/layer_1="rat"
 2d_physics/layer_2="enemies"
+2d_navigation/layer_2="leviathan"
 2d_physics/layer_3="towers"
 2d_physics/layer_4="bullet"
 2d_physics/layer_5="walls"

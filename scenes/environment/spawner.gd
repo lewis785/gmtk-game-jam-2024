@@ -13,7 +13,11 @@ var rng = RandomNumberGenerator.new()
 
 
 func type_to_spawn():
-	return spawn_entities[0].instantiate()
+	var random_number = rng.randf_range(0.0, 1.0)
+	if random_number < 0.1:
+		return spawn_entities[1].instantiate()
+	else:
+		return spawn_entities[0].instantiate()
 
 
 func spawn():

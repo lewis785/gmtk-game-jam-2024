@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://dne1upf2xrhew"]
+
+[ext_resource type="Script" path="res://scenes/components/health_bar.gd" id="1_vasbl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wvx1l"]
+bg_color = Color(0.223529, 0.223529, 0.223529, 0.768627)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f0b57"]
+bg_color = Color(0.317647, 0.72549, 0.0745098, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="HealthBar" type="Node2D"]
+script = ExtResource("1_vasbl")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+z_index = 1
+offset_left = -40.0
+offset_top = -4.0
+offset_right = 40.0
+offset_bottom = 4.0
+theme_override_styles/background = SubResource("StyleBoxFlat_wvx1l")
+theme_override_styles/fill = SubResource("StyleBoxFlat_f0b57")
+value = 50.0
+show_percentage = false

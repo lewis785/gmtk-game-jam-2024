@@ -37,19 +37,14 @@ func _on_health_component_died():
 
 
 func _on_hitbox_area_entered(body: Node2D) -> void:
-	print("body enetered")
 	if body is Hitbox:
-		print("It's a hitbox, staeting timer")
 		attack_timer.start()
 
 
 func _on_attack_timer_timeout() -> void:
-	print("Timer...")
 	var bodies = hitbox.get_overlapping_areas()
 	for body in bodies:
-		print("body..")
 		if body is Hitbox:
-			print("Found hitbox from timer")
 			_deal_attack_damage(body)
 			return
 	attack_timer.stop()

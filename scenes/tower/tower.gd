@@ -22,9 +22,7 @@ func _on_timer_timeout() -> void:
 
 
 func _on_health_component_damaged(damage: int) -> void:
-	print("Tower taking damage")
-
+	pass
 
 func _on_health_component_died() -> void:
-	print("Tower died...")
 	queue_free() # Replace with function body.

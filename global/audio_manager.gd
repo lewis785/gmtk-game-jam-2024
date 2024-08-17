@@ -22,4 +22,4 @@ func toggle_fx():
 	fx_muted = !fx_muted
 	config.save_value("sound", "fx_muted", fx_muted)
 	AudioServer.set_bus_mute(2, fx_muted)
-	fx_toggled.emit(fx_toggled)
+	fx_toggled.emit(fx_muted)

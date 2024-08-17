@@ -2,7 +2,7 @@ extends Node2D
 
 class_name ConfigComponent
 
-@onready var save_path = "res://save-config.cfg"
+@onready var save_path = "res://save-file.cfg"
 @onready var config = ConfigFile.new()
 @onready var load_response = config.load(save_path)
 

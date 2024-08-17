@@ -1,11 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://df1j7j6qtyxc8"]
+[gd_scene load_steps=8 format=3 uid="uid://df1j7j6qtyxc8"]
 
-[ext_resource type="Shader" uid="uid://sgr6eh0505ts" path="res://scenes/tower/palcement_ghost.tres" id="1_ptfh1"]
+[ext_resource type="Shader" uid="uid://sgr6eh0505ts" path="res://scenes/tower/placement_ghost.tres" id="1_ptfh1"]
 [ext_resource type="Texture2D" uid="uid://duhd1dupd8s0r" path="res://assets/tower/Tower1Shooting-Sheet.png" id="2_6jgtp"]
 [ext_resource type="Script" path="res://scenes/tower/tower_ghost.gd" id="3_47umy"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qmfw2"]
+size = Vector2(104, 128)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_755rp"]
 shader = ExtResource("1_ptfh1")
+shader_parameter/IsInvalidPlacement = false
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0hd3v"]
 atlas = ExtResource("2_6jgtp")
@@ -23,8 +27,17 @@ animations = [{
 }]
 
 [node name="TowerGhost" type="Area2D"]
+visibility_layer = 3
+z_index = 1
+collision_layer = 0
+collision_mask = 23
 script = ExtResource("3_47umy")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 64)
+shape = SubResource("RectangleShape2D_qmfw2")
+
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
 material = SubResource("ShaderMaterial_755rp")
 sprite_frames = SubResource("SpriteFrames_2iwxu")

@@ -16,8 +16,7 @@ func _process(delta: float) -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	# Mouse in viewport coordinates.
-	if event is InputEventMouseButton and event.pressed:
-		if event.button_index == MOUSE_BUTTON_LEFT and build_button.button_pressed:
+	if is_valid_to_place(event):
 			var new_tower = tower.scene.instantiate()
 			new_tower.position = get_viewport().get_mouse_position()
 			get_parent().add_child(new_tower)
@@ -29,3 +28,11 @@ func _on_build_button_toggled(toggled_on: bool) -> void:
 	else:
 		if _ghost:
 			_ghost.queue_free()
+
+func is_valid_to_place(event: InputEvent) -> bool:
+	return event is InputEventMouseButton \
+	 and event.pressed \
+	 and event.button_index == MOUSE_BUTTON_LEFT \
+	 and build_button.button_pressed \
+	 and _ghost \
+	 and _ghost.get_overlapping_areas().size() == 0 

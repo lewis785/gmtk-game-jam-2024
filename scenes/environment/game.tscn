@@ -1,16 +1,16 @@
 [gd_scene load_steps=55 format=4 uid="uid://kbl5o7jivp5n"]
 
-[ext_resource type="Texture2D" uid="uid://d20pgnle7f1da" path="res://assets/environment/terrain/grass-mud.png" id="1_0br83"]
+[ext_resource type="Texture2D" uid="uid://d20pgnle7f1da" path="res://assets/environment/terrain/grass-mud.png" id="1_n1tmp"]
 [ext_resource type="Script" path="res://scenes/environment/level.gd" id="1_y6bi2"]
-[ext_resource type="Texture2D" uid="uid://clmxlckxahx8t" path="res://assets/environment/terrain/walls.png" id="2_20wxo"]
-[ext_resource type="PackedScene" uid="uid://b0r5b10b4kdxx" path="res://scenes/environment/spawner.tscn" id="2_bk1vw"]
-[ext_resource type="PackedScene" uid="uid://furvkvmh3lqt" path="res://scenes/environment/target.tscn" id="3_8hld4"]
-[ext_resource type="PackedScene" uid="uid://cynqh8t87mfih" path="res://scenes/coordinators/money_coordinator.tscn" id="3_pnov0"]
-[ext_resource type="PackedScene" uid="uid://bie2pjul8rsmp" path="res://scenes/environment/spawn_manager.tscn" id="5_3f50j"]
-[ext_resource type="PackedScene" path="res://scenes/environment/camera.tscn" id="6_ayoyc"]
-[ext_resource type="PackedScene" uid="uid://c3n2071ceb8pn" path="res://scenes/enemies/enemy.tscn" id="6_i1rke"]
-[ext_resource type="PackedScene" uid="uid://dcs4uq757auua" path="res://scenes/ui/hud.tscn" id="7_v5tkc"]
-[ext_resource type="PackedScene" path="res://scenes/enemies/leviathan.tscn" id="7_vtchk"]
+[ext_resource type="Texture2D" uid="uid://clmxlckxahx8t" path="res://assets/environment/terrain/walls.png" id="2_56e6d"]
+[ext_resource type="PackedScene" uid="uid://b0r5b10b4kdxx" path="res://scenes/environment/spawner.tscn" id="5_eg0gd"]
+[ext_resource type="PackedScene" uid="uid://furvkvmh3lqt" path="res://scenes/environment/target.tscn" id="8_abddm"]
+[ext_resource type="PackedScene" uid="uid://cynqh8t87mfih" path="res://scenes/coordinators/money_coordinator.tscn" id="3_ypm6k"]
+[ext_resource type="PackedScene" uid="uid://bie2pjul8rsmp" path="res://scenes/environment/spawn_manager.tscn" id="4_p3rt7"]
+[ext_resource type="PackedScene" path="res://scenes/environment/camera.tscn" id="9_o5woo"]
+[ext_resource type="PackedScene" uid="uid://c3n2071ceb8pn" path="res://scenes/enemies/enemy.tscn" id="6_vnqbu"]
+[ext_resource type="PackedScene" uid="uid://dcs4uq757auua" path="res://scenes/ui/hud.tscn" id="10_3bvo4"]
+[ext_resource type="PackedScene" path="res://scenes/enemies/leviathan.tscn" id="7_v2fw8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a7341"]
 size = Vector2(2100, 1252)
@@ -317,9 +317,7 @@ texture_region_size = Vector2i(64, 64)
 8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -16, -30.5, -26.5, -28.5, -28.5, -25.5, -30.5, -16, -32, 16, -32, 26, -30.5, 28.5, -29, 30.5, -26.5, 32, -16, 32, 16, 31, 26, 29.5, 29, 26, 31, 16, 32, -16, 32, -26, 31, -29, 30, -31, 27, -32, 16, -32, 16, -32, 16)
 9:0/0 = 0
 9:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -16, -30.5, -26.5, -28.5, -28.5, -25.5, -30.5, -16, -32, 16, -32, 26, -30.5, 28.5, -29, 30.5, -26.5, 32, -16, 32, 16, 31, 26, 29.5, 29, 26, 31, 16, 32, -16, 32, -26, 31, -29, 30, -31, 27, -32, 16, -32, 16, -32, 16)
-10:0/0 = 0
-10:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -16, -30.5, -26.5, -28.5, -28.5, -25.5, -30.5, -16, -32, 16, -32, 26, -30.5, 28.5, -29, 30.5, -26.5, 32, -16, 32, 16, 31, 26, 29.5, 29, 26, 31, 16, 32, -16, 32, -26, 31, -29, 30, -31, 27, -32, 16, -32, 16, -32, 16)
-11:0/0 = 0
+10:0/0 = 03_ypm6k
 11:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -16, -30.5, -26.5, -28.5, -28.5, -25.5, -30.5, -16, -32, 16, -32, 26, -30.5, 28.5, -29, 30.5, -26.5, 32, -16, 32, 16, 31, 26, 29.5, 29, 26, 31, 16, 32, -16, 32, -26, 31, -29, 30, -31, 27, -32, 16, -32, 16, -32, 16)
 12:0/0 = 0
 12:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -16, -30.5, -26.5, -28.5, -28.5, -25.5, -30.5, -16, -32, 16, -32, 26, -30.5, 28.5, -29, 30.5, -26.5, 32, -16, 32, 16, 31, 26, 29.5, 29, 26, 31, 16, 32, -16, 32, -26, 31, -29, 30, -31, 27, -32, 16, -32, 16, -32, 16)

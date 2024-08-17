@@ -46,7 +46,9 @@ func _physics_process(delta):
 	#linear_velocity = velocity.rotated(direction)
 	
 func _on_health_component_damaged(damage):
-	print("Enemy hit")
+	print(damage)
+	#print("Enemy hit")
 
 func _on_health_component_died():
 	print("Enemy died")
+	queue_free()

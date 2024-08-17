@@ -18,7 +18,8 @@ func _unhandled_input(event: InputEvent) -> void:
 	# Mouse in viewport coordinates.
 	if is_valid_to_place(event):
 			var new_tower = tower.scene.instantiate()
-			new_tower.position = get_viewport().get_mouse_position()
+			# new_tower.position = get_viewport().get_mouse_position()
+			new_tower.position = _ghost.get_global_mouse_position()
 			get_parent().add_child(new_tower)
 
 func _on_build_button_toggled(toggled_on: bool) -> void:

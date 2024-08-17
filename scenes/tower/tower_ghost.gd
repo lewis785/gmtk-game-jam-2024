@@ -10,11 +10,12 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	position = get_viewport().get_mouse_position()
+	# position = get_viewport().get_mouse_position()
+	position = get_global_mouse_position()
 	_check_valid_placement()
 	
 func _check_valid_placement():
-	var is_current_placement_valid = get_overlapping_areas().size() != 0
+	var is_current_placement_valid = get_overlapping_areas().size() != 0 or get_overlapping_bodies().size() != 0
 	if _valid_placement != is_current_placement_valid:
 		_valid_placement = is_current_placement_valid
 		sprite_2d.material.set_shader_parameter("IsInvalidPlacement", _valid_placement)

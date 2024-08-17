@@ -53,7 +53,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_u8ad4")
 }],
-"loop": true,
+"loop": false,
 "name": &"die",
 "speed": 5.0
 }, {
@@ -116,6 +116,7 @@ debug_color = Color(0.885887, 0.302521, 0.357986, 0.42)
 [node name="AttackTimer" type="Timer" parent="."]
 unique_name_in_owner = true
 
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="damaged" from="HealthComponent" to="." method="_on_health_component_damaged"]
 [connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

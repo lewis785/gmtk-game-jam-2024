@@ -75,11 +75,13 @@ animations = [{
 "speed": 4.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_s43vc"]
-radius = 50.2494
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cm2d3"]
+radius = 11.0
+height = 42.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_k1a8l"]
-size = Vector2(140, 139)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7espm"]
+radius = 13.0
+height = 46.0
 
 [node name="Enemy" type="CharacterBody2D" groups=["enemies"]]
 collision_layer = 2
@@ -94,8 +96,9 @@ frame_progress = 0.323682
 speed_scale = 5.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -1)
-shape = SubResource("CircleShape2D_s43vc")
+position = Vector2(7, 4)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_cm2d3")
 
 [node name="HealthComponent" parent="." instance=ExtResource("3_hepo6")]
 position = Vector2(96.6766, 328.701)
@@ -107,8 +110,9 @@ collision_layer = 2
 health_component = NodePath("../HealthComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(5, 1)
-shape = SubResource("RectangleShape2D_k1a8l")
+position = Vector2(7, 4)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_7espm")
 debug_color = Color(0.885887, 0.302521, 0.357986, 0.42)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]

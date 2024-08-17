@@ -14,20 +14,12 @@ func _process(delta: float) -> void:
 	position += (Vector2.RIGHT.rotated(rotation) * speed * delta)
 
 func _on_body_entered(body: Node) -> void:
-	print("Im in something")
-	if body.has_method("damage"):
-		print("dmg")
-		var attack : Attack = Attack.new()
-		attack.damage = damage
-		body.damage(attack)
-	else:
-		print("no damage")
-	pass
+	var health = body.find_child("HealthComponent")
+	if health:
+		_deal_damage(health)
+	queue_free()
 
-
-func _on_area_entered(area: Area2D) -> void:
-	print("Ive hit something")
-	if area.has_method("damage"):
-		var attack : Attack = Attack.new()
-		attack.damage = damage
-		area.damage(attack)
+func _deal_damage(target_health: HealthComponent):
+	var attack : Attack = Attack.new()
+	attack.damage = damage
+	target_health.damage(attack)

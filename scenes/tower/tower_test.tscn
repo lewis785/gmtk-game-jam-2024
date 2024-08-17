@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bmyhkwp0cgnxg"]
+[gd_scene load_steps=6 format=3 uid="uid://drlweeqqgm83h"]
 
-[ext_resource type="PackedScene" uid="uid://c01peygpfgfh8" path="res://scenes/tower/tower.tscn" id="1_nns5h"]
-[ext_resource type="Texture2D" uid="uid://csdynh80y1g2m" path="res://icon.svg" id="2_c2auk"]
-[ext_resource type="PackedScene" uid="uid://bekel8al0ejto" path="res://scenes/components/health_component.tscn" id="3_7awh6"]
+[ext_resource type="PackedScene" uid="uid://c01peygpfgfh8" path="res://scenes/tower/tower.tscn" id="1_5gher"]
+[ext_resource type="Texture2D" uid="uid://csdynh80y1g2m" path="res://icon.svg" id="2_mtc38"]
+[ext_resource type="PackedScene" uid="uid://bekel8al0ejto" path="res://scenes/components/health_component.tscn" id="3_acrjl"]
+[ext_resource type="PackedScene" uid="uid://c3n2071ceb8pn" path="res://scenes/enemies/enemy.tscn" id="4_0825f"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e04f2"]
 radius = 74.0068
@@ -14,11 +15,7 @@ position = Vector2(486, 313)
 test_target = NodePath("../TestTarget/TestTarget")
 
 [node name="TestTarget" type="RigidBody2D" parent="."]
-<<<<<<< HEAD:tower_test.tscn
-position = Vector2(856, 556)
-=======
-position = Vector2(957, 473)
->>>>>>> ee9639e (Tower Resource Setup):scenes/tower/tower_test.tscn
+position = Vector2(882, 489)
 collision_layer = 2
 
 [node name="TestTarget" type="Sprite2D" parent="TestTarget"]
@@ -28,11 +25,7 @@ texture = ExtResource("2_mtc38")
 position = Vector2(2, 1)
 shape = SubResource("CircleShape2D_e04f2")
 
-<<<<<<< HEAD:tower_test.tscn
-[node name="HealthComponent" parent="TestTarget" instance=ExtResource("3_7awh6")]
-=======
 [node name="HealthComponent" parent="TestTarget" instance=ExtResource("3_acrjl")]
 
 [node name="Enemy" parent="." instance=ExtResource("4_0825f")]
 position = Vector2(930, 86)
->>>>>>> ee9639e (Tower Resource Setup):scenes/tower/tower_test.tscn

@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://dpvrvvanrieql" path="res://assets/sprites/heart.png" id="2_12yuw"]
 [ext_resource type="Resource" uid="uid://6y2rwctvjk3" path="res://data/towers/base_tower.tres" id="2_tfyex"]
 [ext_resource type="Texture2D" uid="uid://bnf7h3yc2xunu" path="res://assets/sprites/attack-icon.png" id="3_3mimi"]
-[ext_resource type="Texture2D" uid="uid://dniwbkpk5yuf1" path="res://assets/sprites/arrow.png" id="3_hmrk8"]
 [ext_resource type="Texture2D" uid="uid://cjsd0oimewuss" path="res://assets/sprites/coins.png" id="4_8gsav"]
+[ext_resource type="Texture2D" uid="uid://b51aqviaaaja6" path="res://assets/sprites/attack-speed-icon.png" id="4_34c0e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ls6vc"]
 region = Rect2(0, 0, 256, 256)
@@ -63,7 +63,7 @@ tooltip_text = "Attack Speed"
 
 [node name="SpeedIcon" type="TextureRect" parent="MarginContainer/VBoxContainer/GridContainer/SpeedContainer"]
 layout_mode = 2
-texture = ExtResource("3_hmrk8")
+texture = ExtResource("4_34c0e")
 expand_mode = 3
 
 [node name="SpeedLabel" type="Label" parent="MarginContainer/VBoxContainer/GridContainer/SpeedContainer"]

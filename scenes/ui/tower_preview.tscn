@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://ctghttdswbn7c"]
+[gd_scene load_steps=10 format=3 uid="uid://deonhfjohlr7d"]
 
+[ext_resource type="Texture2D" uid="uid://d1ojwqf8fr03w" path="res://assets/sprites/preview-box.png" id="1_e0uxn"]
 [ext_resource type="Script" path="res://scenes/ui/tower_preview.gd" id="1_yfxcx"]
 [ext_resource type="Texture2D" uid="uid://dpvrvvanrieql" path="res://assets/sprites/heart.png" id="2_12yuw"]
 [ext_resource type="Resource" uid="uid://6y2rwctvjk3" path="res://data/towers/base_tower.tres" id="2_tfyex"]
@@ -7,12 +8,19 @@
 [ext_resource type="Texture2D" uid="uid://cjsd0oimewuss" path="res://assets/sprites/coins.png" id="4_8gsav"]
 [ext_resource type="Texture2D" uid="uid://b51aqviaaaja6" path="res://assets/sprites/attack-speed-icon.png" id="4_34c0e"]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3uypv"]
+texture = ExtResource("1_e0uxn")
+texture_margin_left = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 6.0
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_ls6vc"]
 region = Rect2(0, 0, 256, 256)
 
 [node name="PanelContainer" type="PanelContainer"]
 offset_right = 40.0
 offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_3uypv")
 script = ExtResource("1_yfxcx")
 tower = ExtResource("2_tfyex")
 
@@ -41,6 +49,7 @@ vertical_alignment = 1
 
 [node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
 columns = 2
 
 [node name="AttackContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/GridContainer"]

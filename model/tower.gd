@@ -14,6 +14,9 @@ extends Resource
 ## The scene containing the scene of the tower.
 @export var scene:PackedScene
 
+## The scene for the placement ghost -> might change how this is done...
+@export var ghost_scene:PackedScene
+
 ## Cost to build the tower
 @export var price:int = 5
 

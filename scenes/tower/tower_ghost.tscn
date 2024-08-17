@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=3 uid="uid://df1j7j6qtyxc8"]
+
+[ext_resource type="Shader" uid="uid://sgr6eh0505ts" path="res://scenes/tower/palcement_ghost.tres" id="1_ptfh1"]
+[ext_resource type="Texture2D" uid="uid://duhd1dupd8s0r" path="res://assets/tower/Tower1Shooting-Sheet.png" id="2_6jgtp"]
+[ext_resource type="Script" path="res://scenes/tower/tower_ghost.gd" id="3_47umy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_755rp"]
+shader = ExtResource("1_ptfh1")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0hd3v"]
+atlas = ExtResource("2_6jgtp")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2iwxu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0hd3v")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="TowerGhost" type="Area2D"]
+script = ExtResource("3_47umy")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_755rp")
+sprite_frames = SubResource("SpriteFrames_2iwxu")

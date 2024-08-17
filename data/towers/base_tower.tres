@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Tower" load_steps=3 format=3 uid="uid://6y2rwctvjk3"]
+[gd_resource type="Resource" script_class="Tower" load_steps=4 format=3 uid="uid://6y2rwctvjk3"]
 
+[ext_resource type="PackedScene" uid="uid://df1j7j6qtyxc8" path="res://scenes/tower/tower_ghost.tscn" id="1_21n7k"]
 [ext_resource type="PackedScene" uid="uid://c01peygpfgfh8" path="res://scenes/tower/tower.tscn" id="1_d8uch"]
 [ext_resource type="Script" path="res://model/tower.gd" id="2_fdn1j"]
 
@@ -7,4 +8,5 @@
 script = ExtResource("2_fdn1j")
 name = "Basic Tower"
 scene = ExtResource("1_d8uch")
+ghost_scene = ExtResource("1_21n7k")
 price = 5

@@ -1,0 +1,68 @@
+[gd_scene load_steps=3 format=3 uid="uid://brdhhffb4o5v0"]
+
+[ext_resource type="Script" path="res://scenes/menus/pause_menu.gd" id="1_m8in8"]
+
+[sub_resource type="Theme" id="Theme_s37nb"]
+
+[node name="PauseMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_s37nb")
+script = ExtResource("1_m8in8")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.056
+anchor_bottom = 0.102
+offset_right = -0.520004
+offset_bottom = -0.160004
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.5
+offset_top = -28.5
+offset_right = 31.5
+offset_bottom = 28.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = -4
+
+[node name="FxLabel" type="Label" parent="ColorRect/VBoxContainer/FxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 0
+text = "Fx"
+
+[node name="FxVolume" type="HSlider" parent="ColorRect/VBoxContainer/FxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="MusicContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = -4
+
+[node name="MusicLabel" type="Label" parent="ColorRect/VBoxContainer/MusicContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 0
+text = "Music"
+
+[node name="MusicVolume" type="HSlider" parent="ColorRect/VBoxContainer/MusicContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[connection signal="value_changed" from="ColorRect/VBoxContainer/FxContainer/FxVolume" to="." method="_on_fx_volume_value_changed"]
+[connection signal="value_changed" from="ColorRect/VBoxContainer/MusicContainer/MusicVolume" to="." method="_on_music_volume_value_changed"]

@@ -236,7 +236,8 @@ tile_set = SubResource("TileSet_wxjoa")
 
 [node name="MoneyCoordinator" parent="." instance=ExtResource("3_pnov0")]
 gold = 100
-income = 10
+income = 1
+income_period = 0.1
 
 [node name="SpawnManager" parent="." node_paths=PackedStringArray("spawner") instance=ExtResource("5_3f50j")]
 spawner = NodePath("../Spawner")
@@ -252,5 +253,6 @@ position = Vector2(1886, 91)
 
 [node name="Camera" parent="." instance=ExtResource("6_ayoyc")]
 
-[node name="Hud" parent="." node_paths=PackedStringArray("target") instance=ExtResource("7_v5tkc")]
+[node name="Hud" parent="." node_paths=PackedStringArray("target", "coin_manager") instance=ExtResource("7_v5tkc")]
 target = NodePath("../Target")
+coin_manager = NodePath("../MoneyCoordinator")

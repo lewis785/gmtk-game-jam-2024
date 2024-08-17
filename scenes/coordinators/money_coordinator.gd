@@ -1,8 +1,10 @@
 extends Node2D
 
+class_name MoneyCoordinator
+
 @export var gold: int = 0;
 @export var income: int = 0;
-@export var income_period: int = 1;
+@export var income_period: float = 1.0;
 
 @onready var income_timer: Timer = $IncomeTimer
 

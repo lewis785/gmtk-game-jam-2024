@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://furvkvmh3lqt" path="res://scenes/environment/target.tscn" id="3_8hld4"]
 [ext_resource type="PackedScene" uid="uid://cynqh8t87mfih" path="res://scenes/coordinators/money_coordinator.tscn" id="3_pnov0"]
 [ext_resource type="PackedScene" uid="uid://bie2pjul8rsmp" path="res://scenes/environment/spawn_manager.tscn" id="5_3f50j"]
-[ext_resource type="PackedScene" path="res://scenes/environment/camera.tscn" id="6_ayoyc"]
+[ext_resource type="PackedScene" uid="uid://fqfglpb571i5" path="res://scenes/environment/camera.tscn" id="6_ayoyc"]
 [ext_resource type="PackedScene" uid="uid://dcs4uq757auua" path="res://scenes/ui/hud.tscn" id="7_v5tkc"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ha4is"]
@@ -251,7 +251,6 @@ target = NodePath("../Target")
 position = Vector2(1886, 91)
 
 [node name="Camera" parent="." instance=ExtResource("6_ayoyc")]
-position = Vector2(960, 540)
 
 [node name="Hud" parent="." node_paths=PackedStringArray("target") instance=ExtResource("7_v5tkc")]
 target = NodePath("../Target")

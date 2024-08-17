@@ -4,15 +4,19 @@ extends CanvasLayer
 
 @export var tower : Tower
 @export var target : Target
+@export var coin_manager: MoneyCoordinator
 
-@onready var health_amount: Label = $MarginContainer/Health/HealthAmount
+@onready var health_amount: Label = $MarginContainer/Stats/Health/HealthAmount
+@onready var coin_amount: Label = $MarginContainer/Stats/Coin/CoinAmount
 
 var _ghost
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	update_health_bar(0.0)
+	update_coin_amount(0.0)
 	target.health_component.damaged.connect(update_health_bar)
+	coin_manager.gold_changed.connect(update_coin_amount)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -43,3 +47,6 @@ func is_valid_to_place(event: InputEvent) -> bool:
 
 func update_health_bar(_damage: float):
 	health_amount.text = str(target.health_component.health)
+	
+func update_coin_amount(_amount: int):
+	coin_amount.text = str(coin_manager.gold)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://e16qu1dg8a0e"
-path="res://.godot/imported/Grass-to-dirt1.png-c4f462912422f261435570cda03561c4.ctex"
+uid="uid://clmxlckxahx8t"
+path="res://.godot/imported/Wall-Sheet-export.png-d5ec72bf13c46f4dc8d047809c7f35e2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/environment/terrain/Grass-to-dirt1.png"
-dest_files=["res://.godot/imported/Grass-to-dirt1.png-c4f462912422f261435570cda03561c4.ctex"]
+source_file="res://assets/environment/terrain/Wall-Sheet-export.png"
+dest_files=["res://.godot/imported/Wall-Sheet-export.png-d5ec72bf13c46f4dc8d047809c7f35e2.ctex"]
 
 [params]
 

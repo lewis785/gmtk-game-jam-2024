@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cynqh8t87mfih"]
+
+[ext_resource type="Script" path="res://scenes/coordinators/money_coordinator.gd" id="1_1ftf7"]
+
+[node name="MoneyCoordinator" type="Node2D"]
+script = ExtResource("1_1ftf7")
+
+[node name="IncomeTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="IncomeTimer" to="." method="_on_income_timer_timeout"]

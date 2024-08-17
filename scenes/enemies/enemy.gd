@@ -27,13 +27,36 @@ func _physics_process(delta):
 		direction = nav.get_next_path_position() - global_position
 		direction = direction.normalized()
 		
+		# Change sprite depending on direction of travel
+		if direction.y >= 0:
+			animated_sprite_2d.play("move_down")
+		elif direction.y <= 0:
+			animated_sprite_2d.play("move_up")
+		
 		velocity = velocity.lerp(direction * speed, accel * delta)
 		
 		move_and_slide()
+		set_sprite_direction(direction)
 
 func set_target(target : Node2D):
 	nav.target_position = target.global_position
 	
+func set_sprite_direction(direction: Vector2):
+	 # Check if there is significant movement
+	if direction.length() > 0.1:
+		if abs(direction.x) > abs(direction.y):
+			# Horizontal movement
+			if direction.x > 0:
+				animated_sprite_2d.play("move_right")
+			else:
+				animated_sprite_2d.play("move_left")
+		else:
+			# Vertical movement
+			if direction.y > 0:
+				animated_sprite_2d.play("move_down")
+			else:
+				animated_sprite_2d.play("move_up")
+
 func _on_health_component_damaged(damage):
 	pass
 

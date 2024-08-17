@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://clmxlckxahx8t" path="res://assets/environment/terrain/walls.png" id="2_20wxo"]
 [ext_resource type="PackedScene" uid="uid://b0r5b10b4kdxx" path="res://scenes/environment/spawner.tscn" id="2_bk1vw"]
 [ext_resource type="PackedScene" uid="uid://furvkvmh3lqt" path="res://scenes/environment/target.tscn" id="3_8hld4"]
-[ext_resource type="PackedScene" uid="uid://bie2pjul8rsmp" path="res://scenes/environment/spawn_manager.tscn" id="5_3f50j"]
-[ext_resource type="PackedScene" uid="uid://fqfglpb571i5" path="res://scenes/environment/camera.tscn" id="6_ayoyc"]
+[ext_resource type="PackedScene" path="res://scenes/environment/spawn_manager.tscn" id="5_3f50j"]
+[ext_resource type="PackedScene" path="res://scenes/environment/camera.tscn" id="6_ayoyc"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ha4is"]
 vertices = PackedVector2Array(32, 32, -32, 32, -32, -32, 32, -32)

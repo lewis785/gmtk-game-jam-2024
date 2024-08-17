@@ -44,16 +44,18 @@ func _on_health_component_died():
 
 
 func _on_hitbox_area_entered(body: Node2D) -> void:
-	if body is Hitbox:
-		attack_timer.start()
+	if !dead:
+		if body is Hitbox:
+			attack_timer.start()
 
 
 func _on_attack_timer_timeout() -> void:
-	var bodies = hitbox.get_overlapping_areas()
-	for body in bodies:
-		if body is Hitbox:
-			_deal_attack_damage(body)
-			return
+	if !dead:
+		var bodies = hitbox.get_overlapping_areas()
+		for body in bodies:
+			if body is Hitbox:
+				_deal_attack_damage(body)
+				return
 	attack_timer.stop()
 	
 func _deal_attack_damage(body: Hitbox):
@@ -62,6 +64,5 @@ func _deal_attack_damage(body: Hitbox):
 	body.damage(attack)
 
 func _on_animated_sprite_2d_animation_finished():
-	print(animated_sprite_2d.animation)
 	if animated_sprite_2d.animation == "die":
 		queue_free()

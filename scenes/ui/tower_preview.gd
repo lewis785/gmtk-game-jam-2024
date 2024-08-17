@@ -1,5 +1,9 @@
 extends Control
 
+class_name TowerPreview
+
+signal clicked(tower: Tower)
+
 @onready var attack_label: Label = %AttackLabel
 @onready var speed_label: Label = %SpeedLabel
 @onready var cost_label: Label = %CostLabel
@@ -18,7 +22,16 @@ func _ready() -> void:
 	tower_sprite.texture = tower.icon
 	tower_label.text = tower.name
 
+
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	# TODO: scale values with size
 	pass
+
+
+func _on_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton \
+	 and event.pressed \
+	 and event.button_index == MOUSE_BUTTON_LEFT:
+		clicked.emit(tower)

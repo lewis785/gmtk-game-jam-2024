@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://cx61kp0knn081"]
+[gd_scene load_steps=3 format=3 uid="uid://cx61kp0knn081"]
 
 [ext_resource type="Script" path="res://global/audio_manager.gd" id="1_fcjcy"]
+[ext_resource type="PackedScene" uid="uid://beg761q3xkj5r" path="res://scenes/components/config_component.tscn" id="2_cvht7"]
 
 [node name="AudioManager" type="Node2D"]
 script = ExtResource("1_fcjcy")
+
+[node name="ConfigComponent" parent="." instance=ExtResource("2_cvht7")]

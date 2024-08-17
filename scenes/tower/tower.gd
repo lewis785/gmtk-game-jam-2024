@@ -1,4 +1,4 @@
-extends Area2D
+extends RigidBody2D
 
 var bullet = preload("res://scenes/tower/bullet.tscn")
 @export var test_target : Sprite2D

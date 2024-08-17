@@ -3,9 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://csdynh80y1g2m" path="res://icon.svg" id="1_plfj0"]
 [ext_resource type="Script" path="res://scenes/enemies/enemy.gd" id="1_rfqcv"]
 [ext_resource type="PackedScene" uid="uid://bekel8al0ejto" path="res://scenes/components/health_component.tscn" id="3_hepo6"]
-[ext_resource type="PackedScene" path="res://scenes/components/hitbox.tscn" id="4_7lduf"]
+[ext_resource type="PackedScene" uid="uid://b1qedipcdvfcc" path="res://scenes/components/hitbox.tscn" id="4_7lduf"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1uwcl"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_s43vc"]
+radius = 50.2494
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k1a8l"]
 size = Vector2(140, 139)
@@ -19,8 +20,8 @@ script = ExtResource("1_rfqcv")
 texture = ExtResource("1_plfj0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 1.5)
-shape = SubResource("CapsuleShape2D_1uwcl")
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_s43vc")
 
 [node name="HealthComponent" parent="." instance=ExtResource("3_hepo6")]
 position = Vector2(96.6766, 328.701)
@@ -31,7 +32,7 @@ collision_layer = 2
 health_component = NodePath("../HealthComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(1, 0.5)
+position = Vector2(5, 1)
 shape = SubResource("RectangleShape2D_k1a8l")
 debug_color = Color(0.885887, 0.302521, 0.357986, 0.42)
 

@@ -71,3 +71,11 @@ func tower_click(tower : Tower):
 	_ghost.affordable = coin_manager.can_afford(selected_tower.price)
 	_ghost.map_resolution = level.level_size * 64
 	get_parent().add_child(_ghost) # Replace with function body.
+	
+func _input(event):
+	if event.is_action_pressed("CancelTowerPlace"):
+		if _ghost != null:
+			_ghost.queue_free()
+		if selected_tower != null:
+			selected_tower = null
+		

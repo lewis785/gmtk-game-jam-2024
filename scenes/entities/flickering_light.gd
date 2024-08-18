@@ -17,6 +17,3 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	time_duration += delta
 	energy = ((noise.get_noise_1d(time_duration) + 1) / variation) + base_energy
-	print(base_energy)
-	print(noise.get_noise_1d(time_duration))
-	print(energy)

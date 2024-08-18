@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://b0r5b10b4kdxx"]
+[gd_scene load_steps=6 format=3 uid="uid://b0r5b10b4kdxx"]
 
 [ext_resource type="Texture2D" uid="uid://col7etfkwvpwo" path="res://assets/environment/objects/spawner.png" id="1_0xe5r"]
 [ext_resource type="Script" path="res://scenes/environment/spawner.gd" id="1_kpc2a"]
 [ext_resource type="PackedScene" uid="uid://qikv6ltgsfdu" path="res://scenes/enemies/leviathan.tscn" id="2_f3v1s"]
 [ext_resource type="PackedScene" uid="uid://mowgq532ltew" path="res://scenes/enemies/rat.tscn" id="3_4lpr8"]
+[ext_resource type="PackedScene" uid="uid://b1jrmfbkbqpct" path="res://scenes/entities/flickering_light.tscn" id="5_hxilb"]
 
 [node name="Spawner" type="Node2D"]
 script = ExtResource("1_kpc2a")
@@ -11,3 +12,10 @@ spawn_entities = Array[PackedScene]([ExtResource("2_f3v1s"), ExtResource("3_4lpr
 
 [node name="Spawner" type="Sprite2D" parent="."]
 texture = ExtResource("1_0xe5r")
+
+[node name="FlickeringLight" parent="." instance=ExtResource("5_hxilb")]
+color = Color(0.878431, 0.321569, 0.388235, 1)
+energy = 0.8
+texture_scale = 8.0
+frequency = 0.5
+variation = 8.0

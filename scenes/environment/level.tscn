@@ -4,7 +4,7 @@
 [ext_resource type="TileSet" uid="uid://8ifuu21pjlag" path="res://assets/environment/terrain/level_tiles.tres" id="2_e0lua"]
 [ext_resource type="PackedScene" uid="uid://bie2pjul8rsmp" path="res://scenes/environment/spawn_manager.tscn" id="3_swqev"]
 [ext_resource type="PackedScene" uid="uid://b0r5b10b4kdxx" path="res://scenes/environment/spawner.tscn" id="4_wupxx"]
-[ext_resource type="PackedScene" uid="uid://c3n2071ceb8pn" path="res://scenes/enemies/enemy.tscn" id="5_arrpl"]
+[ext_resource type="PackedScene" uid="uid://mowgq532ltew" path="res://scenes/enemies/rat.tscn" id="5_mh2ue"]
 [ext_resource type="PackedScene" uid="uid://qikv6ltgsfdu" path="res://scenes/enemies/leviathan.tscn" id="6_kksf3"]
 [ext_resource type="PackedScene" uid="uid://furvkvmh3lqt" path="res://scenes/environment/target.tscn" id="7_i3wtx"]
 
@@ -33,7 +33,7 @@ spawn_period = 0.5
 
 [node name="Spawner" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_wupxx")]
 position = Vector2(154, 141)
-spawn_entities = Array[PackedScene]([ExtResource("5_arrpl"), ExtResource("6_kksf3")])
+spawn_entities = Array[PackedScene]([ExtResource("5_mh2ue"), ExtResource("6_kksf3")])
 spawn_rate = 1.0
 target = NodePath("../Target")
 

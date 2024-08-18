@@ -10,10 +10,15 @@ class_name BaseTower
 @onready var hitbox_collision_shape: CollisionShape2D = %HitboxCollisionShape
 @onready var health_component: HealthComponent = %HealthComponent
 @onready var timer: Timer = $Timer
+@onready var health_bar: Node2D = $HealthBar
 
 var tower_scale : float
 
 var damage : float
+
+func _ready() -> void:
+	health_component.damaged.connect(show_health_bar)
+	health_bar.hide()
 
 func initialize(tower : Tower, tower_scale : float):
 	self.tower_scale = tower_scale
@@ -36,3 +41,6 @@ func _scale_rect_collision_shape(collision : CollisionShape2D, tower_scale : flo
 	new_collision_shape.size = Vector2(collision.shape.get_rect().size.x, collision.shape.get_rect().size.y) * Vector2(tower_scale, tower_scale)
 	collision.set_shape(new_collision_shape)
 	collision.position *= tower_scale
+
+func show_health_bar(_damage):
+	health_bar.show()

@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://scenes/environment/target.gd" id="1_hiu24"]
 [ext_resource type="PackedScene" uid="uid://bekel8al0ejto" path="res://scenes/components/health_component.tscn" id="2_1bcm2"]
-[ext_resource type="Texture2D" uid="uid://sp5nvc8ceu3q" path="res://assets/target/CrystalIdle-Sheet.png" id="2_6kukr"]
-[ext_resource type="Texture2D" uid="uid://nu3y5l0ybnv0" path="res://assets/target/CrystalDeath-Sheet.png" id="3_725bw"]
+[ext_resource type="Texture2D" uid="uid://sp5nvc8ceu3q" path="res://assets/environment/objects/target/CrystalIdle-Sheet.png" id="2_6kukr"]
+[ext_resource type="Texture2D" uid="uid://nu3y5l0ybnv0" path="res://assets/environment/objects/target/CrystalDeath-Sheet.png" id="3_725bw"]
 [ext_resource type="PackedScene" path="res://scenes/components/hitbox.tscn" id="4_a4bnx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jw6al"]

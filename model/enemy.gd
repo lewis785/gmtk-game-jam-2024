@@ -1,4 +1,4 @@
-class_name Enemy
+class_name EnemyModel
 extends CharacterBody2D
 
 ## Base CharacterBody2D for different enemy types.

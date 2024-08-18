@@ -22,10 +22,11 @@ func _process(delta: float) -> void:
 	path_follow_2d.progress += speed * delta
 
 func detonate():
-	var all_enemies = blast_area.get_overlapping_areas()
+	var all_targets = blast_area.get_overlapping_areas()
 	var attack = Attack.new()
 	attack.damage = damage
 	
-	for enemy in all_enemies:
-		if enemy is Enemy:
-			enemy.hitbox.damage(attack)
+
+	for target in all_targets:
+		if target is Hitbox && target.get_parent().is_in_group("enemies"):
+			target.damage(attack)

@@ -4,9 +4,6 @@ extends CharacterBody2D
 ## Base CharacterBody2D for different enemy types.
 ## Assuming all enemy types will extend CharacterBody, if not, we can later instead extend Node.
 
-## The scene containing the scene of the enemy.
-@export var scene:PackedScene
-
 # Basic enemy subnodes
 @onready var animated_sprite:AnimatedSprite2D = $AnimatedSprite2D
 @onready var health_component:HealthComponent = $HealthComponent

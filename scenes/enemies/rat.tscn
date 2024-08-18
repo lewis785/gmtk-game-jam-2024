@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bwwt0xhf0yydw" path="res://assets/enemies/RatMoveRight-Sheet.png" id="4_26nr4"]
 [ext_resource type="Texture2D" uid="uid://72yffd1untpk" path="res://assets/enemies/RatMoveUp-Sheet.png" id="5_nq22l"]
 [ext_resource type="PackedScene" uid="uid://bekel8al0ejto" path="res://scenes/components/health_component.tscn" id="6_1lonb"]
-[ext_resource type="PackedScene" path="res://scenes/components/hitbox.tscn" id="7_x745i"]
+[ext_resource type="PackedScene" uid="uid://b1qedipcdvfcc" path="res://scenes/components/hitbox.tscn" id="7_x745i"]
 [ext_resource type="AudioStream" uid="uid://dyah5huq6ntdd" path="res://assets/sounds/enemies/rats/RatAttack2.mp3" id="9_jtm00"]
 [ext_resource type="AudioStream" uid="uid://bja0p382m2606" path="res://assets/sounds/enemies/rats/RatDeath1.mp3" id="12_l8gi7"]
 
@@ -204,7 +204,7 @@ shape = SubResource("CapsuleShape2D_xyc5e")
 
 [node name="HealthComponent" parent="." instance=ExtResource("6_1lonb")]
 position = Vector2(96.6766, 328.701)
-max_health = 30.0
+max_health = 5.0
 
 [node name="Hitbox" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("7_x745i")]
 collision_layer = 2

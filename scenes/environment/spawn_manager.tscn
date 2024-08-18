@@ -4,6 +4,7 @@
 
 [node name="SpawnManager" type="Node2D"]
 script = ExtResource("1_3l71n")
+spawn_period = 0.1
 
 [node name="SpawnTimer" type="Timer" parent="."]
 autostart = true

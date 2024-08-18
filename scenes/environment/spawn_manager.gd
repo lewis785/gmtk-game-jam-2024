@@ -4,7 +4,7 @@ extends Node2D
 
 @export var wave: int = 1;
 @export_range(0.0, 30.0, 1.0) var rest_period: float = 20.0
-@export_range(0.0, 10.0, 0.5) var spawn_period: float = 1.0
+@export_range(0.0, 10.0, 0.1) var spawn_period: float = 1.0
 
 @onready var rest_timer: Timer = $RestTimer
 @onready var spawn_timer: Timer = $SpawnTimer

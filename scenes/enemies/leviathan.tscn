@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bgdynl2yle2x0" path="res://assets/enemies/Leviathan1.png" id="2_it5h1"]
 [ext_resource type="Texture2D" uid="uid://cwydo6msqajxc" path="res://assets/enemies/Leviathan1Death-Sheet.png" id="3_0cyho"]
 [ext_resource type="PackedScene" uid="uid://bekel8al0ejto" path="res://scenes/components/health_component.tscn" id="4_jc2q7"]
-[ext_resource type="PackedScene" path="res://scenes/components/hitbox.tscn" id="5_sjkm5"]
+[ext_resource type="PackedScene" uid="uid://b1qedipcdvfcc" path="res://scenes/components/hitbox.tscn" id="5_sjkm5"]
 [ext_resource type="AudioStream" uid="uid://c3tumviadpv61" path="res://assets/sounds/enemies/leviathans/LeviathanDamage2.mp3" id="6_tpq2s"]
 [ext_resource type="AudioStream" uid="uid://c5cinnc8lhoym" path="res://assets/sounds/enemies/leviathans/LeviathanDeath.mp3" id="7_4dulo"]
 
@@ -74,8 +74,8 @@ collision_layer = 3
 collision_mask = 20
 motion_mode = 1
 script = ExtResource("1_bthj1")
-speed = 50
-damage = 100
+speed = 10
+damage = 200
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_bv24m")

@@ -14,7 +14,7 @@ var rng = RandomNumberGenerator.new()
 
 func type_to_spawn():
 	var random_number = rng.randf_range(0.0, 1.0)
-	if random_number < 0.1:
+	if random_number < 0.05:
 		return spawn_entities[1].instantiate()
 	else:
 		return spawn_entities[0].instantiate()
@@ -24,7 +24,9 @@ func spawn():
 	var random_number = rng.randf_range(0.0, 1.0)
 	if random_number < spawn_rate:
 		var entity = type_to_spawn()
-		entity.position = entity.position + spawn_offset
+		var rand_offset_x = rng.randf_range(-50.0, 50.0)
+		var rand_offset_y = rng.randf_range(-50.0, 50.0)
+		entity.position = entity.position + spawn_offset + Vector2(rand_offset_x, rand_offset_y)
 		self.add_child(entity)
 		if entity.is_in_group('enemies'):
 			var enemy : Enemy = entity

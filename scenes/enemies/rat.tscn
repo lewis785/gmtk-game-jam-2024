@@ -185,7 +185,7 @@ height = 42.0
 radius = 13.0
 height = 46.0
 
-[node name="Rat" type="CharacterBody2D"]
+[node name="Rat" type="CharacterBody2D" groups=["enemies"]]
 script = ExtResource("1_8phfx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

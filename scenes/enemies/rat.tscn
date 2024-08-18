@@ -204,8 +204,9 @@ shape = SubResource("CapsuleShape2D_xyc5e")
 position = Vector2(96.6766, 328.701)
 max_health = 30.0
 
-[node name="Hitbox" parent="." instance=ExtResource("7_x745i")]
+[node name="Hitbox" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("7_x745i")]
 collision_layer = 2
+health_component = NodePath("../HealthComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 rotation = 3.14159

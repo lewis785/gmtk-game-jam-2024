@@ -12,8 +12,11 @@ var bullet_damage : float
 
 func initialize(tower : Tower):
 	timer.wait_time = tower.shoot_frequency
+	
+	# Initialise health component variables
 	health_component.max_health = tower.max_health
-	health_component.full_heal()
+	health_component.health = tower.max_health
+
 	bullet_damage = tower.damage
 
 # Called when the node enters the scene tree for the first time.

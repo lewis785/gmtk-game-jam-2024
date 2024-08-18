@@ -24,16 +24,12 @@ func initialize(tower : Tower, tower_scale : float):
 func scale_tower(tower_scale: float) -> void:
 	# Rigid Bodies cannot be scaled, so we need to scale everything else...
 	sprite_2d.scale = Vector2(tower_scale, tower_scale)
-	
-	var new_collision_shape = RectangleShape2D.new()
-	new_collision_shape.size = Vector2(tower_collision_shape.shape.get_rect().size.x, tower_collision_shape.shape.get_rect().size.y) * Vector2(tower_scale, tower_scale)
-	tower_collision_shape.set_shape(new_collision_shape)
-	tower_collision_shape.position *= tower_scale
-
-	var new_hitbox_shape = RectangleShape2D.new()
-	new_hitbox_shape.size = Vector2(hitbox_collision_shape.shape.get_rect().size.x, hitbox_collision_shape.shape.get_rect().size.y) * Vector2(tower_scale, tower_scale)
-	hitbox_collision_shape.set_shape(new_hitbox_shape)
-	hitbox_collision_shape.position *= tower_scale	
-	
+	_scale_rect_collision_shape(tower_collision_shape, tower_scale)
+	_scale_rect_collision_shape(hitbox_collision_shape, tower_scale)
 	range_collision_shape.shape.radius *= tower_scale
-	
+
+func _scale_rect_collision_shape(collision : CollisionShape2D, tower_scale : float):
+	var new_collision_shape = RectangleShape2D.new()
+	new_collision_shape.size = Vector2(collision.shape.get_rect().size.x, collision.shape.get_rect().size.y) * Vector2(tower_scale, tower_scale)
+	collision.set_shape(new_collision_shape)
+	collision.position *= tower_scale

@@ -1,10 +1,10 @@
-[gd_scene load_steps=26 format=3 uid="uid://5ljsbfsgdufq"]
+[gd_scene load_steps=26 format=3 uid="uid://dr7byga834af0"]
 
 [ext_resource type="Script" path="res://scenes/tower/tower.gd" id="1_510tu"]
 [ext_resource type="Texture2D" uid="uid://b7e07csij026e" path="res://assets/tower/bomb-tower-sheet.png" id="2_7pv8w"]
 [ext_resource type="PackedScene" uid="uid://bekel8al0ejto" path="res://scenes/components/health_component.tscn" id="3_m6fif"]
-[ext_resource type="PackedScene" path="res://scenes/components/hitbox.tscn" id="4_v44a4"]
-[ext_resource type="PackedScene" path="res://scenes/components/health_bar.tscn" id="5_00140"]
+[ext_resource type="PackedScene" uid="uid://b1qedipcdvfcc" path="res://scenes/components/hitbox.tscn" id="4_v44a4"]
+[ext_resource type="PackedScene" uid="uid://dne1upf2xrhew" path="res://scenes/components/health_bar.tscn" id="5_00140"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4gu5b"]
 atlas = ExtResource("2_7pv8w")
@@ -137,12 +137,15 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jpt5e"]
+resource_local_to_scene = true
 size = Vector2(105, 38)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xmrch"]
+resource_local_to_scene = true
 radius = 481.037
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lrd8k"]
+resource_local_to_scene = true
 size = Vector2(110, 46)
 
 [node name="BombTower" type="RigidBody2D"]
@@ -157,7 +160,7 @@ animation = &"open"
 autoplay = "default"
 frame_progress = 0.0777206
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="TowerCollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 19)
 shape = SubResource("RectangleShape2D_jpt5e")
 debug_color = Color(0.868573, 0.293213, 0.508281, 0.42)
@@ -182,7 +185,7 @@ max_health = 300.0
 [node name="Hitbox" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_v44a4")]
 health_component = NodePath("../HealthComponent")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+[node name="HitboxCollisionShape" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(0, 21)
 shape = SubResource("RectangleShape2D_lrd8k")
 

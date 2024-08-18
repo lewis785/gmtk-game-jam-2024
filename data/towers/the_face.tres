@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="Tower" load_steps=6 format=3 uid="uid://pen0qetm74fm"]
+
+[ext_resource type="PackedScene" uid="uid://ccjj02aippfxp" path="res://scenes/tower/face_tower_ghost.tscn" id="1_y345q"]
+[ext_resource type="Texture2D" uid="uid://k650vlgi8veh" path="res://assets/tower/Tower2Idle-Sheet.png" id="2_p8eo3"]
+[ext_resource type="PackedScene" uid="uid://diyg253wermkg" path="res://scenes/tower/face_tower.tscn" id="3_d2qck"]
+[ext_resource type="Script" path="res://model/tower.gd" id="4_j8rjb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rfhna"]
+atlas = ExtResource("2_p8eo3")
+region = Rect2(256, 0, 256, 256)
+
+[resource]
+script = ExtResource("4_j8rjb")
+name = "The Face"
+icon = SubResource("AtlasTexture_rfhna")
+scene = ExtResource("3_d2qck")
+ghost_scene = ExtResource("1_y345q")
+price = 100
+attack_range = 300.0
+lower_attack_speed = 10.0
+upper_attack_speed = 1.0
+lower_damage = 10.0
+upper_damage = 40.0
+lower_max_health = 30.0
+upper_max_health = 90.0

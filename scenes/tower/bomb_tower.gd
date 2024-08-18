@@ -5,6 +5,7 @@ const bomb = preload("res://scenes/tower/bomb.tscn")
 @export var test_target : Sprite2D
 @onready var attack_range = $AttackRange
 @onready var sprite: AnimatedSprite2D = %Sprite
+@onready var audio_stream_player_2d_attack = $AudioStreamPlayer2DAttack
 
 var open: bool = false
 
@@ -22,6 +23,7 @@ func _on_timer_timeout() -> void:
 		new_bomb.target = collisions[0].global_position - global_position
 		new_bomb.damage = damage
 		new_bomb.find_child("Area2D").scale = Vector2(tower_scale, tower_scale)
+		audio_stream_player_2d_attack.play()
 		add_child(new_bomb)
 	else:
 		if open:

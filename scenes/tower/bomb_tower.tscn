@@ -1,10 +1,11 @@
-[gd_scene load_steps=26 format=3 uid="uid://dr7byga834af0"]
+[gd_scene load_steps=27 format=3 uid="uid://dr7byga834af0"]
 
 [ext_resource type="Script" path="res://scenes/tower/bomb_tower.gd" id="1_cslg4"]
 [ext_resource type="Texture2D" uid="uid://b7e07csij026e" path="res://assets/tower/bomb-tower-sheet.png" id="2_7pv8w"]
 [ext_resource type="PackedScene" uid="uid://bekel8al0ejto" path="res://scenes/components/health_component.tscn" id="3_m6fif"]
-[ext_resource type="PackedScene" uid="uid://b1qedipcdvfcc" path="res://scenes/components/hitbox.tscn" id="4_v44a4"]
-[ext_resource type="PackedScene" uid="uid://dne1upf2xrhew" path="res://scenes/components/health_bar.tscn" id="5_00140"]
+[ext_resource type="PackedScene" path="res://scenes/components/hitbox.tscn" id="4_v44a4"]
+[ext_resource type="PackedScene" path="res://scenes/components/health_bar.tscn" id="5_00140"]
+[ext_resource type="AudioStream" uid="uid://cgg4b6v4tu0cr" path="res://assets/sounds/towers/TowerBombAttack3.mp3" id="6_r8yxe"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4gu5b"]
 atlas = ExtResource("2_7pv8w")
@@ -196,6 +197,10 @@ shape = SubResource("RectangleShape2D_lrd8k")
 [node name="HealthBar" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("5_00140")]
 position = Vector2(-1, -92)
 health_component = NodePath("../HealthComponent")
+
+[node name="AudioStreamPlayer2DAttack" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_r8yxe")
+max_distance = 500.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="damaged" from="HealthComponent" to="." method="_on_health_component_damaged"]

@@ -13,4 +13,4 @@ func _on_timer_timeout() -> void:
 		new_bullet.damage = damage
 
 func _on_health_component_died() -> void:
-	queue_free() # Replace with function body.
+	queue_free() # Replace with function body

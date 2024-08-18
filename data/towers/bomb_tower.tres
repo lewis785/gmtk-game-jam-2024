@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Tower" load_steps=6 format=3 uid="uid://0svs62c6bbu0"]
 
-[ext_resource type="PackedScene" uid="uid://df1j7j6qtyxc8" path="res://scenes/tower/tower_ghost.tscn" id="1_o3bky"]
+[ext_resource type="PackedScene" uid="uid://2ukxlub3tl1r" path="res://scenes/tower/bomb_tower_ghost.tscn" id="1_yc8v2"]
 [ext_resource type="Texture2D" uid="uid://b7e07csij026e" path="res://assets/tower/bomb-tower-sheet.png" id="2_wdr1j"]
 [ext_resource type="PackedScene" uid="uid://dr7byga834af0" path="res://scenes/tower/bomb_tower.tscn" id="3_quplt"]
 [ext_resource type="Script" path="res://model/tower.gd" id="4_ls0vd"]
@@ -14,7 +14,7 @@ script = ExtResource("4_ls0vd")
 name = "Bomb Tower"
 icon = SubResource("AtlasTexture_cxtlx")
 scene = ExtResource("3_quplt")
-ghost_scene = ExtResource("1_o3bky")
+ghost_scene = ExtResource("1_yc8v2")
 price = 50
 lower_attack_speed = 3.0
 upper_attack_speed = 0.3

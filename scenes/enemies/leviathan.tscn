@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bawjl4tei4nye"]
+[gd_scene load_steps=14 format=3 uid="uid://qikv6ltgsfdu"]
 
 [ext_resource type="Script" path="res://scenes/enemies/enemy.gd" id="1_1ljxa"]
 [ext_resource type="Texture2D" uid="uid://bgdynl2yle2x0" path="res://assets/enemies/Leviathan1.png" id="2_it5h1"]
@@ -88,8 +88,9 @@ debug_color = Color(0.587233, 0.544561, 0.198447, 0.42)
 
 [node name="HealthComponent" parent="." instance=ExtResource("4_jc2q7")]
 
-[node name="Hitbox" parent="." instance=ExtResource("5_sjkm5")]
+[node name="Hitbox" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("5_sjkm5")]
 collision_layer = 2
+health_component = NodePath("../HealthComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(0, 2)

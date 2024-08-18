@@ -216,7 +216,8 @@ shape = SubResource("CapsuleShape2D_hr0wq")
 debug_color = Color(0.885887, 0.302521, 0.357986, 0.42)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-navigation_layers = 3
+navigation_layers = 128
+path_postprocessing = 1
 
 [node name="AttackTimer" type="Timer" parent="."]
 

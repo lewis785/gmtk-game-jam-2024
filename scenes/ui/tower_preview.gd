@@ -17,23 +17,16 @@ var camera : Camera
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	attack_label.text = str(tower.damage)
-	speed_label.text = str(tower.shoot_frequency) #TODO: how do we present this?
-	cost_label.text = str(tower.price)
-	health_label.text = str(tower.max_health)
+	ZoomManager.zoom_changed.connect(zoom_changed)
 	tower_sprite.texture = tower.icon
 	tower_label.text = tower.name
+	zoom_changed(ZoomManager.zoom_level)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	# TODO: scale values with size
-	pass
-
-func scale_values():
-	attack_label.text = str(tower.damage)
-	speed_label.text = str(tower.shoot_frequency)
+func zoom_changed(zoom_level : float):
+	attack_label.text = str(ZoomManager.calculate_relative_value(tower.lower_damage, tower.upper_damage))
+	speed_label.text = str(ZoomManager.calculate_relative_value(tower.lower_attack_speed, tower.upper_attack_speed))
 	cost_label.text = str(tower.price)
-	health_label.text = str(tower.max_health)
+	health_label.text = str(ZoomManager.calculate_relative_value(tower.lower_max_health, tower.upper_max_health))
 
 func _on_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton \

@@ -14,12 +14,11 @@ class_name BaseTower
 var damage : float
 
 func initialize(tower : Tower, tower_scale : float):
-	timer.wait_time = tower.shoot_frequency
-	
-	# Initialise health component variables
-	health_component.max_health = tower.max_health
+	var speed = ZoomManager.calculate_relative_value(tower.lower_attack_speed, tower.upper_attack_speed)
+	timer.wait_time = 1.0 / speed
+	health_component.max_health = ZoomManager.calculate_relative_value(tower.lower_max_health, tower.upper_max_health)
 	health_component.health = tower.max_health
-	damage = tower.damage
+	damage = ZoomManager.calculate_relative_value(tower.lower_damage, tower.upper_damage)
 	scale_tower(tower_scale)
 
 func scale_tower(tower_scale: float) -> void:

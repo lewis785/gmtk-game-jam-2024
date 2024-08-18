@@ -22,7 +22,6 @@ func _input(event):
 		ZoomManager.zoom_level += zoom_factor
 	if event.is_action_pressed("ZoomCamOut"):
 		ZoomManager.zoom_level -= zoom_factor 
-	print("zoom level: " + str(ZoomManager.zoom_level))
 
 func _process(_delta):
 	var movement = Vector2(0,0)

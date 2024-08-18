@@ -22,5 +22,5 @@ func _process(delta: float) -> void:
 
 func calculate_relative_value(lower : float, upper : float) -> float:
 	var slope = (upper - lower) / (min_zoom - max_zoom)
-	return round(lower + slope * (zoom_level - max_zoom))
+	return lower + slope * (zoom_level - max_zoom)
 	

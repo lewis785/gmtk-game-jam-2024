@@ -23,10 +23,10 @@ func _ready() -> void:
 	zoom_changed(ZoomManager.zoom_level)
 
 func zoom_changed(zoom_level : float):
-	attack_label.text = str(ZoomManager.calculate_relative_value(tower.lower_damage, tower.upper_damage))
-	speed_label.text = str(ZoomManager.calculate_relative_value(tower.lower_attack_speed, tower.upper_attack_speed))
+	attack_label.text = str(round(ZoomManager.calculate_relative_value(tower.lower_damage, tower.upper_damage)))
+	speed_label.text = str(round(ZoomManager.calculate_relative_value(tower.lower_attack_speed, tower.upper_attack_speed)))
 	cost_label.text = str(tower.price)
-	health_label.text = str(ZoomManager.calculate_relative_value(tower.lower_max_health, tower.upper_max_health))
+	health_label.text = str(round(ZoomManager.calculate_relative_value(tower.lower_max_health, tower.upper_max_health)))
 
 func _on_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton \

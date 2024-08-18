@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dxinopc32af3i"
+path="res://.godot/imported/GMTK2024 Loop-01.mp3-44b1bcf8823a18ec1448b01bd1ee23ee.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/music/GMTK2024 Loop-01.mp3"
+dest_files=["res://.godot/imported/GMTK2024 Loop-01.mp3-44b1bcf8823a18ec1448b01bd1ee23ee.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

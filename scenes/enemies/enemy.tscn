@@ -203,7 +203,7 @@ shape = SubResource("CapsuleShape2D_cm2d3")
 
 [node name="HealthComponent" parent="." instance=ExtResource("3_hepo6")]
 position = Vector2(96.6766, 328.701)
-max_health = 200.0
+max_health = 30.0
 
 [node name="Hitbox" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_7lduf")]
 unique_name_in_owner = true

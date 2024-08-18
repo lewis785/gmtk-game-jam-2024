@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bie2pjul8rsmp" path="res://scenes/environment/spawn_manager.tscn" id="3_swqev"]
 [ext_resource type="PackedScene" uid="uid://b0r5b10b4kdxx" path="res://scenes/environment/spawner.tscn" id="4_wupxx"]
 [ext_resource type="PackedScene" uid="uid://c3n2071ceb8pn" path="res://scenes/enemies/enemy.tscn" id="5_arrpl"]
-[ext_resource type="PackedScene" uid="uid://bawjl4tei4nye" path="res://scenes/enemies/leviathan.tscn" id="6_kksf3"]
+[ext_resource type="PackedScene" uid="uid://qikv6ltgsfdu" path="res://scenes/enemies/leviathan.tscn" id="6_kksf3"]
 [ext_resource type="PackedScene" uid="uid://furvkvmh3lqt" path="res://scenes/environment/target.tscn" id="7_i3wtx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fui1b"]

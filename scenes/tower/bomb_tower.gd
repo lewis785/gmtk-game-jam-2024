@@ -21,6 +21,7 @@ func _on_timer_timeout() -> void:
 		var new_bomb : Bomb = bomb.instantiate()
 		new_bomb.target = collisions[0].global_position - global_position
 		new_bomb.damage = damage
+		new_bomb.find_child("Area2D").scale = Vector2(tower_scale, tower_scale)
 		add_child(new_bomb)
 	else:
 		if open:

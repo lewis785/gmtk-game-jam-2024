@@ -15,7 +15,8 @@ gold = 100
 income = 1
 income_period = 0.1
 
-[node name="Camera" parent="." instance=ExtResource("9_o5woo")]
+[node name="Camera" parent="." node_paths=PackedStringArray("level") instance=ExtResource("9_o5woo")]
+level = NodePath("../Level")
 
 [node name="Hud" parent="." node_paths=PackedStringArray("level", "coin_manager") instance=ExtResource("10_3bvo4")]
 level = NodePath("../Level")

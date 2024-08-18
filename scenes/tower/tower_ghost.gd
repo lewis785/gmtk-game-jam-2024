@@ -27,9 +27,6 @@ func _check_valid_placement():
 		valid_placement = is_current_placement_valid
 	sprite_2d.material.set_shader_parameter("IsInvalidPlacement", !valid_placement)
 
-func is_placement_affordable():
-	return is_position_on_map() and get_overlapping_areas().size() == 0 and get_overlapping_bodies().size() == 0
-
 func is_placement_valid():
 	return is_position_on_map() and get_overlapping_areas().size() == 0 and get_overlapping_bodies().size() == 0
 

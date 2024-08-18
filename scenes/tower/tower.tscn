@@ -110,6 +110,7 @@ health_component = NodePath("../HealthComponent")
 [node name="AudioStreamPlayer2DAttack" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_6lh6v")
 max_distance = 500.0
+bus = &"Fx"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="damaged" from="HealthComponent" to="." method="_on_health_component_damaged"]

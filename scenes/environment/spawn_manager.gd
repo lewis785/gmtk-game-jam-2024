@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var spawner : Spawner
+@export var spawner : Array[Spawner]
 
 @export var wave: int = 1;
 @export_range(0.0, 30.0, 1.0) var rest_period: float = 20.0
@@ -23,4 +23,4 @@ func _on_rest_timer_timeout() -> void:
 	wave_started.emit();
 
 func _on_spawn_timer_timeout() -> void:
-	spawner.spawn()
+	spawner.pick_random().spawn()

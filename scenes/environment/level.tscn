@@ -28,7 +28,7 @@ shape = SubResource("RectangleShape2D_fui1b")
 debug_color = Color(0.197607, 0.626753, 0.395583, 0.42)
 
 [node name="SpawnManager" parent="." node_paths=PackedStringArray("spawner") instance=ExtResource("3_swqev")]
-spawner = NodePath("../Spawner")
+spawner = [NodePath("../Spawner")]
 spawn_period = 0.5
 
 [node name="Spawner" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_wupxx")]

@@ -28,3 +28,7 @@ func toggle_pause():
 		paused = true
 	visible = paused
 	get_tree().paused = paused
+
+
+func _on_button_pressed():
+	toggle_pause()

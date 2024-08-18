@@ -78,6 +78,7 @@ func tower_click(tower : Tower):
 	_ghost.affordable = coin_manager.can_afford(selected_tower.price)
 	_ghost.map_resolution = level.level_size * 64
 	_ghost.camera = camera
+	_ghost.tower = tower
 	get_parent().add_child(_ghost)
 	
 func game_over():

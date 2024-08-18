@@ -6,6 +6,7 @@ class_name TowerGhost
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 
 @export var affordable: bool = true
+@export var tower : Tower
 
 var map_resolution : Vector2
 
@@ -48,3 +49,7 @@ func is_position_on_map():
 		return false
 	
 	return true
+
+func _draw():
+	if tower:
+		draw_circle(position, tower.attack_range, Color.RED, false, 1.0, true)

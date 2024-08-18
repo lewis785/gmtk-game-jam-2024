@@ -16,6 +16,7 @@ icon = SubResource("AtlasTexture_joc6k")
 scene = ExtResource("3_het0e")
 ghost_scene = ExtResource("1_aebif")
 price = 50
+attack_range = 200.0
 lower_attack_speed = 20.0
 upper_attack_speed = 2.0
 lower_damage = 3.0

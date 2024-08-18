@@ -42,3 +42,5 @@ shape = SubResource("RectangleShape2D_qmfw2")
 unique_name_in_owner = true
 material = SubResource("ShaderMaterial_755rp")
 sprite_frames = SubResource("SpriteFrames_2iwxu")
+
+[node name="AttackRange" type="Polygon2D" parent="."]

@@ -20,6 +20,8 @@ extends Resource
 ## Cost to build the tower
 @export var price:int = 5
 
+@export var attack_range : float = 350.0
+
 @export var lower_attack_speed:float = 0.5
 @export var upper_attack_speed:float = 5.0
 

@@ -12,7 +12,8 @@ var bullet = preload("res://scenes/tower/bullet.tscn")
 func _on_timer_timeout() -> void:
 	if !died:
 		var collisions: Array[Area2D] = attack_range.get_overlapping_areas()
-		audio_stream_player_2d_attack.play()
+		if collisions.size() > 0:
+			audio_stream_player_2d_attack.play()
 		for i in range(0, min(collisions.size(), number_of_simultanious_shots)):
 			var new_bullet : Bullet = bullet.instantiate()
 			add_child(new_bullet)

@@ -69,4 +69,5 @@ func tower_click(tower : Tower):
 	selected_tower = tower
 	_ghost = selected_tower.ghost_scene.instantiate()
 	_ghost.affordable = coin_manager.can_afford(selected_tower.price)
+	_ghost.map_resolution = level.level_size * 64
 	get_parent().add_child(_ghost) # Replace with function body.

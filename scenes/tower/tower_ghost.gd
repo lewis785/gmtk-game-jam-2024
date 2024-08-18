@@ -7,6 +7,8 @@ class_name TowerGhost
 
 @export var affordable: bool = true
 
+var map_resolution : Vector2
+
 var valid_placement
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -37,7 +39,7 @@ func is_position_on_map():
 		return false
 	
 	# Map grid is 31 x 18, each square is 64px 
-	if pos.x + offset_x > (31 * 64) or pos.y + offset_y > (18 * 64):
+	if pos.x + offset_x > (map_resolution.x) or pos.y + offset_y > (map_resolution.y):
 		return false
 	
 	return true

@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dcs4uq757auua" path="res://scenes/ui/hud.tscn" id="10_3bvo4"]
 
 [node name="Game" type="Node2D"]
+y_sort_enabled = true
 
 [node name="Level" parent="." instance=ExtResource("1_ojmab")]
 

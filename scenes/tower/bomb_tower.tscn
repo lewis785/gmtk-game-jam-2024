@@ -1,0 +1,195 @@
+[gd_scene load_steps=26 format=3 uid="uid://5ljsbfsgdufq"]
+
+[ext_resource type="Script" path="res://scenes/tower/tower.gd" id="1_510tu"]
+[ext_resource type="Texture2D" uid="uid://b7e07csij026e" path="res://assets/tower/bomb-tower-sheet.png" id="2_7pv8w"]
+[ext_resource type="PackedScene" uid="uid://bekel8al0ejto" path="res://scenes/components/health_component.tscn" id="3_m6fif"]
+[ext_resource type="PackedScene" path="res://scenes/components/hitbox.tscn" id="4_v44a4"]
+[ext_resource type="PackedScene" path="res://scenes/components/health_bar.tscn" id="5_00140"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4gu5b"]
+atlas = ExtResource("2_7pv8w")
+region = Rect2(1792, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_abrok"]
+atlas = ExtResource("2_7pv8w")
+region = Rect2(1536, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ss26p"]
+atlas = ExtResource("2_7pv8w")
+region = Rect2(1280, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5q715"]
+atlas = ExtResource("2_7pv8w")
+region = Rect2(1024, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_epj4u"]
+atlas = ExtResource("2_7pv8w")
+region = Rect2(768, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2iy7p"]
+atlas = ExtResource("2_7pv8w")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iqwsh"]
+atlas = ExtResource("2_7pv8w")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kuwv1"]
+atlas = ExtResource("2_7pv8w")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nrupa"]
+atlas = ExtResource("2_7pv8w")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yyb3c"]
+atlas = ExtResource("2_7pv8w")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1hnis"]
+atlas = ExtResource("2_7pv8w")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bgree"]
+atlas = ExtResource("2_7pv8w")
+region = Rect2(768, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ku4a2"]
+atlas = ExtResource("2_7pv8w")
+region = Rect2(1024, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3w6u6"]
+atlas = ExtResource("2_7pv8w")
+region = Rect2(1280, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w2ys3"]
+atlas = ExtResource("2_7pv8w")
+region = Rect2(1536, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pmg50"]
+atlas = ExtResource("2_7pv8w")
+region = Rect2(1792, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hy8qg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4gu5b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_abrok")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ss26p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5q715")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_epj4u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2iy7p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iqwsh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kuwv1")
+}],
+"loop": true,
+"name": &"close",
+"speed": 8.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nrupa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yyb3c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1hnis")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bgree")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ku4a2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3w6u6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w2ys3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pmg50")
+}],
+"loop": true,
+"name": &"open",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jpt5e"]
+size = Vector2(105, 38)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xmrch"]
+radius = 481.037
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lrd8k"]
+size = Vector2(110, 46)
+
+[node name="BombTower" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_510tu")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_hy8qg")
+animation = &"open"
+autoplay = "default"
+frame_progress = 0.0777206
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 19)
+shape = SubResource("RectangleShape2D_jpt5e")
+debug_color = Color(0.868573, 0.293213, 0.508281, 0.42)
+
+[node name="AttackRange" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="RangeCollisionShape" type="CollisionShape2D" parent="AttackRange"]
+unique_name_in_owner = true
+shape = SubResource("CircleShape2D_xmrch")
+debug_color = Color(0.494882, 0.585997, 0.3142, 0.42)
+
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
+autostart = true
+
+[node name="HealthComponent" parent="." instance=ExtResource("3_m6fif")]
+unique_name_in_owner = true
+max_health = 300.0
+
+[node name="Hitbox" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_v44a4")]
+health_component = NodePath("../HealthComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, 21)
+shape = SubResource("RectangleShape2D_lrd8k")
+
+[node name="HealthBar" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("5_00140")]
+position = Vector2(-1, -92)
+health_component = NodePath("../HealthComponent")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="damaged" from="HealthComponent" to="." method="_on_health_component_damaged"]
+[connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]

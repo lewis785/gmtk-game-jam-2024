@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Tower" load_steps=6 format=3 uid="uid://0svs62c6bbu0"]
+
+[ext_resource type="PackedScene" uid="uid://df1j7j6qtyxc8" path="res://scenes/tower/tower_ghost.tscn" id="1_o3bky"]
+[ext_resource type="Texture2D" uid="uid://b7e07csij026e" path="res://assets/tower/bomb-tower-sheet.png" id="2_wdr1j"]
+[ext_resource type="PackedScene" uid="uid://5ljsbfsgdufq" path="res://scenes/tower/bomb_tower.tscn" id="3_quplt"]
+[ext_resource type="Script" path="res://model/tower.gd" id="4_ls0vd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cxtlx"]
+atlas = ExtResource("2_wdr1j")
+region = Rect2(1024, 0, 256, 256)
+
+[resource]
+script = ExtResource("4_ls0vd")
+name = "Bomb Tower"
+icon = SubResource("AtlasTexture_cxtlx")
+scene = ExtResource("3_quplt")
+ghost_scene = ExtResource("1_o3bky")
+price = 50
+shoot_frequency = 5.0
+damage = 1000.0
+max_health = 100.0

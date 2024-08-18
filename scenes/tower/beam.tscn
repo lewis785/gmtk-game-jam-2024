@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://cssvgf1x0x7l5"]
+
+[ext_resource type="Script" path="res://scenes/tower/beam.gd" id="1_3vit4"]
+[ext_resource type="Texture2D" uid="uid://bdp01wkbkmywo" path="res://assets/sprites/beam.png" id="1_o8ooa"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7nm3o"]
+radius = 15.0
+height = 39.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0o2l"]
+atlas = ExtResource("1_o8ooa")
+region = Rect2(0, 0, 64, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1y5j5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0o2l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 32.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[node name="Beam" type="Area2D"]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_3vit4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_7nm3o")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_1y5j5")
+autoplay = "default"
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

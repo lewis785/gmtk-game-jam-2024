@@ -6,7 +6,7 @@
 [sub_resource type="Curve2D" id="Curve2D_pmby3"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(0, 0, 100, -600, 0, 0, 0, 0, 0, 0, 300, 0)
+"points": PackedVector2Array(-25, -400, 50, -500, 0, 0, -25, -400, 50, -500, 300, 0)
 }
 point_count = 2
 
@@ -21,14 +21,14 @@ radius = 65.0
 curve = SubResource("Curve2D_pmby3")
 script = ExtResource("1_xd8nc")
 blast_radius = 128
-speed = 500
+speed = 400
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
-rotation = -1.40565
+rotation = -1.47113
 
 [node name="Area2D" type="Area2D" parent="PathFollow2D"]
-rotation = 1.32582
-collision_layer = 8
+rotation = 1.58825
+collision_layer = 0
 collision_mask = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="PathFollow2D/Area2D"]

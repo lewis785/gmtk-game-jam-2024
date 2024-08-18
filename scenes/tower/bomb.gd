@@ -11,7 +11,7 @@ class_name Bomb
 @onready var blast_area: Area2D = $PathFollow2D/Area2D/BlastRadius
 
 func _ready() -> void:
-	curve.set_point_out(0, Vector2(target.x / 2, - abs(target.x)))
+	curve.set_point_out(0, Vector2(target.x / 2, -500))
 	curve.set_point_position(1, target)
 	
 func _process(delta: float) -> void:
@@ -26,7 +26,6 @@ func detonate():
 	var attack = Attack.new()
 	attack.damage = damage
 	
-
 	for target in all_targets:
 		if target is Hitbox && target.get_parent().is_in_group("enemies"):
 			target.damage(attack)

@@ -203,6 +203,9 @@ stream = ExtResource("6_r8yxe")
 max_distance = 500.0
 bus = &"Fx"
 
+[node name="ProjectileSpawn" type="Node2D" parent="."]
+position = Vector2(0, -21)
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="damaged" from="HealthComponent" to="." method="_on_health_component_damaged"]
 [connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]

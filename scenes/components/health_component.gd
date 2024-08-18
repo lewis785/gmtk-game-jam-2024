@@ -13,9 +13,10 @@ func _ready():
 	health = max_health
 
 func damage(value: Attack):
-	var damage = _calculate_damage(value)
-	health -= damage
-	damaged.emit(damage)
+	if health > 0:
+		var damage = _calculate_damage(value)
+		health -= damage
+		damaged.emit(damage)
 
 	if health <= 0:
 		died.emit()

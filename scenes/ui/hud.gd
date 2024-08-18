@@ -16,6 +16,9 @@ const TOWER_PREVIEW = preload("res://scenes/ui/tower_preview.tscn")
 var _ghost: TowerGhost
 var target : Target
 
+@onready var camera: Camera = %Camera
+@onready var zoom_label: Label = %ZoomLabel
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	target = level.target
@@ -33,6 +36,8 @@ func _ready() -> void:
 		tower_menu.add_child(tower_preview)
 
 func _unhandled_input(event: InputEvent) -> void:
+	zoom_label.text = str(camera.zoom)
+	
 	if !is_valid_to_place(event):
 		return
 
@@ -41,7 +46,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	new_tower.position = _ghost.get_global_mouse_position()
 	get_parent().add_child(new_tower)
 	if new_tower.has_method("initialize"):
-		new_tower.initialize(selected_tower)
+		new_tower.initialize(selected_tower, 1 / camera.zoom.x)
 
 func is_valid_to_place(event: InputEvent) -> bool:
 	if !(event is InputEventMouseButton) || !event.pressed || event.button_index != MOUSE_BUTTON_LEFT:
@@ -70,7 +75,8 @@ func tower_click(tower : Tower):
 	_ghost = selected_tower.ghost_scene.instantiate()
 	_ghost.affordable = coin_manager.can_afford(selected_tower.price)
 	_ghost.map_resolution = level.level_size * 64
-	get_parent().add_child(_ghost) # Replace with function body.
+	_ghost.camera = camera
+	get_parent().add_child(_ghost)
 	
 func _input(event):
 	if event.is_action_pressed("CancelTowerPlace"):

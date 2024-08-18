@@ -13,6 +13,8 @@ signal clicked(tower: Tower)
 
 @export var tower : Tower
 
+var camera : Camera
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	attack_label.text = str(tower.damage)
@@ -26,6 +28,12 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	# TODO: scale values with size
 	pass
+
+func scale_values():
+	attack_label.text = str(tower.damage)
+	speed_label.text = str(tower.shoot_frequency)
+	cost_label.text = str(tower.price)
+	health_label.text = str(tower.max_health)
 
 func _on_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton \

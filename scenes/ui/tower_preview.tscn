@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://deonhfjohlr7d"]
+[gd_scene load_steps=10 format=3 uid="uid://ctghttdswbn7c"]
 
 [ext_resource type="Texture2D" uid="uid://d1ojwqf8fr03w" path="res://assets/sprites/preview-box.png" id="1_e0uxn"]
 [ext_resource type="Script" path="res://scenes/ui/tower_preview.gd" id="1_yfxcx"]

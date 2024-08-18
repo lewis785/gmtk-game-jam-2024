@@ -1,5 +1,7 @@
 extends Camera2D
 
+class_name Camera
+
 @export var speed: int = 10
 @export var zoom_speed: int = 1
 

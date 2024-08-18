@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://scenes/tower/tower.gd" id="1_hmn3u"]
 [ext_resource type="Texture2D" uid="uid://duhd1dupd8s0r" path="res://assets/tower/Tower1Shooting-Sheet.png" id="2_jnobj"]
 [ext_resource type="PackedScene" uid="uid://bekel8al0ejto" path="res://scenes/components/health_component.tscn" id="3_1u6n7"]
-[ext_resource type="PackedScene" path="res://scenes/components/hitbox.tscn" id="4_vuwh2"]
-[ext_resource type="PackedScene" path="res://scenes/components/health_bar.tscn" id="5_xx66n"]
+[ext_resource type="PackedScene" uid="uid://b1qedipcdvfcc" path="res://scenes/components/hitbox.tscn" id="4_vuwh2"]
+[ext_resource type="PackedScene" uid="uid://dne1upf2xrhew" path="res://scenes/components/health_bar.tscn" id="5_xx66n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ffx6g"]
 atlas = ExtResource("2_jnobj")
@@ -50,12 +50,15 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jpt5e"]
+resource_local_to_scene = true
 size = Vector2(105, 129)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xmrch"]
+resource_local_to_scene = true
 radius = 481.037
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lrd8k"]
+resource_local_to_scene = true
 size = Vector2(110, 133)
 
 [node name="Tower" type="RigidBody2D"]
@@ -68,7 +71,7 @@ sprite_frames = SubResource("SpriteFrames_hy8qg")
 autoplay = "default"
 frame_progress = 0.190591
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="TowerCollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 64.5)
 shape = SubResource("RectangleShape2D_jpt5e")
 debug_color = Color(0.868573, 0.293213, 0.508281, 0.42)
@@ -78,23 +81,19 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="RangeCollisionShape" type="CollisionShape2D" parent="AttackRange"]
-unique_name_in_owner = true
-visible = false
 shape = SubResource("CircleShape2D_xmrch")
 debug_color = Color(0.494882, 0.585997, 0.3142, 0.42)
 
 [node name="Timer" type="Timer" parent="."]
-unique_name_in_owner = true
 autostart = true
 
 [node name="HealthComponent" parent="." instance=ExtResource("3_1u6n7")]
-unique_name_in_owner = true
 max_health = 100.0
 
 [node name="Hitbox" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_vuwh2")]
 health_component = NodePath("../HealthComponent")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+[node name="HitboxCollisionShape" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(0, 64.5)
 shape = SubResource("RectangleShape2D_lrd8k")
 

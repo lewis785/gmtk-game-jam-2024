@@ -11,10 +11,14 @@ var map_resolution : Vector2
 
 var valid_placement: bool
 
+@onready var camera: Camera
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	position = get_global_mouse_position()
 	_check_valid_placement()
+	#if camera:
+	scale = Vector2(1, 1) / camera.zoom
 	
 func _check_valid_placement():
 	sprite_2d.material.set_shader_parameter("IsUnaffordable", !affordable)
@@ -31,16 +35,16 @@ func is_placement_valid():
 	return is_position_on_map() and get_overlapping_areas().size() == 0 and get_overlapping_bodies().size() == 0
 
 func is_position_on_map():
-	var rect = collision_shape_2d.shape.get_rect()
-	var pos = collision_shape_2d.global_position
-	var offset_x = rect.size.x / 2
-	var offset_y = rect.size.y / 2
-	
-	if pos.x - offset_x < 0 or pos.y - offset_y < 0:
-		return false
-	
-	# Map grid is 31 x 18, each square is 64px 
-	if pos.x + offset_x > (map_resolution.x) or pos.y + offset_y > (map_resolution.y):
-		return false
+	#var rect = collision_shape_2d.shape.get_rect()
+	#var pos = collision_shape_2d.global_position
+	#var offset_x = rect.size.x / 2
+	#var offset_y = rect.size.y / 2
+	#
+	#if pos.x - offset_x < 0 or pos.y - offset_y < 0:
+		#return false
+	#
+	## Map grid is 31 x 18, each square is 64px 
+	#if pos.x + offset_x > (map_resolution.x) or pos.y + offset_y > (map_resolution.y):
+		#return false
 	
 	return true

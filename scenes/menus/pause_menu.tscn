@@ -17,21 +17,19 @@ script = ExtResource("1_m8in8")
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.056
-anchor_bottom = 0.102
-offset_left = 710.0
-offset_top = 300.0
-offset_right = 1102.48
-offset_bottom = 389.84
+anchor_left = 0.3
+anchor_top = 0.2
+anchor_right = 0.7
+anchor_bottom = 0.5
 color = Color(1, 1, 1, 0.392157)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 10.0
-offset_right = -10.0
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.1
+anchor_right = 0.95
+anchor_bottom = 0.9
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
@@ -74,11 +72,12 @@ max_value = 1.0
 step = 0.01
 
 [node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 885.0
-offset_top = 550.0
-offset_right = 1035.0
-offset_bottom = 600.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.45
+anchor_top = 0.55
+anchor_right = 0.55
+anchor_bottom = 0.63
 theme_override_font_sizes/font_size = 48
 text = "RESUME"
 

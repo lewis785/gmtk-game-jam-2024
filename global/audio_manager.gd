@@ -26,7 +26,7 @@ func set_music_volume(value: float):
 func set_fx_volume(value: float):
 	fx_volume = value
 	config.save_value("sound", "fx_volume", value)
-	AudioServer.set_bus_volume_db(music, linear_to_db(value))
+	AudioServer.set_bus_volume_db(fx, linear_to_db(value))
 
 func toggle_music():
 	music_muted = !music_muted

@@ -1,6 +1,6 @@
 [gd_scene load_steps=32 format=3 uid="uid://c3n2071ceb8pn"]
 
-[ext_resource type="Script" path="res://scenes/enemies/enemy.gd" id="1_rfqcv"]
+[ext_resource type="Script" path="res://scenes/enemies/rat.gd" id="1_rfqcv"]
 [ext_resource type="Texture2D" uid="uid://cw8jv01icjnh1" path="res://assets/enemies/RatDeath-Sheet.png" id="2_dfyv5"]
 [ext_resource type="PackedScene" uid="uid://bekel8al0ejto" path="res://scenes/components/health_component.tscn" id="3_hepo6"]
 [ext_resource type="Texture2D" uid="uid://bwwt0xhf0yydw" path="res://assets/enemies/RatMoveRight-Sheet.png" id="3_x5mj8"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://qikv6ltgsfdu"]
 
-[ext_resource type="Script" path="res://scenes/enemies/enemy.gd" id="1_1ljxa"]
+[ext_resource type="Script" path="res://scenes/enemies/leviathan.gd" id="1_bthj1"]
 [ext_resource type="Texture2D" uid="uid://bgdynl2yle2x0" path="res://assets/enemies/Leviathan1.png" id="2_it5h1"]
 [ext_resource type="Texture2D" uid="uid://cwydo6msqajxc" path="res://assets/enemies/Leviathan1Death-Sheet.png" id="3_0cyho"]
 [ext_resource type="PackedScene" uid="uid://bekel8al0ejto" path="res://scenes/components/health_component.tscn" id="4_jc2q7"]
@@ -71,9 +71,8 @@ size = Vector2(106, 116)
 collision_layer = 3
 collision_mask = 20
 motion_mode = 1
-script = ExtResource("1_1ljxa")
+script = ExtResource("1_bthj1")
 speed = 50
-accel = 1
 damage = 100
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

@@ -18,7 +18,6 @@ func _process(delta: float) -> void:
 	if not target: return
 	if path_follow_2d.progress_ratio >= 0.98:
 		detonate()
-		queue_free()
 	path_follow_2d.progress += speed * delta
 
 func detonate():
@@ -29,3 +28,4 @@ func detonate():
 	for target in all_targets:
 		if target is Hitbox && target.get_parent().is_in_group("enemies"):
 			target.damage(attack)
+	queue_free()

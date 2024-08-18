@@ -14,6 +14,8 @@ extends CharacterBody2D
 @onready var collisionbox:CollisionShape2D = $CollisionShape2D
 @onready var attack_timer:Timer = $AttackTimer
 @onready var navigation:NavigationAgent2D = $NavigationAgent2D
+@onready var audio_stream_player_attack = $AudioStreamPlayerAttack
+@onready var audio_stream_player_death = $AudioStreamPlayerDeath
 
 # Basic enemy properties to be set in the implementation
 @export var speed:int
@@ -76,6 +78,7 @@ func _on_health_component_died():
 	if !dead:
 		dead = true
 		animated_sprite.play("die")
+		audio_stream_player_death.play()
 
 func _on_hitbox_area_entered(body: Node2D) -> void:
 	if !dead:
@@ -95,6 +98,7 @@ func _deal_attack_damage(body: Hitbox):
 	var attack = Attack.new()
 	attack.damage = damage
 	body.damage(attack)
+	audio_stream_player_attack.play()
 
 func _on_animated_sprite_2d_animation_finished():
 	if animated_sprite.animation == "die":

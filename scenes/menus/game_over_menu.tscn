@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwqmshnau2qnv"]
+
+[ext_resource type="Script" path="res://scenes/menus/game_over_menu.gd" id="1_4drnb"]
+[ext_resource type="Theme" uid="uid://yub5acxtpnjx" path="res://ui_theme.tres" id="1_sth2q"]
+
+[node name="GameOverMenu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_4drnb")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_sth2q")
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_sth2q")
+theme_override_font_sizes/font_size = 128
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="MainMenuButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "MAIN MENU"
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]

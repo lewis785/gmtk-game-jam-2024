@@ -1,0 +1,31 @@
+extends Path2D
+
+class_name Bomb
+
+@export var blast_radius: int = 64
+@export var damage: int = 50
+@export var speed: int = 200
+@export var target: Vector2
+
+@onready var path_follow_2d: PathFollow2D = $PathFollow2D
+@onready var blast_area: Area2D = $PathFollow2D/Area2D/BlastRadius
+
+func _ready() -> void:
+	curve.set_point_out(0, Vector2(target.x / 2, - abs(target.x)))
+	curve.set_point_position(1, target)
+	
+func _process(delta: float) -> void:
+	if not target: return
+	if path_follow_2d.progress_ratio >= 0.98:
+		detonate()
+		queue_free()
+	path_follow_2d.progress += speed * delta
+
+func detonate():
+	var all_enemies = blast_area.get_overlapping_areas()
+	var attack = Attack.new()
+	attack.damage = damage
+	
+	for enemy in all_enemies:
+		if enemy is Enemy:
+			enemy.hitbox.damage(attack)

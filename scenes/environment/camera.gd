@@ -2,8 +2,10 @@ extends Camera2D
 
 class_name Camera
 
+
+@export var zoom_factor : float = 0.1
+@export var zoom_duration : float = 0.2
 @export var speed: int = 10
-@export var zoom_speed: int = 1
 
 @export var level : Level
 
@@ -13,16 +15,13 @@ var resolution
 func _ready():
 	resolution = level.level_size * 64
 	position = resolution/2
+	ZoomManager.zoom_changed.connect(set_camera_zoom)
 
 func _input(event):
-	var movement = Vector2(0,0)
 	if event.is_action_pressed("ZoomCamIn"):
-		movement += Vector2(zoom_speed,zoom_speed)
+		ZoomManager.zoom_level += zoom_factor
 	if event.is_action_pressed("ZoomCamOut"):
-		if zoom > Vector2(1,1):
-			movement -= Vector2(zoom_speed,zoom_speed)
-	zoom = zoom + movement
-
+		ZoomManager.zoom_level -= zoom_factor 
 
 func _process(_delta):
 	var movement = Vector2(0,0)
@@ -39,3 +38,6 @@ func _process(_delta):
 	if (position.y < 0 and movement.y < 0) or (position.y > resolution.y and movement.y > 0):
 		movement.y = 0
 	position = position + movement
+
+func set_camera_zoom(zoom_level : float):
+	zoom = Vector2(zoom_level, zoom_level)

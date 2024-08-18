@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://fqfglpb571i5"]
+[gd_scene load_steps=2 format=3 uid="uid://crgnehkhb0pqb"]
 
 [ext_resource type="Script" path="res://scenes/environment/camera.gd" id="1_qssmb"]
 

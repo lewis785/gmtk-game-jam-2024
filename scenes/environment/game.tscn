@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bquh8dc2eejp3"]
+[gd_scene load_steps=5 format=3 uid="uid://bquh8dc2eejp3"]
 
 [ext_resource type="PackedScene" uid="uid://bij4f6qk1lkwv" path="res://scenes/environment/level.tscn" id="1_ojmab"]
 [ext_resource type="PackedScene" uid="uid://cynqh8t87mfih" path="res://scenes/coordinators/money_coordinator.tscn" id="3_ypm6k"]
-[ext_resource type="PackedScene" uid="uid://brdhhffb4o5v0" path="res://scenes/menus/pause_menu.tscn" id="5_6o4kj"]
-[ext_resource type="PackedScene" uid="uid://fqfglpb571i5" path="res://scenes/environment/camera.tscn" id="9_o5woo"]
+[ext_resource type="PackedScene" uid="uid://crgnehkhb0pqb" path="res://scenes/environment/camera.tscn" id="9_o5woo"]
 [ext_resource type="PackedScene" uid="uid://dcs4uq757auua" path="res://scenes/ui/hud.tscn" id="10_3bvo4"]
 
 [node name="Game" type="Node2D"]
@@ -18,13 +17,8 @@ income_period = 0.1
 
 [node name="Camera" parent="." node_paths=PackedStringArray("level") instance=ExtResource("9_o5woo")]
 unique_name_in_owner = true
-process_mode = 3
 level = NodePath("../Level")
 
 [node name="Hud" parent="." node_paths=PackedStringArray("level", "coin_manager") instance=ExtResource("10_3bvo4")]
 level = NodePath("../Level")
 coin_manager = NodePath("../MoneyCoordinator")
-
-[node name="PauseMenu" parent="Hud" instance=ExtResource("5_6o4kj")]
-process_mode = 3
-visible = false

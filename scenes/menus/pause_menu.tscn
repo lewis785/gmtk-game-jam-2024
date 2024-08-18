@@ -1,17 +1,17 @@
 [gd_scene load_steps=3 format=3 uid="uid://brdhhffb4o5v0"]
 
 [ext_resource type="Script" path="res://scenes/menus/pause_menu.gd" id="1_m8in8"]
-
-[sub_resource type="Theme" id="Theme_s37nb"]
+[ext_resource type="Theme" uid="uid://yub5acxtpnjx" path="res://ui_theme.tres" id="1_tl55y"]
 
 [node name="PauseMenu" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_s37nb")
+theme = ExtResource("1_tl55y")
 script = ExtResource("1_m8in8")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -19,8 +19,8 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.056
 anchor_bottom = 0.102
-offset_right = -0.520004
-offset_bottom = -0.160004
+offset_right = 192.48
+offset_bottom = 39.84
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
 layout_mode = 1
@@ -29,22 +29,25 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -31.5
-offset_top = -28.5
-offset_right = 31.5
-offset_bottom = 28.5
+offset_left = -125.0
+offset_top = -50.0
+offset_right = 125.0
+offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
+alignment = 1
 
 [node name="FxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = -4
+alignment = 1
 
 [node name="FxLabel" type="Label" parent="ColorRect/VBoxContainer/FxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 0
 text = "Fx"
+horizontal_alignment = 1
 
 [node name="FxVolume" type="HSlider" parent="ColorRect/VBoxContainer/FxContainer"]
 layout_mode = 2
@@ -59,6 +62,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 0
 text = "Music"
+horizontal_alignment = 1
 
 [node name="MusicVolume" type="HSlider" parent="ColorRect/VBoxContainer/MusicContainer"]
 layout_mode = 2

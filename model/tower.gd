@@ -20,12 +20,14 @@ extends Resource
 ## Cost to build the tower
 @export var price:int = 5
 
-# TODO: have a min and max for these, so it scales with the size?
-@export var shoot_frequency:float = 1.0
-@export var damage: float = 10.0
-@export var max_health:float = 100.0
+@export var lower_attack_speed:float = 0.5
+@export var upper_attack_speed:float = 5.0
 
+@export var lower_damage: float = 5.0
+@export var upper_damage: float = 50.0
 
+@export var lower_max_health:float = 50.0
+@export var upper_max_health:float = 300.0
 
 ## Instantiates the tower and initializes it with the 
 ## current item -> will be handy if we want more data stored here

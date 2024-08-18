@@ -11,9 +11,12 @@ class_name BaseTower
 @onready var health_component: HealthComponent = %HealthComponent
 @onready var timer: Timer = $Timer
 
+var tower_scale : float
+
 var damage : float
 
 func initialize(tower : Tower, tower_scale : float):
+	self.tower_scale = tower_scale
 	var speed = ZoomManager.calculate_relative_value(tower.lower_attack_speed, tower.upper_attack_speed)
 	timer.wait_time = 1.0 / speed
 	health_component.max_health = ZoomManager.calculate_relative_value(tower.lower_max_health, tower.upper_max_health)

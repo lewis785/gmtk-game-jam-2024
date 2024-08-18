@@ -22,13 +22,10 @@ func _ready() -> void:
 	tower_sprite.texture = tower.icon
 	tower_label.text = tower.name
 
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	# TODO: scale values with size
 	pass
-
 
 func _on_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton \

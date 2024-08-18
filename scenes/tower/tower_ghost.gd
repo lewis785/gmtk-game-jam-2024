@@ -1,13 +1,13 @@
 extends Area2D
 
+class_name TowerGhost
+
 @onready var sprite_2d: AnimatedSprite2D = %Sprite2D
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 
-var valid_placement
+@export var affordable: bool = true
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+var valid_placement
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -15,6 +15,10 @@ func _process(delta: float) -> void:
 	_check_valid_placement()
 	
 func _check_valid_placement():
+	if !affordable:
+		sprite_2d.material.set_shader_parameter("IsInvalidPlacement", true)
+		return
+		
 	var is_current_placement_valid = is_placement_valid()
 	if valid_placement != is_current_placement_valid:
 		valid_placement = is_current_placement_valid

@@ -18,8 +18,8 @@ func damage(value: Attack):
 		health -= damage
 		damaged.emit(damage)
 
-	if health <= 0:
-		died.emit()
+		if health <= 0:
+			died.emit()
 
 func heal(amount: int):
 	healed.emit(amount)

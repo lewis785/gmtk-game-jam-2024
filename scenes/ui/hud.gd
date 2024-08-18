@@ -10,6 +10,7 @@ extends CanvasLayer
 @onready var health_amount: Label = $MarginContainer/Stats/Health/HealthAmount
 @onready var coin_amount: Label = $MarginContainer/Stats/Coin/CoinAmount
 @onready var tower_menu: HBoxContainer = %TowerMenu
+@onready var game_over_node = $GameOver
 
 const TOWER_PREVIEW = preload("res://scenes/ui/tower_preview.tscn")
 
@@ -28,6 +29,7 @@ func _ready() -> void:
 	
 	target.health_component.damaged.connect(update_health_bar)
 	coin_manager.gold_changed.connect(update_coin_amount)
+	target.health_component.died.connect(game_over)
 
 	for tower_type in tower_types: 
 		var tower_preview : TowerPreview = TOWER_PREVIEW.instantiate()
@@ -77,6 +79,9 @@ func tower_click(tower : Tower):
 	_ghost.map_resolution = level.level_size * 64
 	_ghost.camera = camera
 	get_parent().add_child(_ghost)
+	
+func game_over():
+	game_over_node.visible = true
 	
 func _input(event):
 	if event.is_action_pressed("CancelTowerPlace"):

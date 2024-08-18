@@ -1,10 +1,12 @@
-[gd_scene load_steps=33 format=3 uid="uid://furvkvmh3lqt"]
+[gd_scene load_steps=35 format=3 uid="uid://furvkvmh3lqt"]
 
 [ext_resource type="Script" path="res://scenes/environment/target.gd" id="1_hiu24"]
 [ext_resource type="PackedScene" uid="uid://bekel8al0ejto" path="res://scenes/components/health_component.tscn" id="2_1bcm2"]
 [ext_resource type="Texture2D" uid="uid://sp5nvc8ceu3q" path="res://assets/environment/objects/target/CrystalIdle-Sheet.png" id="2_6kukr"]
 [ext_resource type="Texture2D" uid="uid://nu3y5l0ybnv0" path="res://assets/environment/objects/target/CrystalDeath-Sheet.png" id="3_725bw"]
 [ext_resource type="PackedScene" path="res://scenes/components/hitbox.tscn" id="4_a4bnx"]
+[ext_resource type="AudioStream" uid="uid://b8abdfk3jb5cw" path="res://assets/sounds/crystal/CrystalDamage.mp3" id="6_pap8s"]
+[ext_resource type="AudioStream" uid="uid://dsb7kxjbchmy0" path="res://assets/sounds/crystal/CrystalDeath.mp3" id="7_5p60y"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jw6al"]
 atlas = ExtResource("3_725bw")
@@ -194,6 +196,7 @@ radius = 50.01
 radius = 54.0
 
 [node name="Target" type="RigidBody2D"]
+process_mode = 3
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("1_hiu24")
@@ -215,6 +218,14 @@ health_component = NodePath("../HealthComponent")
 [node name="HitboxCollision" type="CollisionShape2D" parent="Hitbox"]
 shape = SubResource("CircleShape2D_u4aaq")
 debug_color = Color(0.889146, 0.304826, 0.315233, 0.42)
+
+[node name="AudioStreamPlayerHit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_pap8s")
+bus = &"Fx"
+
+[node name="AudioStreamPlayerDeath" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_5p60y")
+bus = &"Fx"
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="damaged" from="HealthComponent" to="." method="_on_health_component_damaged"]

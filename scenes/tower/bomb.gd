@@ -2,8 +2,6 @@ extends Path2D
 
 class_name Bomb
 
-@onready var collision_shape_2d: CollisionShape2D = $BlastRadius/CollisionShape2D
-
 @export var blast_radius: int = 64
 @export var damage: int = 50
 @export var speed: int = 200

@@ -9,6 +9,7 @@ size = Vector2(104, 128)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_755rp"]
 shader = ExtResource("1_ptfh1")
+shader_parameter/IsUnaffordable = false
 shader_parameter/IsInvalidPlacement = false
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0hd3v"]

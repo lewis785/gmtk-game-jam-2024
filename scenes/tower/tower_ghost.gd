@@ -9,7 +9,7 @@ class_name TowerGhost
 
 var map_resolution : Vector2
 
-var valid_placement
+var valid_placement: bool
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -17,14 +17,18 @@ func _process(delta: float) -> void:
 	_check_valid_placement()
 	
 func _check_valid_placement():
+	sprite_2d.material.set_shader_parameter("IsUnaffordable", !affordable)
+	# Affordable has highest precedent so will return early if that is the case
 	if !affordable:
-		sprite_2d.material.set_shader_parameter("IsInvalidPlacement", true)
 		return
 		
 	var is_current_placement_valid = is_placement_valid()
 	if valid_placement != is_current_placement_valid:
 		valid_placement = is_current_placement_valid
 	sprite_2d.material.set_shader_parameter("IsInvalidPlacement", !valid_placement)
+
+func is_placement_affordable():
+	return is_position_on_map() and get_overlapping_areas().size() == 0 and get_overlapping_bodies().size() == 0
 
 func is_placement_valid():
 	return is_position_on_map() and get_overlapping_areas().size() == 0 and get_overlapping_bodies().size() == 0

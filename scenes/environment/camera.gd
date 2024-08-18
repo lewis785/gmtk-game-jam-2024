@@ -5,9 +5,11 @@ extends Camera2D
 
 @export var level : Level
 
+var resolution
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var resolution = level.level_size * 64
+	resolution = level.level_size * 64
 	position = resolution/2
 
 func _input(event):
@@ -30,4 +32,8 @@ func _process(_delta):
 		movement.y -= speed
 	if Input.is_action_pressed("MoveCamDown"):
 		movement.y += speed
+	if (position.x < 0 and movement.x < 0) or (position.x > resolution.x and movement.x > 0):
+		movement.x = 0
+	if (position.y < 0 and movement.y < 0) or (position.y > resolution.y and movement.y > 0):
+		movement.y = 0
 	position = position + movement

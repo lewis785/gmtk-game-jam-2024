@@ -1,9 +1,34 @@
-[gd_scene load_steps=26 format=3 uid="uid://furvkvmh3lqt"]
+[gd_scene load_steps=33 format=3 uid="uid://furvkvmh3lqt"]
 
 [ext_resource type="Script" path="res://scenes/environment/target.gd" id="1_hiu24"]
 [ext_resource type="PackedScene" uid="uid://bekel8al0ejto" path="res://scenes/components/health_component.tscn" id="2_1bcm2"]
 [ext_resource type="Texture2D" uid="uid://sp5nvc8ceu3q" path="res://assets/target/CrystalIdle-Sheet.png" id="2_6kukr"]
+[ext_resource type="Texture2D" uid="uid://nu3y5l0ybnv0" path="res://assets/target/CrystalDeath-Sheet.png" id="3_725bw"]
 [ext_resource type="PackedScene" path="res://scenes/components/hitbox.tscn" id="4_a4bnx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jw6al"]
+atlas = ExtResource("3_725bw")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m2w1x"]
+atlas = ExtResource("3_725bw")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qisrg"]
+atlas = ExtResource("3_725bw")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_utx66"]
+atlas = ExtResource("3_725bw")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p72w2"]
+atlas = ExtResource("3_725bw")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ohij"]
+atlas = ExtResource("3_725bw")
+region = Rect2(640, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8fnth"]
 atlas = ExtResource("2_6kukr")
@@ -81,6 +106,29 @@ region = Rect2(2176, 0, 128, 128)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_jw6al")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m2w1x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qisrg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_utx66")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p72w2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ohij")
+}],
+"loop": false,
+"name": &"die",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_8fnth")
 }, {
 "duration": 1.0,
@@ -150,11 +198,10 @@ collision_layer = 4
 collision_mask = 0
 script = ExtResource("1_hiu24")
 
-[node name="Target" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vv22x")
-animation = &"idle"
+animation = &"die"
 autoplay = "idle"
-frame_progress = 0.529485
 
 [node name="PhysicalCollision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_t4si5")
@@ -168,3 +215,7 @@ health_component = NodePath("../HealthComponent")
 [node name="HitboxCollision" type="CollisionShape2D" parent="Hitbox"]
 shape = SubResource("CircleShape2D_u4aaq")
 debug_color = Color(0.889146, 0.304826, 0.315233, 0.42)
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="damaged" from="HealthComponent" to="." method="_on_health_component_damaged"]
+[connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]

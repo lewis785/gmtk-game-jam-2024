@@ -21,7 +21,7 @@ func damage(value: Attack):
 		if health <= 0:
 			died.emit()
 
-func heal(amount: int):
+func heal(amount: float):
 	healed.emit(amount)
 	health = min(health + amount, max_health)	
 

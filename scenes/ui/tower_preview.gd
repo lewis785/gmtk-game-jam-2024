@@ -22,7 +22,7 @@ func _ready() -> void:
 	tower_label.text = tower.name
 	zoom_changed(ZoomManager.zoom_level)
 
-func zoom_changed(zoom_level : float):
+func zoom_changed(_zoom_level : float):
 	attack_label.text = str(round(ZoomManager.calculate_relative_value(tower.lower_damage, tower.upper_damage)))
 	speed_label.text = str(round(ZoomManager.calculate_relative_value(tower.lower_attack_speed, tower.upper_attack_speed)))
 	cost_label.text = str(tower.price)

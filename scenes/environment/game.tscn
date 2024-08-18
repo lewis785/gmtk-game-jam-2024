@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bij4f6qk1lkwv" path="res://scenes/environment/level.tscn" id="1_ojmab"]
 [ext_resource type="PackedScene" uid="uid://cynqh8t87mfih" path="res://scenes/coordinators/money_coordinator.tscn" id="3_ypm6k"]
-[ext_resource type="PackedScene" uid="uid://fqfglpb571i5" path="res://scenes/environment/camera.tscn" id="9_o5woo"]
+[ext_resource type="PackedScene" uid="uid://crgnehkhb0pqb" path="res://scenes/environment/camera.tscn" id="9_o5woo"]
 [ext_resource type="PackedScene" uid="uid://dcs4uq757auua" path="res://scenes/ui/hud.tscn" id="10_3bvo4"]
 
 [node name="Game" type="Node2D"]
@@ -17,7 +17,6 @@ income_period = 0.1
 
 [node name="Camera" parent="." node_paths=PackedStringArray("level") instance=ExtResource("9_o5woo")]
 unique_name_in_owner = true
-process_mode = 3
 level = NodePath("../Level")
 
 [node name="Hud" parent="." node_paths=PackedStringArray("level", "coin_manager") instance=ExtResource("10_3bvo4")]

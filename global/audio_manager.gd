@@ -21,12 +21,12 @@ func _ready() -> void:
 func set_music_volume(value: float):
 	music_volume = value
 	config.save_value("sound", "music_volume", value)
-	AudioServer.set_bus_volume_db(music, linear_to_db(value))
+	AudioServer.set_bus_volume_db(music, linear_to_db(clamp(value, 0.0, 1.0)))
 
 func set_fx_volume(value: float):
 	fx_volume = value
 	config.save_value("sound", "fx_volume", value)
-	AudioServer.set_bus_volume_db(fx, linear_to_db(value))
+	AudioServer.set_bus_volume_db(fx, linear_to_db(clamp(value, 0.0, 1.0)))
 
 func toggle_music():
 	music_muted = !music_muted

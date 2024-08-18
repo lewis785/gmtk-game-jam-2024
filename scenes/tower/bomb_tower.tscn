@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://scenes/tower/bomb_tower.gd" id="1_cslg4"]
 [ext_resource type="Texture2D" uid="uid://b7e07csij026e" path="res://assets/tower/bomb-tower-sheet.png" id="2_7pv8w"]
 [ext_resource type="PackedScene" uid="uid://bekel8al0ejto" path="res://scenes/components/health_component.tscn" id="3_m6fif"]
-[ext_resource type="PackedScene" path="res://scenes/components/hitbox.tscn" id="4_v44a4"]
-[ext_resource type="PackedScene" path="res://scenes/components/health_bar.tscn" id="5_00140"]
+[ext_resource type="PackedScene" uid="uid://b1qedipcdvfcc" path="res://scenes/components/hitbox.tscn" id="4_v44a4"]
+[ext_resource type="PackedScene" uid="uid://dne1upf2xrhew" path="res://scenes/components/health_bar.tscn" id="5_00140"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4gu5b"]
 atlas = ExtResource("2_7pv8w")

@@ -4,7 +4,7 @@
 [ext_resource type="TileSet" uid="uid://8ifuu21pjlag" path="res://assets/images/level/terrain/level_tiles.tres" id="2_r4f5d"]
 [ext_resource type="PackedScene" uid="uid://b0r5b10b4kdxx" path="res://scenes/levels/objects/spawner.tscn" id="4_b7bgg"]
 [ext_resource type="Resource" uid="uid://dt0wf2xjr1nti" path="res://data/levels/level_one_spawner_one.tres" id="5_pw2j2"]
-[ext_resource type="PackedScene" uid="uid://dy0qpbxqynwfg" path="res://scenes/levels/objects/keep_of_the_grass.tscn" id="6_63o5l"]
+[ext_resource type="PackedScene" path="res://scenes/levels/objects/keep_of_the_grass.tscn" id="6_63o5l"]
 [ext_resource type="PackedScene" uid="uid://furvkvmh3lqt" path="res://scenes/levels/objects/target.tscn" id="7_gkrus"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fui1b"]

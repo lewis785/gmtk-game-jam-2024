@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 AudioManager="*res://global/audio_manager.tscn"
 ZoomManager="*res://global/zoom_manager.tscn"
+MoneyCoordinator="*res://global/money_coordinator.tscn"
 
 [display]
 

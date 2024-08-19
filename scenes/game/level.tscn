@@ -4,7 +4,7 @@
 [ext_resource type="TileSet" uid="uid://8ifuu21pjlag" path="res://assets/images/level/terrain/level_tiles.tres" id="2_e0lua"]
 [ext_resource type="PackedScene" uid="uid://b0r5b10b4kdxx" path="res://scenes/levels/objects/spawner.tscn" id="4_wupxx"]
 [ext_resource type="PackedScene" uid="uid://furvkvmh3lqt" path="res://scenes/levels/objects/target.tscn" id="7_i3wtx"]
-[ext_resource type="PackedScene" uid="uid://dy0qpbxqynwfg" path="res://scenes/levels/objects/keep_of_the_grass.tscn" id="8_0qnb3"]
+[ext_resource type="PackedScene" path="res://scenes/levels/objects/keep_of_the_grass.tscn" id="8_0qnb3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fui1b"]
 size = Vector2(2622, 1645)

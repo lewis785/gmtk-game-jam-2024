@@ -83,9 +83,9 @@ func wave_ended() -> void:
 	spawn_timer.stop()
 	rest_timer.start(rest_period)
 	wave_end.emit(wave_index)
+	MoneyCoordinator.add_gold(waves[wave_index].reward)
 	wave_index += 1
 	if wave_index >= waves.size():
-		print("You Win")
 		all_waves_complete.emit()
 		## TODO: trigger next level.
 		#get_tree().change_scene_to_file("res://scenes/menus/start_menu.tscn")

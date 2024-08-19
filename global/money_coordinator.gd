@@ -1,8 +1,6 @@
 extends Node2D
 
-class_name MoneyCoordinator
-
-@export var gold: int = 0;
+@export var gold: int = 50;
 @export var income: int = 0;
 @export var income_period: float = 1.0;
 

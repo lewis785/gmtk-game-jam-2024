@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://bquh8dc2eejp3"]
 
-[ext_resource type="Script" path="res://scenes/environment/game.gd" id="1_cai03"]
-[ext_resource type="PackedScene" uid="uid://n71g8bv1n62s" path="res://scenes/levels/level1.tscn" id="1_hhe47"]
+[ext_resource type="Script" path="res://scenes/game/game.gd" id="1_cai03"]
+[ext_resource type="PackedScene" uid="uid://n71g8bv1n62s" path="res://scenes/levels/maps/level1.tscn" id="1_hhe47"]
 [ext_resource type="PackedScene" uid="uid://cynqh8t87mfih" path="res://scenes/coordinators/money_coordinator.tscn" id="3_ypm6k"]
 [ext_resource type="AudioStream" uid="uid://dxinopc32af3i" path="res://assets/sounds/music/GMTK2024 Loop-01.mp3" id="5_7u4xh"]
-[ext_resource type="PackedScene" uid="uid://crgnehkhb0pqb" path="res://scenes/environment/camera.tscn" id="9_o5woo"]
+[ext_resource type="PackedScene" uid="uid://crgnehkhb0pqb" path="res://scenes/entities/camera.tscn" id="9_o5woo"]
 [ext_resource type="PackedScene" uid="uid://dcs4uq757auua" path="res://scenes/ui/hud.tscn" id="10_3bvo4"]
 
 [node name="Game" type="Node2D"]

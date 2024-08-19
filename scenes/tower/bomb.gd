@@ -12,7 +12,7 @@ var exploding = false
 @onready var path_follow_2d: PathFollow2D = $PathFollow2D
 @onready var blast_area: Area2D = $PathFollow2D/Area2D/BlastRadius
 @onready var gpu_particles_2d: GPUParticles2D = %GPUParticles2D
-@onready var sprite_2d: Sprite2D = %Sprite2D
+@onready var sprite_2d: AnimatedSprite2D = %Sprite2D
 
 func _ready() -> void:
 	curve.set_point_out(0, Vector2(target.x / 2, -500))
@@ -37,6 +37,6 @@ func detonate():
 		
 	gpu_particles_2d.emitting = true
 	exploding = true
-	sprite_2d.visible = false
+	sprite_2d.play("explode")
 	await get_tree().create_timer(1).timeout
 	queue_free()

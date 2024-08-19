@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://co2j5xvh3vswn"]
+[gd_scene load_steps=17 format=3 uid="uid://co2j5xvh3vswn"]
 
 [ext_resource type="Script" path="res://scenes/tower/bomb.gd" id="1_xd8nc"]
 [ext_resource type="Texture2D" uid="uid://5aejajb3ptvs" path="res://assets/tower/bomb.png" id="2_en8hh"]
+[ext_resource type="Texture2D" uid="uid://70xds8taifqc" path="res://assets/tower/bomb-explosion-Sheet.png" id="3_7e1c6"]
 
 [sub_resource type="Curve2D" id="Curve2D_pmby3"]
 resource_local_to_scene = true
@@ -9,6 +10,61 @@ _data = {
 "points": PackedVector2Array(-25, -400, 50, -500, 0, 0, -25, -400, 50, -500, 300, 0)
 }
 point_count = 2
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0j5rf"]
+atlas = ExtResource("2_en8hh")
+region = Rect2(0, 0, 14, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wuufl"]
+atlas = ExtResource("3_7e1c6")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xw5c8"]
+atlas = ExtResource("3_7e1c6")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sb2uq"]
+atlas = ExtResource("3_7e1c6")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hvjln"]
+atlas = ExtResource("3_7e1c6")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0l6km"]
+atlas = ExtResource("3_7e1c6")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5bipx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0j5rf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wuufl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xw5c8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sb2uq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hvjln")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0l6km")
+}],
+"loop": true,
+"name": &"explode",
+"speed": 12.0
+}]
 
 [sub_resource type="Curve" id="Curve_4dmt5"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.540076, 0.887155), -1.11732, -1.11732, 0, 0, Vector2(0.996819, 0.0833955), -1.29235, 0.0, 0, 0]
@@ -51,9 +107,10 @@ rotation = 1.58825
 collision_layer = 0
 collision_mask = 0
 
-[node name="Sprite2D" type="Sprite2D" parent="PathFollow2D/Area2D"]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="PathFollow2D/Area2D"]
 unique_name_in_owner = true
-texture = ExtResource("2_en8hh")
+sprite_frames = SubResource("SpriteFrames_5bipx")
+frame_progress = 0.688972
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="PathFollow2D/Area2D"]
 unique_name_in_owner = true
@@ -76,6 +133,5 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="BlastRadiusCollision" type="CollisionShape2D" parent="PathFollow2D/Area2D/BlastRadius"]
-visible = false
 shape = SubResource("CircleShape2D_r0csj")
 debug_color = Color(0.761239, 0.140258, 0.137337, 0.42)

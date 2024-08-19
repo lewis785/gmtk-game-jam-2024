@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://m8evwqb5ypnv"]
+[gd_scene load_steps=2 format=3 uid="uid://cjxjubu4o7rst"]
 
 [ext_resource type="Script" path="res://global/zoom_manager.gd" id="1_cjn3c"]
 

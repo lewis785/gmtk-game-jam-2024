@@ -3,7 +3,7 @@ extends Node2D
 # Lower cap for the `_zoom_level`.
 @export var min_zoom : float = 0.5
 # Upper cap for the `_zoom_level`.
-@export var max_zoom : float = 2.0
+@export var max_zoom : float = 4.0
 
 signal zoom_changed(new_zoom_level : float)
 

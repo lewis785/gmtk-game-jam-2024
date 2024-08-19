@@ -4,6 +4,7 @@ extends Node2D
 @export var health_component : HealthComponent
 @export var hit_flash_time : float = 0.1
 @export var flash_delay_time : float = 0.2
+@export var flash_brightness : float = 0.2
 
 var hit_flash_timer : float = hit_flash_time
 var ongoing_hit_flash : bool = false
@@ -11,6 +12,7 @@ var flash_delay_timer : float = 0.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	material.set_shader_parameter("FlashBrightness", flash_brightness)
 	animated_sprite.material = material
 	health_component.damaged.connect(_on_health_component_damaged)
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsrwlm3y1xdlu"
-path="res://.godot/imported/RatMoveLeft-Sheet.png-d6560ca91db577cd963002ffc2fbbc79.ctex"
+uid="uid://bwwt0xhf0yydw"
+path="res://.godot/imported/rat-move-right-sheet.png-b0f8ef7cbd505934a2bf5cc684984155.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/enemies/RatMoveLeft-Sheet.png"
-dest_files=["res://.godot/imported/RatMoveLeft-Sheet.png-d6560ca91db577cd963002ffc2fbbc79.ctex"]
+source_file="res://assets/enemies/rat/rat-move-right-sheet.png"
+dest_files=["res://.godot/imported/rat-move-right-sheet.png-b0f8ef7cbd505934a2bf5cc684984155.ctex"]
 
 [params]
 

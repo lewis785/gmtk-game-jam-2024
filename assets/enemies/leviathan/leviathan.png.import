@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cw8jv01icjnh1"
-path="res://.godot/imported/RatDeath-Sheet.png-64d3db774d67ccc8f994cc0969d484e0.ctex"
+uid="uid://bgdynl2yle2x0"
+path="res://.godot/imported/leviathan.png-97753915cba6b8b240b779179c76eb11.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/enemies/RatDeath-Sheet.png"
-dest_files=["res://.godot/imported/RatDeath-Sheet.png-64d3db774d67ccc8f994cc0969d484e0.ctex"]
+source_file="res://assets/enemies/leviathan/leviathan.png"
+dest_files=["res://.godot/imported/leviathan.png-97753915cba6b8b240b779179c76eb11.ctex"]
 
 [params]
 

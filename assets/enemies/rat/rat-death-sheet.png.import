@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://72yffd1untpk"
-path="res://.godot/imported/RatMoveUp-Sheet.png-cc144b4b5b87c1d1602ce730fc46fe92.ctex"
+uid="uid://cw8jv01icjnh1"
+path="res://.godot/imported/rat-death-sheet.png-ee92fa1c156ff838de55f1bdf49940ab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/enemies/RatMoveUp-Sheet.png"
-dest_files=["res://.godot/imported/RatMoveUp-Sheet.png-cc144b4b5b87c1d1602ce730fc46fe92.ctex"]
+source_file="res://assets/enemies/rat/rat-death-sheet.png"
+dest_files=["res://.godot/imported/rat-death-sheet.png-ee92fa1c156ff838de55f1bdf49940ab.ctex"]
 
 [params]
 

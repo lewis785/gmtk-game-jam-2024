@@ -11,7 +11,6 @@ var exploding = false
 
 @onready var path_follow_2d: PathFollow2D = $PathFollow2D
 @onready var blast_area: Area2D = $PathFollow2D/Area2D/BlastRadius
-@onready var gpu_particles_2d: GPUParticles2D = %GPUParticles2D
 @onready var sprite_2d: AnimatedSprite2D = %Sprite2D
 
 func _ready() -> void:
@@ -35,7 +34,6 @@ func detonate():
 		if target is Hitbox && target.get_parent().is_in_group("enemies"):
 			target.damage(attack)
 		
-	gpu_particles_2d.emitting = true
 	exploding = true
 	sprite_2d.play("explode")
 	await get_tree().create_timer(1).timeout

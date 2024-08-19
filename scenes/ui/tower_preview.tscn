@@ -72,6 +72,7 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_xle88")
 
 [node name="AttackContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/GridContainer/PanelContainer"]
+custom_minimum_size = Vector2(55, 0)
 layout_mode = 2
 tooltip_text = "Attack Damage"
 
@@ -90,6 +91,7 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_xle88")
 
 [node name="SpeedContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/GridContainer/PanelContainer2"]
+custom_minimum_size = Vector2(55, 0)
 layout_mode = 2
 tooltip_text = "Attack Speed"
 
@@ -108,6 +110,7 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_xle88")
 
 [node name="CostContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/GridContainer/PanelContainer3"]
+custom_minimum_size = Vector2(55, 0)
 layout_mode = 2
 tooltip_text = "Cost"
 
@@ -126,6 +129,7 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_xle88")
 
 [node name="HealthContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/GridContainer/PanelContainer4"]
+custom_minimum_size = Vector2(55, 0)
 layout_mode = 2
 tooltip_text = "Health"
 

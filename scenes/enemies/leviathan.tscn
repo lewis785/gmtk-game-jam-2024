@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://qikv6ltgsfdu"]
+[gd_scene load_steps=20 format=3 uid="uid://qikv6ltgsfdu"]
 
 [ext_resource type="Script" path="res://scenes/enemies/leviathan.gd" id="1_bthj1"]
 [ext_resource type="Texture2D" uid="uid://bgdynl2yle2x0" path="res://assets/enemies/Leviathan1.png" id="2_it5h1"]
@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://c3tumviadpv61" path="res://assets/sounds/enemies/leviathans/LeviathanDamage2.mp3" id="6_tpq2s"]
 [ext_resource type="AudioStream" uid="uid://c5cinnc8lhoym" path="res://assets/sounds/enemies/leviathans/LeviathanDeath.mp3" id="7_4dulo"]
 [ext_resource type="PackedScene" uid="uid://0feb7qr0ey2" path="res://scenes/enemies/on_hit_flash.tscn" id="9_w4n2p"]
+[ext_resource type="PackedScene" uid="uid://dne1upf2xrhew" path="res://scenes/components/health_bar.tscn" id="10_ivs1l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4ft8w"]
 atlas = ExtResource("3_0cyho")
@@ -75,6 +76,7 @@ size = Vector2(106, 116)
 resource_local_to_scene = true
 shader = ExtResource("2_vuqi0")
 shader_parameter/Hit = false
+shader_parameter/FlashBrightness = 0.2
 
 [node name="Leviathan" type="CharacterBody2D" groups=["enemies"]]
 collision_layer = 3
@@ -125,6 +127,10 @@ bus = &"Fx"
 [node name="OnHitFlash" parent="." node_paths=PackedStringArray("animated_sprite", "health_component") instance=ExtResource("9_w4n2p")]
 material = SubResource("ShaderMaterial_jdqgp")
 animated_sprite = NodePath("../AnimatedSprite2D")
+health_component = NodePath("../HealthComponent")
+
+[node name="HealthBar" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("10_ivs1l")]
+position = Vector2(0, -62)
 health_component = NodePath("../HealthComponent")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

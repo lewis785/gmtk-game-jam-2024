@@ -32,7 +32,8 @@ func setup():
 	wave_indicator.spawner = level.spawner
 	
 	target.health_component.damaged.connect(update_health_bar)
-	target.end_game.connect(game_over)
+	level.lose.connect(game_over)
+	level.win.connect(win_level)
 	MoneyCoordinator.gold_changed.connect(update_coin_amount)
 	
 	update_health_bar(0.0)
@@ -90,6 +91,11 @@ func tower_click(tower : Tower):
 	
 func game_over():
 	game_over_node.game_over = true
+	game_over_node.text = 'GAME OVER'
+	
+func win_level():
+	game_over_node.game_over = true
+	game_over_node.text = 'YOU WIN'
 	
 func _input(event):
 	if event.is_action_pressed("CancelTowerPlace"):

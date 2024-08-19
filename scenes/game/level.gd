@@ -13,6 +13,9 @@ class_name Level
 @export var health: int = 200
 @export var start_gold: int = 100
 
+signal win
+signal lose
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	camera.level = self
@@ -24,3 +27,8 @@ func _ready():
 func _on_area_exited(area: Area2D) -> void:
 	area.queue_free()
 	
+func game_end_win():
+	win.emit()
+	
+func game_end_lose():
+	lose.emit()

@@ -87,6 +87,8 @@ func wave_ended() -> void:
 	wave_index += 1
 	if wave_index >= waves.size():
 		all_waves_complete.emit()
+		var level: Level = $".."
+		level.game_end_win()
 		## TODO: trigger next level.
 		#get_tree().change_scene_to_file("res://scenes/menus/start_menu.tscn")
 		wave_index -= 1 # For now we just repeat the last wave....

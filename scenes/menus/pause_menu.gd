@@ -2,8 +2,8 @@ extends Control
 
 class_name PauseMenu
 
-@onready var fx_volume: HSlider = $ColorRect/VBoxContainer/FxContainer/FxVolume
-@onready var music_volume: HSlider = $ColorRect/VBoxContainer/MusicContainer/MusicVolume
+@onready var fx_volume: HSlider = %FxVolume
+@onready var music_volume: HSlider = %MusicVolume
 @onready var game_over: GameOverMenu = %GameOver
 @onready var tower_menu: HBoxContainer = %TowerMenu
 

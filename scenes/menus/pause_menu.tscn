@@ -48,6 +48,7 @@ text = "FX"
 horizontal_alignment = 1
 
 [node name="FxVolume" type="HSlider" parent="ColorRect/VBoxContainer/FxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 4
 max_value = 1.0
@@ -66,6 +67,7 @@ text = "MUSIC"
 horizontal_alignment = 1
 
 [node name="MusicVolume" type="HSlider" parent="ColorRect/VBoxContainer/MusicContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 4
 max_value = 1.0

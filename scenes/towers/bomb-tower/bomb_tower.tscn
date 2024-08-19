@@ -1,6 +1,6 @@
 [gd_scene load_steps=30 format=3 uid="uid://dr7byga834af0"]
 
-[ext_resource type="Script" path="res://scenes/tower/bomb-tower/bomb_tower.gd" id="1_cslg4"]
+[ext_resource type="Script" path="res://scenes/towers/bomb-tower/bomb_tower.gd" id="1_cslg4"]
 [ext_resource type="Texture2D" uid="uid://b7e07csij026e" path="res://assets/images/tower/bomb-tower-sheet.png" id="2_7pv8w"]
 [ext_resource type="PackedScene" uid="uid://bekel8al0ejto" path="res://scenes/components/health_component.tscn" id="3_m6fif"]
 [ext_resource type="PackedScene" path="res://scenes/components/hitbox.tscn" id="4_v44a4"]

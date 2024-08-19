@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://scenes/game/level.gd" id="1_ahjy4"]
 [ext_resource type="TileSet" uid="uid://8ifuu21pjlag" path="res://assets/images/level/terrain/level_tiles.tres" id="2_e0lua"]
-[ext_resource type="PackedScene" path="res://scenes/coordinators/spawn_manager.tscn" id="3_swqev"]
 [ext_resource type="PackedScene" uid="uid://b0r5b10b4kdxx" path="res://scenes/levels/objects/spawner.tscn" id="4_wupxx"]
 [ext_resource type="PackedScene" uid="uid://furvkvmh3lqt" path="res://scenes/levels/objects/target.tscn" id="7_i3wtx"]
+[ext_resource type="PackedScene" uid="uid://dy0qpbxqynwfg" path="res://scenes/levels/objects/keep_of_the_grass.tscn" id="8_0qnb3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fui1b"]
 size = Vector2(2622, 1645)
@@ -38,9 +38,6 @@ position = Vector2(1254, 772.5)
 shape = SubResource("RectangleShape2D_fui1b")
 debug_color = Color(0.197607, 0.626753, 0.395583, 0.42)
 
-[node name="SpawnManager" parent="." node_paths=PackedStringArray("spawner") instance=ExtResource("3_swqev")]
-spawner = [NodePath("../Spawner")]
-
 [node name="Spawner" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_wupxx")]
 unique_name_in_owner = true
 position = Vector2(154, 141)
@@ -59,5 +56,8 @@ navigation_layers = 128
 scale = Vector2(1, 0.994721)
 navigation_polygon = SubResource("NavigationPolygon_2m65j")
 navigation_layers = 64
+
+[node name="KeepOfTheGrass" parent="." instance=ExtResource("8_0qnb3")]
+position = Vector2(181, 298)
 
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]

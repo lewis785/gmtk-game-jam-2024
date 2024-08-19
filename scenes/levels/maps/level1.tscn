@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=4 uid="uid://n71g8bv1n62s"]
+[gd_scene load_steps=10 format=4 uid="uid://n71g8bv1n62s"]
 
 [ext_resource type="Script" path="res://scenes/game/level.gd" id="1_rvkwc"]
 [ext_resource type="TileSet" uid="uid://8ifuu21pjlag" path="res://assets/images/level/terrain/level_tiles.tres" id="2_r4f5d"]
 [ext_resource type="PackedScene" uid="uid://b0r5b10b4kdxx" path="res://scenes/levels/objects/spawner.tscn" id="4_b7bgg"]
 [ext_resource type="Resource" uid="uid://dt0wf2xjr1nti" path="res://data/levels/level_one_spawner_one.tres" id="5_pw2j2"]
+[ext_resource type="PackedScene" uid="uid://dy0qpbxqynwfg" path="res://scenes/levels/objects/keep_of_the_grass.tscn" id="6_63o5l"]
 [ext_resource type="PackedScene" uid="uid://furvkvmh3lqt" path="res://scenes/levels/objects/target.tscn" id="7_gkrus"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fui1b"]
@@ -58,5 +59,8 @@ visible = false
 scale = Vector2(1, 0.994721)
 navigation_polygon = SubResource("NavigationPolygon_2m65j")
 navigation_layers = 64
+
+[node name="KeepOfTheGrass" parent="." instance=ExtResource("6_63o5l")]
+position = Vector2(187, 315)
 
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]

@@ -31,3 +31,12 @@ func toggle_pause():
 		paused = true
 	visible = paused
 	get_tree().paused = paused
+
+
+func _on_main_menu_button_pressed() -> void:
+	toggle_pause()
+	get_tree().change_scene_to_file("res://scenes/menus/start_menu.tscn")
+
+
+func _on_quit_game_button_pressed() -> void:
+	get_tree().quit()

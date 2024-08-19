@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://cntuvphactpi3"]
-
-[node name="BuildMenu" type="Container"]
-
-[node name="Button" type="Button" parent="."]
-layout_mode = 2
-toggle_mode = true
-text = "Build"

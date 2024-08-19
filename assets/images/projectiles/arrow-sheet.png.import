@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://sp5nvc8ceu3q"
-path="res://.godot/imported/CrystalIdle-Sheet.png-d045ea0e0d341115403d4d1c8863eed0.ctex"
+uid="uid://cfebomeefpcev"
+path="res://.godot/imported/arrow-sheet.png-8cdcead30646ca2793829807bed94e38.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/level/objects/target/CrystalIdle-Sheet.png"
-dest_files=["res://.godot/imported/CrystalIdle-Sheet.png-d045ea0e0d341115403d4d1c8863eed0.ctex"]
+source_file="res://assets/images/projectiles/arrow-sheet.png"
+dest_files=["res://.godot/imported/arrow-sheet.png-8cdcead30646ca2793829807bed94e38.ctex"]
 
 [params]
 

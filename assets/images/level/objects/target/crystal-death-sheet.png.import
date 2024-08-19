@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://nu3y5l0ybnv0"
-path="res://.godot/imported/CrystalDeath-Sheet.png-ae544e2e4d5de04bb2bee3ada2e260e3.ctex"
+path="res://.godot/imported/crystal-death-sheet.png-15495148b9f688a87e5bd72300803e33.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/level/objects/target/CrystalDeath-Sheet.png"
-dest_files=["res://.godot/imported/CrystalDeath-Sheet.png-ae544e2e4d5de04bb2bee3ada2e260e3.ctex"]
+source_file="res://assets/images/level/objects/target/crystal-death-sheet.png"
+dest_files=["res://.godot/imported/crystal-death-sheet.png-15495148b9f688a87e5bd72300803e33.ctex"]
 
 [params]
 

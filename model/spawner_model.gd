@@ -6,7 +6,7 @@ extends Resource
 ## these too
 
 ## Waves
-@export var wave: Array[PackedScene]
+@export var waves: Array[WaveModel]
 
 ## Time between waves
 @export var wave_delay: float

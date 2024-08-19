@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dwqmshnau2qnv"]
 
 [ext_resource type="Script" path="res://scenes/menus/game_over_menu.gd" id="1_4drnb"]
-[ext_resource type="Theme" uid="uid://yub5acxtpnjx" path="res://ui_theme.tres" id="1_sth2q"]
+[ext_resource type="Theme" path="res://ui_theme.tres" id="1_sth2q"]
 
 [node name="GameOverMenu" type="CanvasLayer"]
 process_mode = 3

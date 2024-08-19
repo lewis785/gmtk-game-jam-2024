@@ -139,7 +139,7 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jpt5e"]
 resource_local_to_scene = true
-size = Vector2(105, 38)
+size = Vector2(102, 58)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xmrch"]
 resource_local_to_scene = true
@@ -147,7 +147,7 @@ radius = 481.037
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lrd8k"]
 resource_local_to_scene = true
-size = Vector2(110, 46)
+size = Vector2(110, 62)
 
 [node name="BombTower" type="RigidBody2D"]
 collision_layer = 4
@@ -165,7 +165,7 @@ autoplay = "default"
 
 [node name="TowerCollisionShape" type="CollisionShape2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(0.5, 19)
+position = Vector2(0, 10)
 shape = SubResource("RectangleShape2D_jpt5e")
 debug_color = Color(0.868573, 0.293213, 0.508281, 0.42)
 
@@ -187,11 +187,12 @@ unique_name_in_owner = true
 max_health = 300.0
 
 [node name="Hitbox" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_v44a4")]
+position = Vector2(0, -9)
 health_component = NodePath("../HealthComponent")
 
 [node name="HitboxCollisionShape" type="CollisionShape2D" parent="Hitbox"]
 unique_name_in_owner = true
-position = Vector2(0, 21)
+position = Vector2(0, 19)
 shape = SubResource("RectangleShape2D_lrd8k")
 
 [node name="HealthBar" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("5_00140")]

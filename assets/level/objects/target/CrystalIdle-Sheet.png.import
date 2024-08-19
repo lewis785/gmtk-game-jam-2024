@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clmxlckxahx8t"
-path="res://.godot/imported/walls.png-2c80b323484b5749d1143f0befa7e6a4.ctex"
+uid="uid://sp5nvc8ceu3q"
+path="res://.godot/imported/CrystalIdle-Sheet.png-81d5627522b60eca374702ab10fc8484.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/environment/terrain/walls.png"
-dest_files=["res://.godot/imported/walls.png-2c80b323484b5749d1143f0befa7e6a4.ctex"]
+source_file="res://assets/level/objects/target/CrystalIdle-Sheet.png"
+dest_files=["res://.godot/imported/CrystalIdle-Sheet.png-81d5627522b60eca374702ab10fc8484.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://col7etfkwvpwo"
-path="res://.godot/imported/spawner.png-459c4270a1a172dcbaba14a1166e426e.ctex"
+uid="uid://clmxlckxahx8t"
+path="res://.godot/imported/walls.png-586dee4271d9232095d67ac94552924f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/environment/objects/spawner.png"
-dest_files=["res://.godot/imported/spawner.png-459c4270a1a172dcbaba14a1166e426e.ctex"]
+source_file="res://assets/level/terrain/walls.png"
+dest_files=["res://.godot/imported/walls.png-586dee4271d9232095d67ac94552924f.ctex"]
 
 [params]
 

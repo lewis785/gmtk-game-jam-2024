@@ -1,7 +1,7 @@
 [gd_resource type="TileSet" load_steps=44 format=3 uid="uid://8ifuu21pjlag"]
 
-[ext_resource type="Texture2D" uid="uid://d20pgnle7f1da" path="res://assets/environment/terrain/grass-mud.png" id="1_2b0k5"]
-[ext_resource type="Texture2D" uid="uid://clmxlckxahx8t" path="res://assets/environment/terrain/walls.png" id="2_usxyx"]
+[ext_resource type="Texture2D" uid="uid://d20pgnle7f1da" path="res://assets/level/terrain/grass-mud.png" id="1_2b0k5"]
+[ext_resource type="Texture2D" uid="uid://clmxlckxahx8t" path="res://assets/level/terrain/walls.png" id="2_usxyx"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_rine7"]
 

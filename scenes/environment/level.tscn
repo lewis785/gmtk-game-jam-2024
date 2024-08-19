@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=4 uid="uid://bij4f6qk1lkwv"]
 
 [ext_resource type="Script" path="res://scenes/environment/level.gd" id="1_ahjy4"]
-[ext_resource type="TileSet" uid="uid://8ifuu21pjlag" path="res://assets/environment/terrain/level_tiles.tres" id="2_e0lua"]
+[ext_resource type="TileSet" uid="uid://8ifuu21pjlag" path="res://assets/level/terrain/level_tiles.tres" id="2_e0lua"]
 [ext_resource type="PackedScene" uid="uid://bie2pjul8rsmp" path="res://scenes/environment/spawn_manager.tscn" id="3_swqev"]
 [ext_resource type="PackedScene" uid="uid://b0r5b10b4kdxx" path="res://scenes/environment/spawner.tscn" id="4_wupxx"]
 [ext_resource type="PackedScene" uid="uid://mowgq532ltew" path="res://scenes/enemies/rat.tscn" id="5_mh2ue"]

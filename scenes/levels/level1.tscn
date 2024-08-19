@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=4 uid="uid://n71g8bv1n62s"]
 
 [ext_resource type="Script" path="res://scenes/environment/level.gd" id="1_rvkwc"]
-[ext_resource type="TileSet" uid="uid://8ifuu21pjlag" path="res://assets/environment/terrain/level_tiles.tres" id="2_r4f5d"]
+[ext_resource type="TileSet" uid="uid://8ifuu21pjlag" path="res://assets/level/terrain/level_tiles.tres" id="2_r4f5d"]
 [ext_resource type="PackedScene" uid="uid://b0r5b10b4kdxx" path="res://scenes/environment/spawner.tscn" id="4_b7bgg"]
 [ext_resource type="Resource" uid="uid://dt0wf2xjr1nti" path="res://data/levels/level_one_spawner_one.tres" id="5_pw2j2"]
 [ext_resource type="PackedScene" uid="uid://furvkvmh3lqt" path="res://scenes/environment/target.tscn" id="7_gkrus"]

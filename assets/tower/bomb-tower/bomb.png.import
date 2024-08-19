@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://duhd1dupd8s0r"
-path="res://.godot/imported/Tower1Shooting-Sheet.png-c8b190a77af63c529d88ca162f8376f5.ctex"
+uid="uid://5aejajb3ptvs"
+path="res://.godot/imported/bomb.png-30a59f94a7882e45ccc69d1e4c2be1d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tower/Tower1Shooting-Sheet.png"
-dest_files=["res://.godot/imported/Tower1Shooting-Sheet.png-c8b190a77af63c529d88ca162f8376f5.ctex"]
+source_file="res://assets/tower/bomb-tower/bomb.png"
+dest_files=["res://.godot/imported/bomb.png-30a59f94a7882e45ccc69d1e4c2be1d9.ctex"]
 
 [params]
 

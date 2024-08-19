@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://k650vlgi8veh"
-path="res://.godot/imported/Tower2Idle-Sheet.png-0b93e8ee7c020a18bdfd1d1c81797f38.ctex"
+uid="uid://btjh655kufkfs"
+path="res://.godot/imported/arrow-tower.png-20414fb21bab4afa9418d2458e647477.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tower/Tower2Idle-Sheet.png"
-dest_files=["res://.godot/imported/Tower2Idle-Sheet.png-0b93e8ee7c020a18bdfd1d1c81797f38.ctex"]
+source_file="res://assets/tower/arrow-tower/arrow-tower.png"
+dest_files=["res://.godot/imported/arrow-tower.png-20414fb21bab4afa9418d2458e647477.ctex"]
 
 [params]
 

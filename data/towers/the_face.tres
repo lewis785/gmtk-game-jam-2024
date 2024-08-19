@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Tower" load_steps=6 format=3 uid="uid://pen0qetm74fm"]
 
-[ext_resource type="PackedScene" uid="uid://ccjj02aippfxp" path="res://scenes/tower/face_tower_ghost.tscn" id="1_y345q"]
-[ext_resource type="Texture2D" uid="uid://k650vlgi8veh" path="res://assets/tower/Tower2Idle-Sheet.png" id="2_p8eo3"]
+[ext_resource type="PackedScene" path="res://scenes/tower/face_tower_ghost.tscn" id="1_y345q"]
+[ext_resource type="Texture2D" uid="uid://k650vlgi8veh" path="res://assets/tower/arrow-tower/arrow-tower-idle.png" id="2_p8eo3"]
 [ext_resource type="PackedScene" uid="uid://diyg253wermkg" path="res://scenes/tower/face_tower.tscn" id="3_d2qck"]
 [ext_resource type="Script" path="res://model/tower.gd" id="4_j8rjb"]
 

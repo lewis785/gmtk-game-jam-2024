@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://70xds8taifqc"
-path="res://.godot/imported/bomb-explosion-Sheet.png-f8a2e1fb54d903b3f8f92e6434cdc45b.ctex"
+uid="uid://k650vlgi8veh"
+path="res://.godot/imported/arrow-tower-idle.png-ea069b31d6b350bbbc5ecb53fae8fdd7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tower/bomb-explosion-Sheet.png"
-dest_files=["res://.godot/imported/bomb-explosion-Sheet.png-f8a2e1fb54d903b3f8f92e6434cdc45b.ctex"]
+source_file="res://assets/tower/arrow-tower/arrow-tower-idle.png"
+dest_files=["res://.godot/imported/arrow-tower-idle.png-ea069b31d6b350bbbc5ecb53fae8fdd7.ctex"]
 
 [params]
 

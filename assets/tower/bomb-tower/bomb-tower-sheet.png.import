@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btjh655kufkfs"
-path="res://.godot/imported/TowerArrowIdle.png-af13494a71b85dd1f6fc08a1eb4793cc.ctex"
+uid="uid://b7e07csij026e"
+path="res://.godot/imported/bomb-tower-sheet.png-09c12849514cd926cd64979011e130a1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tower/TowerArrowIdle.png"
-dest_files=["res://.godot/imported/TowerArrowIdle.png-af13494a71b85dd1f6fc08a1eb4793cc.ctex"]
+source_file="res://assets/tower/bomb-tower/bomb-tower-sheet.png"
+dest_files=["res://.godot/imported/bomb-tower-sheet.png-09c12849514cd926cd64979011e130a1.ctex"]
 
 [params]
 

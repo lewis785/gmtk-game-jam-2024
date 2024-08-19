@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Tower" load_steps=6 format=3 uid="uid://6y2rwctvjk3"]
 
-[ext_resource type="PackedScene" uid="uid://df1j7j6qtyxc8" path="res://scenes/tower/tower_ghost.tscn" id="1_21n7k"]
-[ext_resource type="PackedScene" uid="uid://c01peygpfgfh8" path="res://scenes/tower/tower.tscn" id="1_d8uch"]
+[ext_resource type="PackedScene" uid="uid://df1j7j6qtyxc8" path="res://scenes/tower/arrow-tower/arrow_tower_ghost.tscn" id="1_21n7k"]
+[ext_resource type="PackedScene" uid="uid://c01peygpfgfh8" path="res://scenes/tower/arrow-tower/arrow_tower.tscn" id="1_d8uch"]
 [ext_resource type="Texture2D" uid="uid://duhd1dupd8s0r" path="res://assets/images/tower/arrow-tower/arrow-tower-shooting-sheet.png" id="2_8neyf"]
 [ext_resource type="Script" path="res://model/tower.gd" id="2_fdn1j"]
 

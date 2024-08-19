@@ -21,3 +21,7 @@ func launch_main_menu():
 
 func _on_video_stream_player_finished() -> void:
 	launch_main_menu()
+
+
+func _on_animated_sprite_2d_animation_finished():
+	launch_main_menu()

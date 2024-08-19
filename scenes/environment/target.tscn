@@ -1,14 +1,15 @@
-[gd_scene load_steps=38 format=3 uid="uid://furvkvmh3lqt"]
+[gd_scene load_steps=39 format=3 uid="uid://furvkvmh3lqt"]
 
 [ext_resource type="Script" path="res://scenes/environment/target.gd" id="1_hiu24"]
 [ext_resource type="PackedScene" uid="uid://bekel8al0ejto" path="res://scenes/components/health_component.tscn" id="2_1bcm2"]
 [ext_resource type="Texture2D" uid="uid://sp5nvc8ceu3q" path="res://assets/environment/objects/target/CrystalIdle-Sheet.png" id="2_6kukr"]
 [ext_resource type="Texture2D" uid="uid://nu3y5l0ybnv0" path="res://assets/environment/objects/target/CrystalDeath-Sheet.png" id="3_725bw"]
-[ext_resource type="PackedScene" uid="uid://b1qedipcdvfcc" path="res://scenes/components/hitbox.tscn" id="4_a4bnx"]
+[ext_resource type="PackedScene" path="res://scenes/components/hitbox.tscn" id="4_a4bnx"]
 [ext_resource type="AudioStream" uid="uid://b8abdfk3jb5cw" path="res://assets/sounds/crystal/CrystalDamage.mp3" id="6_pap8s"]
 [ext_resource type="AudioStream" uid="uid://dsb7kxjbchmy0" path="res://assets/sounds/crystal/CrystalDeath.mp3" id="7_5p60y"]
-[ext_resource type="PackedScene" uid="uid://0feb7qr0ey2" path="res://scenes/enemies/on_hit_flash.tscn" id="8_bu3p7"]
-[ext_resource type="Shader" uid="uid://brqjaqb8uif4s" path="res://scenes/enemies/enemy_damage.tres" id="9_rbggc"]
+[ext_resource type="PackedScene" path="res://scenes/enemies/on_hit_flash.tscn" id="8_bu3p7"]
+[ext_resource type="Shader" uid="uid://cuiqrvshpwut5" path="res://scenes/enemies/enemy_damage.tres" id="9_rbggc"]
+[ext_resource type="PackedScene" uid="uid://b1jrmfbkbqpct" path="res://scenes/entities/flickering_light.tscn" id="10_qaceh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jw6al"]
 atlas = ExtResource("3_725bw")
@@ -201,6 +202,7 @@ radius = 54.0
 resource_local_to_scene = true
 shader = ExtResource("9_rbggc")
 shader_parameter/Hit = false
+shader_parameter/FlashBrightness = 0.2
 
 [node name="Target" type="RigidBody2D"]
 process_mode = 3
@@ -210,16 +212,19 @@ script = ExtResource("1_hiu24")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vv22x")
-animation = &"die"
+animation = &"idle"
 autoplay = "idle"
+frame_progress = 0.0945845
 
 [node name="PhysicalCollision" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CircleShape2D_t4si5")
 
 [node name="HealthComponent" parent="." instance=ExtResource("2_1bcm2")]
 max_health = 200.0
 
 [node name="Hitbox" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_a4bnx")]
+visible = false
 health_component = NodePath("../HealthComponent")
 
 [node name="HitboxCollision" type="CollisionShape2D" parent="Hitbox"]
@@ -238,6 +243,12 @@ bus = &"Fx"
 material = SubResource("ShaderMaterial_i72fk")
 animated_sprite = NodePath("../AnimatedSprite2D")
 health_component = NodePath("../HealthComponent")
+
+[node name="FlickeringLight" parent="." instance=ExtResource("10_qaceh")]
+position = Vector2(0, -10)
+color = Color(0.3239, 0.79, 0.487035, 1)
+energy = 0.3
+texture_scale = 6.0
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="damaged" from="HealthComponent" to="." method="_on_health_component_damaged"]

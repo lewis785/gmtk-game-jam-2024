@@ -20,7 +20,7 @@ func _ready():
 	hud.level = self
 	
 	target.set_health(health) 
-	money_coordinator.gold = start_gold
+	MoneyCoordinator.gold = start_gold
 	
 func _on_area_exited(area: Area2D) -> void:
 	area.queue_free()

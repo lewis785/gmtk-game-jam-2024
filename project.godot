@@ -105,6 +105,8 @@ PauseToggle={
 2d_physics/layer_3="towers"
 2d_physics/layer_4="bullet"
 2d_physics/layer_5="walls"
+2d_navigation/layer_7="levi2"
+2d_navigation/layer_8="rat2"
 
 [physics]
 

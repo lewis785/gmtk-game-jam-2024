@@ -11,13 +11,16 @@ class_name Level
 @onready var spawner: Spawner = %Spawner
 
 @export var level_size : Vector2 = Vector2()
+@export var health: int = 200
+@export var start_gold: int = 100
 
-# Called when the node enters the scene tree for the first time.
+# Called when the node enteNavigationRegion2Drs the scene tree for the first time.
 func _ready():
 	camera.level = self
 	hud.level = self
 	
-	#money_coordinator.gold = 
+	target.set_health(health) 
+	money_coordinator.gold = start_gold
 	
 func _on_area_exited(area: Area2D) -> void:
 	area.queue_free()

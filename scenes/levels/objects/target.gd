@@ -9,6 +9,10 @@ class_name Target
 
 signal end_game
 
+func set_health(health):
+	health_component.max_health = health
+	health_component.full_heal()
+
 func _on_health_component_damaged(damage):
 	audio_stream_player_hit.play()
 

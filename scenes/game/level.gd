@@ -8,6 +8,7 @@ class_name Level
 @onready var money_coordinator : MoneyCoordinator = $"../MoneyCoordinator"
 @onready var camera : Camera = $"../Camera"
 @onready var hud = $"../Hud"
+@onready var spawner: Spawner = %Spawner
 
 @export var level_size : Vector2 = Vector2()
 

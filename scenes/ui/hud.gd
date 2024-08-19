@@ -12,6 +12,7 @@ extends CanvasLayer
 @onready var game_over_node: GameOverMenu = $GameOver
 @onready var camera = $"../Camera"
 @onready var zoom_label: Label = %ZoomLabel
+@onready var wave_indicator: WaveIndicator = %WaveIndicator
 
 const TOWER_PREVIEW = preload("res://scenes/ui/tower_preview.tscn")
 
@@ -30,6 +31,7 @@ func _process(_delta):
 
 func setup():
 	target = level.target
+	wave_indicator.spawner = level.spawner
 	
 	target.health_component.damaged.connect(update_health_bar)
 	target.end_game.connect(game_over)

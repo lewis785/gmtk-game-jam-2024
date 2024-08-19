@@ -2,6 +2,10 @@ extends Node2D
 
 class_name Spawner
 
+signal wave_start(wave : int)
+signal wave_end(wave : int)
+signal all_waves_complete()
+
 @onready var rat : PackedScene = preload("res://scenes/enemies/rat.tscn")
 @onready var leviathan : PackedScene = preload("res://scenes/enemies/leviathan.tscn")
 
@@ -71,15 +75,18 @@ func spawn():
 			enemy.set_target(target)
 
 func wave_started() -> void:
+	wave_start.emit(wave_index)
 	_setup_wave(wave_index)
 	spawn_timer.start()
 
 func wave_ended() -> void:
 	spawn_timer.stop()
 	rest_timer.start(rest_period)
+	wave_end.emit(wave_index)
 	wave_index += 1
 	if wave_index >= waves.size():
 		print("You Win")
+		all_waves_complete.emit()
 		## TODO: trigger next level.
 		#get_tree().change_scene_to_file("res://scenes/menus/start_menu.tscn")
 		wave_index -= 1 # For now we just repeat the last wave....

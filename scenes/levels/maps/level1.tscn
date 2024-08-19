@@ -39,6 +39,7 @@ shape = SubResource("RectangleShape2D_fui1b")
 debug_color = Color(0.197607, 0.626753, 0.395583, 0.42)
 
 [node name="Spawner" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_b7bgg")]
+unique_name_in_owner = true
 position = Vector2(154, 141)
 target = NodePath("../Target")
 spawner_resource = ExtResource("5_pw2j2")

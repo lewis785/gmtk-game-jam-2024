@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://n71g8bv1n62s" path="res://scenes/levels/maps/level1.tscn" id="1_hhe47"]
 [ext_resource type="PackedScene" uid="uid://cynqh8t87mfih" path="res://scenes/coordinators/money_coordinator.tscn" id="3_ypm6k"]
 [ext_resource type="AudioStream" uid="uid://dxinopc32af3i" path="res://assets/sounds/music/GMTK2024 Loop-01.mp3" id="5_7u4xh"]
-[ext_resource type="PackedScene" uid="uid://crgnehkhb0pqb" path="res://scenes/entities/camera.tscn" id="9_o5woo"]
+[ext_resource type="PackedScene" path="res://scenes/entities/camera.tscn" id="9_o5woo"]
 [ext_resource type="PackedScene" uid="uid://dcs4uq757auua" path="res://scenes/ui/hud.tscn" id="10_3bvo4"]
 
 [node name="Game" type="Node2D"]
@@ -19,8 +19,8 @@ income_period = 0.1
 
 [node name="Camera" parent="." instance=ExtResource("9_o5woo")]
 
-[node name="Hud" parent="." node_paths=PackedStringArray("level", "coin_manager") instance=ExtResource("10_3bvo4")]
-level = NodePath("")
+[node name="Hud" parent="." node_paths=PackedStringArray("coin_manager") instance=ExtResource("10_3bvo4")]
+unique_name_in_owner = true
 coin_manager = NodePath("../MoneyCoordinator")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

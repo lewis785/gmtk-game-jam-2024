@@ -1,11 +1,13 @@
-[gd_scene load_steps=18 format=3 uid="uid://diyg253wermkg"]
+[gd_scene load_steps=21 format=3 uid="uid://diyg253wermkg"]
 
 [ext_resource type="Script" path="res://scenes/tower/face_tower.gd" id="1_mg20o"]
 [ext_resource type="Texture2D" uid="uid://k650vlgi8veh" path="res://assets/tower/Tower2Idle-Sheet.png" id="2_y0h47"]
 [ext_resource type="PackedScene" uid="uid://bekel8al0ejto" path="res://scenes/components/health_component.tscn" id="3_gcnyc"]
-[ext_resource type="PackedScene" path="res://scenes/components/hitbox.tscn" id="4_bqs4b"]
-[ext_resource type="PackedScene" path="res://scenes/components/health_bar.tscn" id="5_tm5mo"]
+[ext_resource type="PackedScene" uid="uid://b1qedipcdvfcc" path="res://scenes/components/hitbox.tscn" id="4_bqs4b"]
+[ext_resource type="PackedScene" uid="uid://dne1upf2xrhew" path="res://scenes/components/health_bar.tscn" id="5_tm5mo"]
 [ext_resource type="AudioStream" uid="uid://d4j4jgfgfvlfy" path="res://assets/sounds/towers/TowerBeamAttack1.mp3" id="6_o67js"]
+[ext_resource type="PackedScene" uid="uid://0feb7qr0ey2" path="res://scenes/enemies/on_hit_flash.tscn" id="7_shxaa"]
+[ext_resource type="Shader" uid="uid://brqjaqb8uif4s" path="res://scenes/enemies/enemy_damage.tres" id="8_y8wpy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ja7fu"]
 atlas = ExtResource("2_y0h47")
@@ -76,7 +78,12 @@ radius = 481.037
 resource_local_to_scene = true
 size = Vector2(136, 61)
 
-[node name="Tower" type="RigidBody2D"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xkocj"]
+resource_local_to_scene = true
+shader = ExtResource("8_y8wpy")
+shader_parameter/Hit = false
+
+[node name="FaceTower" type="RigidBody2D"]
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("1_mg20o")
@@ -127,6 +134,11 @@ health_component = NodePath("../HealthComponent")
 stream = ExtResource("6_o67js")
 max_distance = 500.0
 bus = &"Fx"
+
+[node name="OnHitFlash" parent="." node_paths=PackedStringArray("animated_sprite", "health_component") instance=ExtResource("7_shxaa")]
+material = SubResource("ShaderMaterial_xkocj")
+animated_sprite = NodePath("../Node2D/Sprite")
+health_component = NodePath("../HealthComponent")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="damaged" from="HealthComponent" to="." method="_on_health_component_damaged"]

@@ -10,7 +10,7 @@ class_name BaseTower
 @onready var hitbox_collision_shape: CollisionShape2D = %HitboxCollisionShape
 @onready var health_component: HealthComponent = %HealthComponent
 @onready var timer: Timer = $Timer
-@onready var health_bar: Node2D = $HealthBar
+@onready var health_bar: HealthBar = $HealthBar
 
 var tower_scale : float
 
@@ -19,6 +19,7 @@ var damage : float
 func _ready() -> void:
 	health_component.damaged.connect(show_health_bar)
 	health_bar.hide()
+	
 
 func initialize(tower : Tower, tower_scale : float):
 	self.tower_scale = tower_scale
@@ -26,6 +27,7 @@ func initialize(tower : Tower, tower_scale : float):
 	timer.wait_time = 1.0 / speed
 	health_component.max_health = ZoomManager.calculate_relative_value(tower.lower_max_health, tower.upper_max_health)
 	health_component.health = health_component.max_health
+	health_bar.progress_bar.max_value = health_component.max_health
 	damage = ZoomManager.calculate_relative_value(tower.lower_damage, tower.upper_damage)
 	scale_tower(tower_scale, tower)
 

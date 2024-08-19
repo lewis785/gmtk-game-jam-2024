@@ -1,6 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://0feb7qr0ey2"]
+[gd_scene load_steps=4 format=3 uid="uid://0feb7qr0ey2"]
 
+[ext_resource type="Shader" uid="uid://brqjaqb8uif4s" path="res://scenes/enemies/enemy_damage.tres" id="1_p23h6"]
 [ext_resource type="Script" path="res://scenes/enemies/on_hit_flash.gd" id="1_ycuv4"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ghmge"]
+resource_local_to_scene = true
+shader = ExtResource("1_p23h6")
+shader_parameter/Hit = false
+
 [node name="OnHitFlash" type="Node2D"]
+material = SubResource("ShaderMaterial_ghmge")
 script = ExtResource("1_ycuv4")

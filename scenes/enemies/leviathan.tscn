@@ -10,11 +10,6 @@
 [ext_resource type="AudioStream" uid="uid://c5cinnc8lhoym" path="res://assets/sounds/enemies/leviathans/LeviathanDeath.mp3" id="7_4dulo"]
 [ext_resource type="PackedScene" uid="uid://0feb7qr0ey2" path="res://scenes/enemies/on_hit_flash.tscn" id="9_w4n2p"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_66pd0"]
-resource_local_to_scene = true
-shader = ExtResource("2_vuqi0")
-shader_parameter/Hit = false
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_4ft8w"]
 atlas = ExtResource("3_0cyho")
 region = Rect2(0, 0, 128, 128)
@@ -76,6 +71,11 @@ height = 110.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fdry8"]
 size = Vector2(106, 116)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jdqgp"]
+resource_local_to_scene = true
+shader = ExtResource("2_vuqi0")
+shader_parameter/Hit = false
+
 [node name="Leviathan" type="CharacterBody2D" groups=["enemies"]]
 collision_layer = 3
 collision_mask = 20
@@ -85,7 +85,6 @@ speed = 10
 damage = 200
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-material = SubResource("ShaderMaterial_66pd0")
 sprite_frames = SubResource("SpriteFrames_bv24m")
 animation = &"die"
 autoplay = "idle"
@@ -123,12 +122,13 @@ stream = ExtResource("7_4dulo")
 max_distance = 500.0
 bus = &"Fx"
 
-[node name="OnHitFlash" parent="." node_paths=PackedStringArray("animated_sprite") instance=ExtResource("9_w4n2p")]
+[node name="OnHitFlash" parent="." node_paths=PackedStringArray("animated_sprite", "health_component") instance=ExtResource("9_w4n2p")]
+material = SubResource("ShaderMaterial_jdqgp")
 animated_sprite = NodePath("../AnimatedSprite2D")
+health_component = NodePath("../HealthComponent")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="damaged" from="HealthComponent" to="." method="_on_health_component_damaged"]
-[connection signal="damaged" from="HealthComponent" to="OnHitFlash" method="_on_health_component_damaged"]
 [connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

@@ -81,6 +81,7 @@ func _on_hitbox_area_entered(body: Node2D) -> void:
 	if !dead:
 		if body is Hitbox:
 			attack_timer.start()
+			_deal_attack_damage(body)
 
 func _on_attack_timer_timeout() -> void:
 	if !dead:

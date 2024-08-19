@@ -13,11 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://0feb7qr0ey2" path="res://scenes/enemies/on_hit_flash.tscn" id="12_4qn13"]
 [ext_resource type="AudioStream" uid="uid://bja0p382m2606" path="res://assets/sounds/enemies/rats/RatDeath1.mp3" id="12_l8gi7"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_iuv3c"]
-resource_local_to_scene = true
-shader = ExtResource("2_f5rqt")
-shader_parameter/Hit = false
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_40hcg"]
 atlas = ExtResource("1_qn8ad")
 region = Rect2(0, 0, 56, 56)
@@ -194,13 +189,17 @@ height = 42.0
 radius = 13.0
 height = 46.0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3mcwh"]
+resource_local_to_scene = true
+shader = ExtResource("2_f5rqt")
+shader_parameter/Hit = false
+
 [node name="Rat" type="CharacterBody2D" groups=["enemies"]]
 collision_layer = 3
 collision_mask = 20
 script = ExtResource("1_8phfx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-material = SubResource("ShaderMaterial_iuv3c")
 sprite_frames = SubResource("SpriteFrames_7rx85")
 animation = &"move_up"
 autoplay = "move_down"
@@ -241,12 +240,13 @@ stream = ExtResource("12_l8gi7")
 max_distance = 500.0
 bus = &"Fx"
 
-[node name="OnHitFlash" parent="." node_paths=PackedStringArray("animated_sprite") instance=ExtResource("12_4qn13")]
+[node name="OnHitFlash" parent="." node_paths=PackedStringArray("animated_sprite", "health_component") instance=ExtResource("12_4qn13")]
+material = SubResource("ShaderMaterial_3mcwh")
 animated_sprite = NodePath("../AnimatedSprite2D")
+health_component = NodePath("../HealthComponent")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="damaged" from="HealthComponent" to="." method="_on_health_component_damaged"]
-[connection signal="damaged" from="HealthComponent" to="OnHitFlash" method="_on_health_component_damaged"]
 [connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

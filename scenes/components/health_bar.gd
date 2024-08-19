@@ -1,5 +1,7 @@
 extends Node2D
 
+class_name HealthBar
+
 @export var health_component : HealthComponent
 @onready var progress_bar: ProgressBar = %ProgressBar
 

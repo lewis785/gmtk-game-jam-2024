@@ -1,11 +1,13 @@
-[gd_scene load_steps=27 format=3 uid="uid://dr7byga834af0"]
+[gd_scene load_steps=30 format=3 uid="uid://dr7byga834af0"]
 
 [ext_resource type="Script" path="res://scenes/tower/bomb_tower.gd" id="1_cslg4"]
 [ext_resource type="Texture2D" uid="uid://b7e07csij026e" path="res://assets/tower/bomb-tower-sheet.png" id="2_7pv8w"]
 [ext_resource type="PackedScene" uid="uid://bekel8al0ejto" path="res://scenes/components/health_component.tscn" id="3_m6fif"]
-[ext_resource type="PackedScene" path="res://scenes/components/hitbox.tscn" id="4_v44a4"]
-[ext_resource type="PackedScene" path="res://scenes/components/health_bar.tscn" id="5_00140"]
+[ext_resource type="PackedScene" uid="uid://b1qedipcdvfcc" path="res://scenes/components/hitbox.tscn" id="4_v44a4"]
+[ext_resource type="PackedScene" uid="uid://dne1upf2xrhew" path="res://scenes/components/health_bar.tscn" id="5_00140"]
 [ext_resource type="AudioStream" uid="uid://cgg4b6v4tu0cr" path="res://assets/sounds/towers/TowerBombAttack3.mp3" id="6_r8yxe"]
+[ext_resource type="PackedScene" uid="uid://0feb7qr0ey2" path="res://scenes/enemies/on_hit_flash.tscn" id="7_blekg"]
+[ext_resource type="Shader" uid="uid://brqjaqb8uif4s" path="res://scenes/enemies/enemy_damage.tres" id="8_oxmdy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4gu5b"]
 atlas = ExtResource("2_7pv8w")
@@ -149,6 +151,11 @@ radius = 481.037
 resource_local_to_scene = true
 size = Vector2(110, 62)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d7gs1"]
+resource_local_to_scene = true
+shader = ExtResource("8_oxmdy")
+shader_parameter/Hit = false
+
 [node name="BombTower" type="RigidBody2D"]
 collision_layer = 4
 collision_mask = 0
@@ -206,6 +213,11 @@ bus = &"Fx"
 
 [node name="ProjectileSpawn" type="Node2D" parent="."]
 position = Vector2(0, -21)
+
+[node name="OnHitFlash" parent="." node_paths=PackedStringArray("animated_sprite", "health_component") instance=ExtResource("7_blekg")]
+material = SubResource("ShaderMaterial_d7gs1")
+animated_sprite = NodePath("../Node2D/Sprite")
+health_component = NodePath("../HealthComponent")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="damaged" from="HealthComponent" to="." method="_on_health_component_damaged"]

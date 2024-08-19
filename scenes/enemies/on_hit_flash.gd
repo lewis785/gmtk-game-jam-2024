@@ -1,7 +1,7 @@
-extends Node
+extends Node2D
 
 @export var animated_sprite : AnimatedSprite2D
-
+@export var health_component : HealthComponent
 @export var hit_flash_time : float = 0.1
 @export var flash_delay_time : float = 0.2
 
@@ -11,7 +11,8 @@ var flash_delay_timer : float = 0.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	animated_sprite.material = material
+	health_component.damaged.connect(_on_health_component_damaged)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

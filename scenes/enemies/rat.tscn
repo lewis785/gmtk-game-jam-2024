@@ -250,6 +250,8 @@ health_component = NodePath("../HealthComponent")
 [node name="BloodSpurter" parent="." node_paths=PackedStringArray("health_component", "collider") instance=ExtResource("13_r5egy")]
 health_component = NodePath("../HealthComponent")
 collider = NodePath("../CollisionShape2D")
+upper_damage_blood = 40.0
+upper_particle_amount = 40.0
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="damaged" from="HealthComponent" to="." method="_on_health_component_damaged"]

@@ -32,7 +32,7 @@ func _input(event):
 func _process(_delta):
 	if level and !set_up_done:
 		setup()
-	else:
+	elif set_up_done:
 		var movement = Vector2(0,0)
 		if Input.is_action_pressed("MoveCamLeft"):
 			movement.x -= speed

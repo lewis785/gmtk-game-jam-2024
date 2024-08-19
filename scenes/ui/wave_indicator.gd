@@ -4,7 +4,7 @@ extends PanelContainer
 
 @onready var label: Label = $MarginContainer/Label
 
-@onready var spawner : Spawner = %Spawner:
+var spawner:
 	set(value):
 		spawner = value
 		spawner.wave_start.connect(_on_wave_start)

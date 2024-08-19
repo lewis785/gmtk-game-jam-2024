@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://cc7w0ujjramdo"]
+
+[ext_resource type="Theme" uid="uid://yub5acxtpnjx" path="res://ui_theme.tres" id="1_u6cmi"]
+[ext_resource type="PackedScene" uid="uid://bxnbmgkkoq1t0" path="res://scenes/ui/level_select_item.tscn" id="2_gs8h4"]
+[ext_resource type="Resource" uid="uid://db0gui53w35vm" path="res://data/levels/level_two.tres" id="3_640ln"]
+[ext_resource type="Resource" uid="uid://bfdbcwwpwxy6j" path="res://data/levels/level_one.tres" id="3_dughi"]
+
+[node name="LevelSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_u6cmi")
+
+[node name="LevelSelectItem" parent="." instance=ExtResource("2_gs8h4")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.3
+anchor_right = 0.3
+anchor_bottom = 0.6
+level_data = ExtResource("3_dughi")
+
+[node name="LevelSelectItem2" parent="." instance=ExtResource("2_gs8h4")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.3
+anchor_right = 0.6
+anchor_bottom = 0.6
+level_data = ExtResource("3_640ln")
+
+[node name="LevelSelectItem3" parent="." instance=ExtResource("2_gs8h4")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7
+anchor_top = 0.3
+anchor_right = 0.9
+anchor_bottom = 0.6

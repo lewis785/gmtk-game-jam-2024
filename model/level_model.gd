@@ -12,7 +12,7 @@ extends Resource
 @export var scene:PackedScene
 
 ## Level Thumbnail
-@export var img: Image
+@export var img: Texture
 
 ## Starting Gold
 @export var start_gold: int

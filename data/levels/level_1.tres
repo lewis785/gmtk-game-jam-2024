@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="LevelModel" load_steps=4 format=3 uid="uid://cwpvfeo4ffmnr"]
+
+[ext_resource type="Texture2D" uid="uid://csdynh80y1g2m" path="res://icon.svg" id="1_3w2k8"]
+[ext_resource type="PackedScene" uid="uid://bljpgl8dqf8yn" path="res://scenes/levels/maps/level1.tscn" id="2_fo7ct"]
+[ext_resource type="Script" path="res://model/level_model.gd" id="3_h53aj"]
+
+[resource]
+script = ExtResource("3_h53aj")
+name = "Tutorial"
+scene = ExtResource("2_fo7ct")
+img = ExtResource("1_3w2k8")
+start_gold = 50
+health = 200

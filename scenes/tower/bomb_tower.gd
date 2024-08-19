@@ -20,7 +20,7 @@ func _on_timer_timeout() -> void:
 			return
 
 		var new_bomb : Bomb = bomb.instantiate()
-		print("Global: ", global_position, " Spawn: ", projectile_spawn_point.global_position )
+		#print("Global: ", global_position, " Spawn: ", projectile_spawn_point.global_position )
 		new_bomb.position = projectile_spawn_point.position
 		new_bomb.target = collisions[0].global_position - projectile_spawn_point.global_position
 		new_bomb.damage = damage

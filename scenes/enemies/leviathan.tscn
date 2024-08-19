@@ -1,12 +1,19 @@
-[gd_scene load_steps=16 format=3 uid="uid://qikv6ltgsfdu"]
+[gd_scene load_steps=19 format=3 uid="uid://qikv6ltgsfdu"]
 
 [ext_resource type="Script" path="res://scenes/enemies/leviathan.gd" id="1_bthj1"]
 [ext_resource type="Texture2D" uid="uid://bgdynl2yle2x0" path="res://assets/enemies/Leviathan1.png" id="2_it5h1"]
+[ext_resource type="Shader" uid="uid://brqjaqb8uif4s" path="res://scenes/enemies/enemy_damage.tres" id="2_vuqi0"]
 [ext_resource type="Texture2D" uid="uid://cwydo6msqajxc" path="res://assets/enemies/Leviathan1Death-Sheet.png" id="3_0cyho"]
 [ext_resource type="PackedScene" uid="uid://bekel8al0ejto" path="res://scenes/components/health_component.tscn" id="4_jc2q7"]
-[ext_resource type="PackedScene" path="res://scenes/components/hitbox.tscn" id="5_sjkm5"]
+[ext_resource type="PackedScene" uid="uid://b1qedipcdvfcc" path="res://scenes/components/hitbox.tscn" id="5_sjkm5"]
 [ext_resource type="AudioStream" uid="uid://c3tumviadpv61" path="res://assets/sounds/enemies/leviathans/LeviathanDamage2.mp3" id="6_tpq2s"]
 [ext_resource type="AudioStream" uid="uid://c5cinnc8lhoym" path="res://assets/sounds/enemies/leviathans/LeviathanDeath.mp3" id="7_4dulo"]
+[ext_resource type="PackedScene" uid="uid://0feb7qr0ey2" path="res://scenes/enemies/on_hit_flash.tscn" id="9_w4n2p"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_66pd0"]
+resource_local_to_scene = true
+shader = ExtResource("2_vuqi0")
+shader_parameter/Hit = false
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4ft8w"]
 atlas = ExtResource("3_0cyho")
@@ -78,6 +85,7 @@ speed = 10
 damage = 200
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_66pd0")
 sprite_frames = SubResource("SpriteFrames_bv24m")
 animation = &"die"
 autoplay = "idle"
@@ -115,8 +123,12 @@ stream = ExtResource("7_4dulo")
 max_distance = 500.0
 bus = &"Fx"
 
+[node name="OnHitFlash" parent="." node_paths=PackedStringArray("animated_sprite") instance=ExtResource("9_w4n2p")]
+animated_sprite = NodePath("../AnimatedSprite2D")
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="damaged" from="HealthComponent" to="." method="_on_health_component_damaged"]
+[connection signal="damaged" from="HealthComponent" to="OnHitFlash" method="_on_health_component_damaged"]
 [connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

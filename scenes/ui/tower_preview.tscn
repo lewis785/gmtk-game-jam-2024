@@ -1,13 +1,13 @@
 [gd_scene load_steps=12 format=3 uid="uid://ctghttdswbn7c"]
 
-[ext_resource type="Texture2D" uid="uid://d1ojwqf8fr03w" path="res://assets/sprites/preview-box.png" id="1_e0uxn"]
+[ext_resource type="Texture2D" uid="uid://d1ojwqf8fr03w" path="res://assets/ui/preview-box.png" id="1_e0uxn"]
 [ext_resource type="Script" path="res://scenes/ui/tower_preview.gd" id="1_yfxcx"]
-[ext_resource type="Texture2D" uid="uid://dpvrvvanrieql" path="res://assets/sprites/heart.png" id="2_12yuw"]
+[ext_resource type="Texture2D" uid="uid://dpvrvvanrieql" path="res://assets/ui/heart.png" id="2_12yuw"]
 [ext_resource type="Resource" uid="uid://6y2rwctvjk3" path="res://data/towers/base_tower.tres" id="2_tfyex"]
-[ext_resource type="Texture2D" uid="uid://bnf7h3yc2xunu" path="res://assets/sprites/attack-icon.png" id="3_3mimi"]
-[ext_resource type="Texture2D" uid="uid://cjsd0oimewuss" path="res://assets/sprites/coins.png" id="4_8gsav"]
-[ext_resource type="Texture2D" uid="uid://b51aqviaaaja6" path="res://assets/sprites/attack-speed-icon.png" id="4_34c0e"]
-[ext_resource type="Texture2D" uid="uid://biaog2rokqej" path="res://assets/sprites/preview-text-box.png" id="4_gv0db"]
+[ext_resource type="Texture2D" uid="uid://bnf7h3yc2xunu" path="res://assets/ui/attack-icon.png" id="3_3mimi"]
+[ext_resource type="Texture2D" uid="uid://cjsd0oimewuss" path="res://assets/ui/coins.png" id="4_8gsav"]
+[ext_resource type="Texture2D" uid="uid://b51aqviaaaja6" path="res://assets/ui/attack-speed-icon.png" id="4_34c0e"]
+[ext_resource type="Texture2D" uid="uid://biaog2rokqej" path="res://assets/ui/preview-text-box.png" id="4_gv0db"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3uypv"]
 texture = ExtResource("1_e0uxn")

@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" path="res://scenes/components/hitbox.tscn" id="4_v44a4"]
 [ext_resource type="PackedScene" path="res://scenes/components/health_bar.tscn" id="5_00140"]
 [ext_resource type="AudioStream" uid="uid://cgg4b6v4tu0cr" path="res://assets/sounds/towers/TowerBombAttack3.mp3" id="6_r8yxe"]
-[ext_resource type="PackedScene" path="res://scenes/enemies/on_hit_flash.tscn" id="7_blekg"]
+[ext_resource type="PackedScene" uid="uid://bkse0eqj68f5n" path="res://scenes/enemies/on_hit_flash.tscn" id="7_blekg"]
 [ext_resource type="Shader" uid="uid://cuiqrvshpwut5" path="res://scenes/enemies/enemy_damage.tres" id="8_oxmdy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4gu5b"]

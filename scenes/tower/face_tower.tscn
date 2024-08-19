@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" path="res://scenes/components/hitbox.tscn" id="4_bqs4b"]
 [ext_resource type="PackedScene" path="res://scenes/components/health_bar.tscn" id="5_tm5mo"]
 [ext_resource type="AudioStream" uid="uid://d4j4jgfgfvlfy" path="res://assets/sounds/towers/TowerBeamAttack1.mp3" id="6_o67js"]
-[ext_resource type="PackedScene" path="res://scenes/enemies/on_hit_flash.tscn" id="7_shxaa"]
+[ext_resource type="PackedScene" uid="uid://bkse0eqj68f5n" path="res://scenes/enemies/on_hit_flash.tscn" id="7_shxaa"]
 [ext_resource type="Shader" uid="uid://cuiqrvshpwut5" path="res://scenes/enemies/enemy_damage.tres" id="8_y8wpy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ja7fu"]
@@ -82,6 +82,7 @@ size = Vector2(136, 61)
 resource_local_to_scene = true
 shader = ExtResource("8_y8wpy")
 shader_parameter/Hit = false
+shader_parameter/FlashBrightness = 0.2
 
 [node name="FaceTower" type="RigidBody2D"]
 collision_layer = 4

@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://0feb7qr0ey2"]
+[gd_scene load_steps=4 format=3 uid="uid://bkse0eqj68f5n"]
 
-[ext_resource type="Shader" uid="uid://brqjaqb8uif4s" path="res://scenes/enemies/enemy_damage.tres" id="1_p23h6"]
+[ext_resource type="Shader" uid="uid://cuiqrvshpwut5" path="res://scenes/enemies/enemy_damage.tres" id="1_p23h6"]
 [ext_resource type="Script" path="res://scenes/enemies/on_hit_flash.gd" id="1_ycuv4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ghmge"]

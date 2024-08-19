@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://bvognctng5o8f"]
 
-[ext_resource type="Script" path="res://scenes/tower/bullet.gd" id="1_2cdcq"]
+[ext_resource type="Script" path="res://scenes/projectiles/bullet.gd" id="1_2cdcq"]
 [ext_resource type="Texture2D" uid="uid://cfebomeefpcev" path="res://assets/images/projectiles/arrow-Sheet.png" id="2_28mka"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nbnmq"]

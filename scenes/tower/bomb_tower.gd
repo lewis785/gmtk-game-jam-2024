@@ -1,6 +1,6 @@
 extends BaseTower
 
-const bomb = preload("res://scenes/tower/bomb.tscn")
+var bomb = preload("res://scenes/projectiles/bomb.tscn")
 
 @export var test_target : Sprite2D
 @onready var attack_range = $AttackRange

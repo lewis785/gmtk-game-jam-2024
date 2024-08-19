@@ -1,6 +1,7 @@
 extends BaseTower
 
-var beam = preload("res://scenes/tower/beam.tscn")
+var beam = preload("res://scenes/projectiles/beam.tscn")
+
 @export var test_target : Sprite2D
 @export var number_of_simultanious_shots = 4
 

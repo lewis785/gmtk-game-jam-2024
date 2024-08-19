@@ -1,8 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://2ukxlub3tl1r"]
+[gd_scene load_steps=8 format=3 uid="uid://cllf4mv615no2"]
 
 [ext_resource type="Script" path="res://scenes/tower/tower_ghost.gd" id="1_5eaf5"]
 [ext_resource type="Shader" uid="uid://sgr6eh0505ts" path="res://scenes/tower/placement_ghost.tres" id="2_047gp"]
-[ext_resource type="Texture2D" uid="uid://b7e07csij026e" path="res://assets/tower/bomb-tower-sheet.png" id="3_1y0eb"]
+[ext_resource type="Texture2D" uid="uid://b7e07csij026e" path="res://assets/images/tower/bomb-tower-sheet.png" id="3_1y0eb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qmfw2"]
 size = Vector2(105, 38)

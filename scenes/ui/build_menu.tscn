@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bc3hgv7irkqw1"]
+
+[node name="BuildMenu" type="Container"]
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+toggle_mode = true
+text = "Build"

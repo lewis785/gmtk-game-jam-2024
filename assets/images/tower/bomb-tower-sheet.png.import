@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b7e07csij026e"
-path="res://.godot/imported/bomb-tower-sheet.png-92829b63289a3284ad04562ebdca72f5.ctex"
+path="res://.godot/imported/bomb-tower-sheet.png-6604a08603be12993de352664a278a8b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/tower/bomb-tower/bomb-tower-sheet.png"
-dest_files=["res://.godot/imported/bomb-tower-sheet.png-92829b63289a3284ad04562ebdca72f5.ctex"]
+source_file="res://assets/images/tower/bomb-tower-sheet.png"
+dest_files=["res://.godot/imported/bomb-tower-sheet.png-6604a08603be12993de352664a278a8b.ctex"]
 
 [params]
 

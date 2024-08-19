@@ -13,6 +13,8 @@ var flash_delay_timer : float = 0.0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	material.set_shader_parameter("FlashBrightness", flash_brightness)
+	if animated_sprite.material:
+		push_warning("Sprite already has a material, so flash animation material will not be added")
 	animated_sprite.material = material
 	health_component.damaged.connect(_on_health_component_damaged)
 

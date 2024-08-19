@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dcs4uq757auua"]
+[gd_scene load_steps=12 format=3 uid="uid://dcs4uq757auua"]
 
 [ext_resource type="Script" path="res://scenes/ui/hud.gd" id="1_ctr55"]
 [ext_resource type="Resource" uid="uid://6y2rwctvjk3" path="res://data/towers/base_tower.tres" id="2_3nqk0"]
@@ -9,6 +9,7 @@
 [ext_resource type="Resource" uid="uid://pen0qetm74fm" path="res://data/towers/the_face.tres" id="5_vijuq"]
 [ext_resource type="PackedScene" uid="uid://brdhhffb4o5v0" path="res://scenes/menus/pause_menu.tscn" id="8_c5q0g"]
 [ext_resource type="PackedScene" uid="uid://dwqmshnau2qnv" path="res://scenes/menus/game_over_menu.tscn" id="9_1vmeh"]
+[ext_resource type="Theme" path="res://ui_theme.tres" id="10_63rqm"]
 [ext_resource type="Script" path="res://scenes/ui/wave_indicator.gd" id="10_s2uv0"]
 
 [node name="Hud" type="CanvasLayer"]
@@ -101,6 +102,7 @@ offset_left = -20.0
 offset_right = 20.0
 offset_bottom = 40.0
 grow_horizontal = 2
+theme = ExtResource("10_63rqm")
 script = ExtResource("10_s2uv0")
 
 [node name="MarginContainer" type="MarginContainer" parent="WaveIndicator"]
@@ -110,4 +112,5 @@ theme_override_constants/margin_right = 20
 
 [node name="Label" type="Label" parent="WaveIndicator/MarginContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 48
 text = "Wave 1"

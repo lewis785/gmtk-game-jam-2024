@@ -5,8 +5,19 @@ class_name Level
 @onready var target : Target = $Target
 @onready var base_tile_map_layer : TileMapLayer = $BaseTileMapLayer
 
+@onready var money_coordinator : MoneyCoordinator = $"../MoneyCoordinator"
+@onready var camera : Camera = $"../Camera"
+@onready var hud = $"../Hud"
+
 @export var level_size : Vector2 = Vector2()
 
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	camera.level = self
+	hud.level = self
+	
+	#money_coordinator.gold = 
+	
 func _on_area_exited(area: Area2D) -> void:
 	area.queue_free()
 	

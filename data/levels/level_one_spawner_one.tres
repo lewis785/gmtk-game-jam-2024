@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SpawnModel" load_steps=4 format=3 uid="uid://dt0wf2xjr1nti"]
+
+[ext_resource type="Script" path="res://model/spawner_model.gd" id="1_dtos4"]
+[ext_resource type="PackedScene" uid="uid://mowgq532ltew" path="res://scenes/enemies/rat.tscn" id="2_ya7ut"]
+[ext_resource type="PackedScene" uid="uid://qikv6ltgsfdu" path="res://scenes/enemies/leviathan.tscn" id="3_17p6x"]
+
+[resource]
+script = ExtResource("1_dtos4")
+wave = Array[PackedScene]([ExtResource("2_ya7ut"), ExtResource("2_ya7ut"), ExtResource("2_ya7ut"), ExtResource("2_ya7ut"), ExtResource("3_17p6x"), ExtResource("2_ya7ut"), ExtResource("2_ya7ut"), ExtResource("2_ya7ut"), ExtResource("2_ya7ut"), ExtResource("3_17p6x"), ExtResource("2_ya7ut"), ExtResource("2_ya7ut"), ExtResource("2_ya7ut"), ExtResource("2_ya7ut"), ExtResource("3_17p6x")])
+wave_delay = 10.0
+intro_time = 5.0

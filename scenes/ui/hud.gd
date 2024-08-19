@@ -4,32 +4,39 @@ extends CanvasLayer
 
 @export var tower_types : Array[Tower]
 
-@export var level : Level
 @export var coin_manager: MoneyCoordinator
 
 @onready var health_amount: Label = $MarginContainer/Stats/Health/HealthAmount
 @onready var coin_amount: Label = $MarginContainer/Stats/Coin/CoinAmount
 @onready var tower_menu: HBoxContainer = %TowerMenu
 @onready var game_over_node: GameOverMenu = $GameOver
+@onready var camera = $"../Camera"
+@onready var zoom_label: Label = %ZoomLabel
 
 const TOWER_PREVIEW = preload("res://scenes/ui/tower_preview.tscn")
 
+var level : Level
 var _ghost: TowerGhost
 var target : Target
 
-@onready var camera: Camera = %Camera
-@onready var zoom_label: Label = %ZoomLabel
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if level:
+		setup()
+
+func _process(_delta):
+	if !target and level:
+		setup()
+
+func setup():
 	target = level.target
+	
+	target.health_component.damaged.connect(update_health_bar)
+	target.end_game.connect(game_over)
+	coin_manager.gold_changed.connect(update_coin_amount)
 	
 	update_health_bar(0.0)
 	update_coin_amount(0.0)
-	
-	target.health_component.damaged.connect(update_health_bar)
-	coin_manager.gold_changed.connect(update_coin_amount)
-	target.end_game.connect(game_over)
 
 	for tower_type in tower_types: 
 		var tower_preview : TowerPreview = TOWER_PREVIEW.instantiate()
@@ -38,7 +45,7 @@ func _ready() -> void:
 		tower_menu.add_child(tower_preview)
 
 func _unhandled_input(event: InputEvent) -> void:
-	zoom_label.text = str(camera.zoom)
+	#zoom_label.text = str(camera.zoom)
 	
 	if !is_valid_to_place(event):
 		return

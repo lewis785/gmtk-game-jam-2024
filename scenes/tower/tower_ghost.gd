@@ -4,6 +4,7 @@ class_name TowerGhost
 
 @onready var sprite_2d: AnimatedSprite2D = %Sprite2D
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
+@onready var camera = $"../Camera"
 
 @export var affordable: bool = true
 @export var tower : Tower
@@ -12,13 +13,10 @@ var map_resolution : Vector2
 
 var valid_placement: bool
 
-@onready var camera: Camera
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	position = get_global_mouse_position()
 	_check_valid_placement()
-	#if camera:
 	scale = Vector2(1, 1) / camera.zoom
 	
 func _check_valid_placement():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://mowgq532ltew"]
+[gd_scene load_steps=38 format=3 uid="uid://mowgq532ltew"]
 
 [ext_resource type="Script" path="res://scenes/enemies/rat.gd" id="1_8phfx"]
 [ext_resource type="Texture2D" uid="uid://cw8jv01icjnh1" path="res://assets/enemies/RatDeath-Sheet.png" id="1_qn8ad"]
@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://dyah5huq6ntdd" path="res://assets/sounds/enemies/rats/RatAttack2.mp3" id="9_jtm00"]
 [ext_resource type="PackedScene" uid="uid://0feb7qr0ey2" path="res://scenes/enemies/on_hit_flash.tscn" id="12_4qn13"]
 [ext_resource type="AudioStream" uid="uid://bja0p382m2606" path="res://assets/sounds/enemies/rats/RatDeath1.mp3" id="12_l8gi7"]
+[ext_resource type="PackedScene" uid="uid://bdhuu4rlab3fn" path="res://scenes/enemies/blood_spurt.tscn" id="13_r5egy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_40hcg"]
 atlas = ExtResource("1_qn8ad")
@@ -193,6 +194,7 @@ height = 46.0
 resource_local_to_scene = true
 shader = ExtResource("2_f5rqt")
 shader_parameter/Hit = false
+shader_parameter/FlashBrightness = 0.2
 
 [node name="Rat" type="CharacterBody2D" groups=["enemies"]]
 collision_layer = 3
@@ -244,6 +246,10 @@ bus = &"Fx"
 material = SubResource("ShaderMaterial_3mcwh")
 animated_sprite = NodePath("../AnimatedSprite2D")
 health_component = NodePath("../HealthComponent")
+
+[node name="BloodSpurter" parent="." node_paths=PackedStringArray("health_component", "collider") instance=ExtResource("13_r5egy")]
+health_component = NodePath("../HealthComponent")
+collider = NodePath("../CollisionShape2D")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="damaged" from="HealthComponent" to="." method="_on_health_component_damaged"]

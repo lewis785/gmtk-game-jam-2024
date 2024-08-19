@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://co2j5xvh3vswn"]
+[gd_scene load_steps=14 format=3 uid="uid://co2j5xvh3vswn"]
 
 [ext_resource type="Script" path="res://scenes/tower/bomb.gd" id="1_xd8nc"]
 [ext_resource type="Texture2D" uid="uid://5aejajb3ptvs" path="res://assets/tower/bomb.png" id="2_en8hh"]
@@ -66,26 +66,6 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="Curve" id="Curve_4dmt5"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.540076, 0.887155), -1.11732, -1.11732, 0, 0, Vector2(0.996819, 0.0833955), -1.29235, 0.0, 0, 0]
-point_count = 3
-
-[sub_resource type="CurveTexture" id="CurveTexture_pw6ni"]
-curve = SubResource("Curve_4dmt5")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_lrwjx"]
-particle_flag_disable_z = true
-emission_shape = 1
-emission_sphere_radius = 5.84
-angle_min = 1.07288e-05
-angle_max = 1.07288e-05
-radial_velocity_min = 60.0
-radial_velocity_max = 100.0
-gravity = Vector3(0, 0, 0)
-scale_max = 2.0
-color = Color(1, 0.196078, 0.235294, 1)
-alpha_curve = SubResource("CurveTexture_pw6ni")
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r8sra"]
 radius = 8.0
 height = 20.0
@@ -111,16 +91,6 @@ collision_mask = 0
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_5bipx")
 frame_progress = 0.688972
-
-[node name="GPUParticles2D" type="GPUParticles2D" parent="PathFollow2D/Area2D"]
-unique_name_in_owner = true
-rotation = -0.117122
-emitting = false
-amount = 50
-process_material = SubResource("ParticleProcessMaterial_lrwjx")
-lifetime = 0.6
-one_shot = true
-explosiveness = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/Area2D"]
 visible = false

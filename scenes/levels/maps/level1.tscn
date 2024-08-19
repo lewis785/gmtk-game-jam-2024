@@ -12,9 +12,9 @@ size = Vector2(2151, 1189)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_qgfcc"]
 resource_local_to_scene = true
-vertices = PackedVector2Array(180, 331.031, 113.32, 332.023, 116.688, 116.148, 395.07, 117.023, 395.922, 331.641, 333.133, 332.641, 180, 971.93, 329.867, 819.719, 1867.96, 971.93, 1718.32, 821.781, 1867.04, 565.508, 1716.69, 717.742, 1022.87, 565.508, 565.031, 714.742, 1013, 565.508, 716.078, 565.508, 565.961, 118.062, 714.922, 269.352, 1931.92, 116.109, 1013, 268.188, 1035.01, 539.094, 1036.08, 269.273, 1716.68, 269.273, 1931.07, 329.398, 1717.67, 330.25)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(0, 3, 4, 5), PackedInt32Array(6, 0, 5, 7), PackedInt32Array(8, 6, 7, 9), PackedInt32Array(10, 8, 9, 11), PackedInt32Array(12, 10, 11, 13), PackedInt32Array(14, 12, 13), PackedInt32Array(15, 14, 13), PackedInt32Array(15, 13, 16, 17), PackedInt32Array(17, 16, 18, 19), PackedInt32Array(20, 12, 14, 19, 21), PackedInt32Array(21, 19, 18, 22), PackedInt32Array(22, 18, 23, 24)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(97, 96.0898, 415, 97.0908, 416, 351.328, 353, 352.329, 350, 799.748, 1698, 801.75, 1697, 737.69, 545, 734.687, 546, 98.0917, 1952, 96.0898, 1951, 349.327, 1698, 350.328, 1697, 289.27, 1056, 289.27, 1055, 543.508, 1021, 617.577, 993, 545.51, 993, 288.27, 735, 289.27, 736, 545.51, 1887, 545.51, 1888, 991.927, 160, 991.927, 160, 351.328, 93, 352.329)])
+vertices = PackedVector2Array(180, 331.031, 113.32, 332.023, 116.688, 116.148, 395.07, 117.023, 395.922, 331.641, 333.133, 332.641, 180, 971.93, 329.867, 819.719, 1867.96, 971.93, 1718.32, 821.781, 1867.04, 565.508, 1716.7, 718.047, 1042.93, 565.508, 1045, 705.68, 1009, 565.508, 1009, 262.789, 1044.08, 267.211, 565.031, 714.32, 716.078, 565.508, 565.961, 118.062, 714.922, 269.742, 1931.92, 116.109, 1716.68, 269.328, 1931.07, 329.398, 1717.67, 330.25)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(0, 3, 4, 5), PackedInt32Array(6, 0, 5, 7), PackedInt32Array(8, 6, 7, 9), PackedInt32Array(10, 8, 9, 11), PackedInt32Array(12, 10, 11, 13), PackedInt32Array(12, 14, 15, 16), PackedInt32Array(12, 13, 17, 14), PackedInt32Array(18, 14, 17), PackedInt32Array(18, 17, 19, 20), PackedInt32Array(20, 19, 21, 15), PackedInt32Array(16, 15, 21, 22), PackedInt32Array(22, 21, 23, 24)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(97, 96.0898, 415, 97.0908, 416, 351.328, 353, 352.329, 350, 799.748, 1698, 801.75, 1697, 737.69, 1045, 725.679, 545, 734.687, 546, 98.0917, 1952, 96.0898, 1951, 349.327, 1698, 350.328, 1697, 289.27, 1064, 287.269, 1063, 548.513, 1061, 623.583, 975, 619.579, 989, 550.515, 989, 283.265, 735, 289.27, 736, 545.51, 1887, 545.51, 1888, 991.927, 160, 991.927, 160, 351.328, 93, 352.329)])
 agent_radius = 20.0
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_2m65j"]
@@ -49,14 +49,11 @@ spawner_resource = ExtResource("5_pw2j2")
 position = Vector2(1822, 208)
 
 [node name="NavigationRegion2DRat" type="NavigationRegion2D" parent="."]
-visible = false
-scale = Vector2(1, 0.999065)
 navigation_polygon = SubResource("NavigationPolygon_qgfcc")
 navigation_layers = 128
 
 [node name="NavigationRegion2DLevi" type="NavigationRegion2D" parent="."]
 visible = false
-scale = Vector2(1, 0.994721)
 navigation_polygon = SubResource("NavigationPolygon_2m65j")
 navigation_layers = 64
 

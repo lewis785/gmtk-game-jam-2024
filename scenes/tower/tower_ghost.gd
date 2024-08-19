@@ -38,14 +38,15 @@ func is_placement_valid():
 func is_position_on_map():
 	var rect = collision_shape_2d.shape.get_rect()
 	var pos = collision_shape_2d.global_position
-	var offset_x = (rect.size.x / 2) * ZoomManager.zoom_level
-	var offset_y = (rect.size.y / 2) * ZoomManager.zoom_level
+	var scaler = 1 / ZoomManager.zoom_level
+	var offset_x = (rect.size.x / 2) * scaler
+	var offset_y = (rect.size.y / 2) * scaler
 	
-	if pos.x - offset_x < 0 or pos.y - offset_y < 0:
+	if (pos.x - offset_x) < 0 or (pos.y - offset_y) < 0:
 		return false
 	
 	# Map grid is 31 x 18, each square is 64px 
-	if pos.x + offset_x > (map_resolution.x) or pos.y + offset_y > (map_resolution.y):
+	if (pos.x + offset_x) > map_resolution.x or (pos.y + offset_y) > map_resolution.y:
 		return false
 	
 	return true

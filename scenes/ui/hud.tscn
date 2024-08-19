@@ -88,4 +88,5 @@ grow_vertical = 0
 visible = false
 
 [node name="GameOver" parent="." instance=ExtResource("9_1vmeh")]
+unique_name_in_owner = true
 visible = false

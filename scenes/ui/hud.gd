@@ -82,7 +82,7 @@ func tower_click(tower : Tower):
 	get_parent().add_child(_ghost)
 	
 func game_over():
-	game_over_node.game_over()
+	game_over_node.game_over = true
 	
 func _input(event):
 	if event.is_action_pressed("CancelTowerPlace"):

@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://df1j7j6qtyxc8"]
 
 [ext_resource type="Shader" uid="uid://sgr6eh0505ts" path="res://scenes/tower/placement_ghost.tres" id="1_ptfh1"]
-[ext_resource type="Texture2D" uid="uid://duhd1dupd8s0r" path="res://assets/tower/arrow-tower/arrow-tower-shooting-sheet.png" id="2_6jgtp"]
+[ext_resource type="Texture2D" uid="uid://duhd1dupd8s0r" path="res://assets/images/tower/arrow-tower/arrow-tower-shooting-sheet.png" id="2_6jgtp"]
 [ext_resource type="Script" path="res://scenes/tower/tower_ghost.gd" id="3_47umy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qmfw2"]

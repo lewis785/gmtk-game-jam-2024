@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://scenes/tower/tower.gd" id="1_hmn3u"]
 [ext_resource type="Shader" uid="uid://cuiqrvshpwut5" path="res://scenes/enemies/enemy_damage.tres" id="2_c82sq"]
-[ext_resource type="Texture2D" uid="uid://duhd1dupd8s0r" path="res://assets/tower/arrow-tower/arrow-tower-shooting-sheet.png" id="2_jnobj"]
+[ext_resource type="Texture2D" uid="uid://duhd1dupd8s0r" path="res://assets/images/tower/arrow-tower/arrow-tower-shooting-sheet.png" id="2_jnobj"]
 [ext_resource type="PackedScene" uid="uid://bekel8al0ejto" path="res://scenes/components/health_component.tscn" id="3_1u6n7"]
-[ext_resource type="Texture2D" uid="uid://btjh655kufkfs" path="res://assets/tower/arrow-tower/arrow-tower.png" id="3_jhtyc"]
+[ext_resource type="Texture2D" uid="uid://btjh655kufkfs" path="res://assets/images/tower/arrow-tower/arrow-tower.png" id="3_jhtyc"]
 [ext_resource type="PackedScene" path="res://scenes/components/hitbox.tscn" id="4_vuwh2"]
 [ext_resource type="PackedScene" path="res://scenes/components/health_bar.tscn" id="5_xx66n"]
 [ext_resource type="AudioStream" uid="uid://be3a6aexd50cj" path="res://assets/sounds/towers/TowerPiperAttack2.mp3" id="6_6lh6v"]

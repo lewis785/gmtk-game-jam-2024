@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://bquh8dc2eejp3"]
+[gd_scene load_steps=6 format=3 uid="uid://bquh8dc2eejp3"]
 
 [ext_resource type="Script" path="res://scenes/game/game.gd" id="1_cai03"]
-[ext_resource type="PackedScene" uid="uid://n71g8bv1n62s" path="res://scenes/levels/maps/level1.tscn" id="2_ia27w"]
 [ext_resource type="AudioStream" uid="uid://dxinopc32af3i" path="res://assets/sounds/music/GMTK2024 Loop-01.mp3" id="5_7u4xh"]
 [ext_resource type="PackedScene" uid="uid://cc7w0ujjramdo" path="res://scenes/menus/level_select.tscn" id="7_q1vy2"]
 [ext_resource type="PackedScene" uid="uid://crgnehkhb0pqb" path="res://scenes/entities/camera.tscn" id="9_o5woo"]
@@ -10,18 +9,11 @@
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_cai03")
-level_1 = ExtResource("2_fqs8g")
 
 [node name="LevelSelect" parent="." instance=ExtResource("7_q1vy2")]
 layout_direction = 2
 offset_right = 1920.0
 offset_bottom = 1080.0
-
-[node name="MoneyCoordinator" parent="." instance=ExtResource("3_ypm6k")]
-visible = false
-gold = 100
-income = 1
-income_period = 0.1
 
 [node name="Camera" parent="." instance=ExtResource("9_o5woo")]
 position = Vector2(960, 540)
@@ -29,7 +21,6 @@ position = Vector2(960, 540)
 [node name="Hud" parent="." instance=ExtResource("10_3bvo4")]
 unique_name_in_owner = true
 visible = false
-coin_manager = NodePath("../MoneyCoordinator")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_7u4xh")

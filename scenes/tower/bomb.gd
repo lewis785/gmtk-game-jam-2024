@@ -36,5 +36,5 @@ func detonate():
 		
 	exploding = true
 	sprite_2d.play("explode")
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(1.0).timeout
 	queue_free()

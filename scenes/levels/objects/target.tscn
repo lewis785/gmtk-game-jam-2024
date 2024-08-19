@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" path="res://scenes/components/hitbox.tscn" id="4_a4bnx"]
 [ext_resource type="AudioStream" uid="uid://b8abdfk3jb5cw" path="res://assets/sounds/crystal/CrystalDamage.mp3" id="6_pap8s"]
 [ext_resource type="AudioStream" uid="uid://dsb7kxjbchmy0" path="res://assets/sounds/crystal/CrystalDeath.mp3" id="7_5p60y"]
-[ext_resource type="PackedScene" uid="uid://bkse0eqj68f5n" path="res://scenes/enemies/on_hit_flash.tscn" id="8_bu3p7"]
+[ext_resource type="PackedScene" uid="uid://bkse0eqj68f5n" path="res://scenes/components/on_hit_flash.tscn" id="8_bu3p7"]
 [ext_resource type="Shader" uid="uid://cuiqrvshpwut5" path="res://scenes/enemies/enemy_damage.tres" id="9_rbggc"]
 [ext_resource type="PackedScene" uid="uid://b1jrmfbkbqpct" path="res://scenes/entities/flickering_light.tscn" id="10_qaceh"]
 

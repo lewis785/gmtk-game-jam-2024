@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" path="res://scenes/components/hitbox.tscn" id="5_sjkm5"]
 [ext_resource type="AudioStream" uid="uid://c3tumviadpv61" path="res://assets/sounds/enemies/leviathans/LeviathanDamage2.mp3" id="6_tpq2s"]
 [ext_resource type="AudioStream" uid="uid://c5cinnc8lhoym" path="res://assets/sounds/enemies/leviathans/LeviathanDeath.mp3" id="7_4dulo"]
-[ext_resource type="PackedScene" path="res://scenes/enemies/on_hit_flash.tscn" id="9_w4n2p"]
+[ext_resource type="PackedScene" uid="uid://bkse0eqj68f5n" path="res://scenes/components/on_hit_flash.tscn" id="9_w4n2p"]
 [ext_resource type="PackedScene" path="res://scenes/components/health_bar.tscn" id="10_ivs1l"]
 [ext_resource type="PackedScene" path="res://scenes/enemies/blood_spurt.tscn" id="11_u0tu6"]
 

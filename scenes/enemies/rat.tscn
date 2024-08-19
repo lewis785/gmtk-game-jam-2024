@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bekel8al0ejto" path="res://scenes/components/health_component.tscn" id="6_1lonb"]
 [ext_resource type="PackedScene" path="res://scenes/components/hitbox.tscn" id="7_x745i"]
 [ext_resource type="AudioStream" uid="uid://dyah5huq6ntdd" path="res://assets/sounds/enemies/rats/RatAttack2.mp3" id="9_jtm00"]
-[ext_resource type="PackedScene" path="res://scenes/enemies/on_hit_flash.tscn" id="12_4qn13"]
+[ext_resource type="PackedScene" uid="uid://bkse0eqj68f5n" path="res://scenes/components/on_hit_flash.tscn" id="12_4qn13"]
 [ext_resource type="AudioStream" uid="uid://bja0p382m2606" path="res://assets/sounds/enemies/rats/RatDeath1.mp3" id="12_l8gi7"]
 [ext_resource type="PackedScene" path="res://scenes/enemies/blood_spurt.tscn" id="13_r5egy"]
 

@@ -6,6 +6,6 @@
 
 [resource]
 script = ExtResource("3_h53aj")
-name = "Tutorial"
+name = "Little Steps"
 scene = ExtResource("2_fo7ct")
 img = ExtResource("1_0kuer")

@@ -1,6 +1,7 @@
-[gd_scene load_steps=18 format=4 uid="uid://bljpgl8dqf8yn"]
+[gd_scene load_steps=19 format=4 uid="uid://bljpgl8dqf8yn"]
 
 [ext_resource type="Script" path="res://scenes/game/level.gd" id="1_rvkwc"]
+[ext_resource type="PackedScene" path="res://scenes/components/config_component.tscn" id="2_0w8my"]
 [ext_resource type="TileSet" uid="uid://8ifuu21pjlag" path="res://assets/images/level/terrain/level_tiles.tres" id="2_r4f5d"]
 [ext_resource type="Script" path="res://model/spawner_model.gd" id="4_acfiu"]
 [ext_resource type="PackedScene" uid="uid://b0r5b10b4kdxx" path="res://scenes/levels/objects/spawner.tscn" id="4_b7bgg"]
@@ -70,6 +71,8 @@ collision_layer = 0
 collision_mask = 31
 script = ExtResource("1_rvkwc")
 level_size = Vector2(32, 17)
+
+[node name="ConfigComponent" parent="." instance=ExtResource("2_0w8my")]
 
 [node name="BaseTileMapLayer" type="TileMapLayer" parent="."]
 z_index = -2

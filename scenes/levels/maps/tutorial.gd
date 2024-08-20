@@ -10,8 +10,14 @@ var tip_index = 0
 @onready var tutorial: CanvasLayer = %Tutorial
 @onready var spawner: Spawner = %Spawner
 
+@onready var config_component: ConfigComponent = $"../ConfigComponent"
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	var already_viewed = config_component.load_value("tutorial", "already_viewed", false)
+	if already_viewed:
+		hide()
+		return
 	spawner.rest_timer.paused = true
 	if tips.size() >= 1:
 		show_tip()
@@ -21,6 +27,7 @@ func _ready() -> void:
 func end_tutorial():
 	tutorial.hide()
 	spawner.rest_timer.paused = false
+	config_component.save_value("tutorial", "already_viewed", true)
 
 func _on_skip_button_pressed() -> void:
 	end_tutorial()

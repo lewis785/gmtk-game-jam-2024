@@ -263,8 +263,17 @@ animations = [{
 "duration": 0.3,
 "texture": SubResource("AtlasTexture_yubhg")
 }, {
-"duration": 1.0,
+"duration": 2.0,
 "texture": SubResource("AtlasTexture_3jhi1")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_wweqn")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_r7rvl")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_6u8h2")
 }, {
 "duration": 3.0,
 "texture": SubResource("AtlasTexture_6o0do")
@@ -296,6 +305,8 @@ position = Vector2(0, 60)
 scale = Vector2(7.5, 7.5)
 sprite_frames = SubResource("SpriteFrames_w2ikw")
 autoplay = "default"
+frame = 40
+frame_progress = 1.0
 centered = false
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

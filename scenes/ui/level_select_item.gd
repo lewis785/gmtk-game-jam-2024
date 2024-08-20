@@ -10,7 +10,7 @@ func _ready():
 		label.text = level_data.name
 		texture_rect.texture = level_data.img
 
-func _on_button_pressed():
+func _on_level_button_pressed():
 	var game: Game = $"../.."
 	if game and level_data:
 		game.change_level(level_data.scene)

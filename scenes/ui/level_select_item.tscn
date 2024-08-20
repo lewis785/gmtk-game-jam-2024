@@ -44,7 +44,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 54
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="."]
+[node name="LevelButton" type="Button" parent="."]
 clip_contents = true
 layout_mode = 1
 anchors_preset = 15
@@ -54,4 +54,4 @@ grow_horizontal = 2
 grow_vertical = 2
 flat = true
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="LevelButton" to="." method="_on_level_button_pressed"]

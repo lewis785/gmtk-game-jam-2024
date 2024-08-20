@@ -71,6 +71,8 @@ collision_layer = 0
 collision_mask = 31
 script = ExtResource("1_rvkwc")
 level_size = Vector2(32, 17)
+health = 500
+start_gold = 250
 
 [node name="ConfigComponent" parent="." instance=ExtResource("2_0w8my")]
 

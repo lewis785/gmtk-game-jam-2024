@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="LevelModel" load_steps=4 format=3 uid="uid://cwpvfeo4ffmnr"]
+[gd_resource type="Resource" script_class="LevelModel" load_steps=4 format=3 uid="uid://cykkkj2x21yi1"]
 
 [ext_resource type="Texture2D" uid="uid://c8wylbom1mdfb" path="res://assets/images/level/minimap/level-1-mini2.png" id="1_0kuer"]
 [ext_resource type="PackedScene" uid="uid://bljpgl8dqf8yn" path="res://scenes/levels/maps/level1.tscn" id="2_fo7ct"]
@@ -9,5 +9,5 @@ script = ExtResource("3_h53aj")
 name = "Tutorial"
 scene = ExtResource("2_fo7ct")
 img = ExtResource("1_0kuer")
-start_gold = 50
-health = 200
+start_gold = 250
+health = 500

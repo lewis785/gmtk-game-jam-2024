@@ -24,8 +24,8 @@ collision_layer = 0
 collision_mask = 31
 script = ExtResource("1_vb7os")
 level_size = Vector2(39, 27)
-health = 100
-start_gold = 0
+health = 500
+start_gold = 300
 
 [node name="BaseTileMapLayer" type="TileMapLayer" parent="."]
 z_index = -2

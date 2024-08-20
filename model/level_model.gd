@@ -13,9 +13,3 @@ extends Resource
 
 ## Level Thumbnail
 @export var img: Texture
-
-## Starting Gold
-@export var start_gold: int
-
-## Crystal Health
-@export var health: int

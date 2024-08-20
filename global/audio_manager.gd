@@ -9,14 +9,14 @@ signal music_toggled(new_state:bool)
 
 var music_muted: bool
 var fx_muted: bool
-var music_volume: float = 100.0
-var fx_volume: float = 100.0
+var music_volume: float = 1.0
+var fx_volume: float = 1.0
 
 func _ready() -> void:
 	music_muted = config.load_value("sound", "music_muted", false)
 	fx_muted = config.load_value("sound", "fx_muted", false)
-	set_music_volume(config.load_value("sound", "music_volume", 100.0))
-	set_fx_volume(config.load_value("sound", "fx_volume", 100.0))
+	set_music_volume(config.load_value("sound", "music_volume", 0.5))
+	set_fx_volume(config.load_value("sound", "fx_volume", 0.5))
 	
 func set_music_volume(value: float):
 	music_volume = value

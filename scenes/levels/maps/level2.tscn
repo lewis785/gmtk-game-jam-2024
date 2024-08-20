@@ -30,21 +30,21 @@ script = ExtResource("5_1ayxc")
 rat_count = 200
 leviathan_count = 0
 leviathan_head_count = 0
-reward = 100
+reward = 200
 
 [sub_resource type="Resource" id="Resource_yuj5g"]
 script = ExtResource("5_1ayxc")
 rat_count = 100
 leviathan_count = 5
 leviathan_head_count = 5
-reward = 100
+reward = 200
 
 [sub_resource type="Resource" id="Resource_x4fhv"]
 script = ExtResource("5_1ayxc")
 rat_count = 100
 leviathan_count = 0
 leviathan_head_count = 10
-reward = 150
+reward = 200
 
 [sub_resource type="Resource" id="Resource_ka86e"]
 script = ExtResource("5_1ayxc")
@@ -58,21 +58,21 @@ script = ExtResource("5_1ayxc")
 rat_count = 1
 leviathan_count = 20
 leviathan_head_count = 0
-reward = 100
+reward = 300
 
 [sub_resource type="Resource" id="Resource_twekn"]
 script = ExtResource("5_1ayxc")
 rat_count = 1
 leviathan_count = 1
 leviathan_head_count = 15
-reward = 100
+reward = 300
 
 [sub_resource type="Resource" id="Resource_vecq8"]
 script = ExtResource("5_1ayxc")
 rat_count = 200
 leviathan_count = 15
 leviathan_head_count = 15
-reward = 200
+reward = 400
 
 [sub_resource type="Resource" id="Resource_xtcao"]
 script = ExtResource("5_1ayxc")

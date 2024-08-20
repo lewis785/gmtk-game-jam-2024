@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://c1oi56wl67188"]
+[gd_scene load_steps=35 format=3 uid="uid://rx4d0ebg7xh0"]
 
 [ext_resource type="Script" path="res://scenes/enemies/leviathan_head.gd" id="1_x4ej1"]
 [ext_resource type="Texture2D" uid="uid://b1f20p120wr3s" path="res://assets/images/enemies/leviathan-head/leviathan-head-death-sheet.png" id="2_rr3if"]
@@ -171,7 +171,7 @@ radius = 256.0
 collision_layer = 2
 collision_mask = 20
 script = ExtResource("1_x4ej1")
-speed = 300
+speed = 150
 acceleration = 7.0
 damage = 5
 

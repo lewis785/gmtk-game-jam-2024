@@ -791,7 +791,6 @@ debug_color = Color(0.669779, 0.462112, 0.579049, 0.42)
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 navigation_layers = 64
 path_postprocessing = 1
-debug_enabled = true
 
 [node name="AttackTimer" type="Timer" parent="."]
 

@@ -22,7 +22,7 @@ reward = 150
 script = ExtResource("5_1ayxc")
 rat_count = 40
 leviathan_count = 2
-leviathan_head_count = 2
+leviathan_head_count = 0
 reward = 200
 
 [sub_resource type="Resource" id="Resource_f0bxp"]
@@ -43,7 +43,7 @@ reward = 200
 script = ExtResource("5_1ayxc")
 rat_count = 100
 leviathan_count = 0
-leviathan_head_count = 10
+leviathan_head_count = 5
 reward = 200
 
 [sub_resource type="Resource" id="Resource_ka86e"]
@@ -65,14 +65,14 @@ script = ExtResource("5_1ayxc")
 rat_count = 1
 leviathan_count = 1
 leviathan_head_count = 15
-reward = 300
+reward = 400
 
 [sub_resource type="Resource" id="Resource_vecq8"]
 script = ExtResource("5_1ayxc")
 rat_count = 200
 leviathan_count = 15
 leviathan_head_count = 15
-reward = 400
+reward = 500
 
 [sub_resource type="Resource" id="Resource_xtcao"]
 script = ExtResource("5_1ayxc")
@@ -105,7 +105,7 @@ collision_mask = 31
 script = ExtResource("1_rvkwc")
 level_size = Vector2(39, 24)
 health = 500
-start_gold = 250
+start_gold = 400
 
 [node name="BaseTileMapLayer" type="TileMapLayer" parent="."]
 z_index = -2

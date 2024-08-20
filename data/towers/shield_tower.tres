@@ -17,5 +17,5 @@ lower_attack_speed = 0.0
 upper_attack_speed = 0.0
 lower_damage = 0.0
 upper_damage = 0.0
-lower_max_health = 200.0
-upper_max_health = 300.0
+lower_max_health = 300.0
+upper_max_health = 500.0

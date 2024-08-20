@@ -10,81 +10,81 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fui1b"]
 size = Vector2(2622, 1825)
 
-[sub_resource type="Resource" id="Resource_dur6u"]
+[sub_resource type="Resource" id="Resource_f6i5k"]
 script = ExtResource("5_ixk1w")
-rat_count = 10
-leviathan_count = 2
+rat_count = 30
+leviathan_count = 3
 leviathan_head_count = 0
-reward = 100
+reward = 200
 
-[sub_resource type="Resource" id="Resource_aya6h"]
+[sub_resource type="Resource" id="Resource_gual6"]
 script = ExtResource("5_ixk1w")
-rat_count = 20
-leviathan_count = 2
-leviathan_head_count = 1
-reward = 100
+rat_count = 40
+leviathan_count = 5
+leviathan_head_count = 0
+reward = 250
 
-[sub_resource type="Resource" id="Resource_xsg4i"]
+[sub_resource type="Resource" id="Resource_86qdc"]
 script = ExtResource("5_ixk1w")
 rat_count = 300
 leviathan_count = 0
 leviathan_head_count = 0
-reward = 150
+reward = 200
 
-[sub_resource type="Resource" id="Resource_ujytn"]
+[sub_resource type="Resource" id="Resource_alyb1"]
 script = ExtResource("5_ixk1w")
 rat_count = 100
 leviathan_count = 5
-leviathan_head_count = 3
-reward = 150
-
-[sub_resource type="Resource" id="Resource_p800a"]
-script = ExtResource("5_ixk1w")
-rat_count = 0
-leviathan_count = 6
-leviathan_head_count = 6
-reward = 150
-
-[sub_resource type="Resource" id="Resource_54koa"]
-script = ExtResource("5_ixk1w")
-rat_count = 100
-leviathan_count = 10
-leviathan_head_count = 0
-reward = 200
-
-[sub_resource type="Resource" id="Resource_w076o"]
-script = ExtResource("5_ixk1w")
-rat_count = 100
-leviathan_count = 0
-leviathan_head_count = 10
-reward = 200
-
-[sub_resource type="Resource" id="Resource_i3d02"]
-script = ExtResource("5_ixk1w")
-rat_count = 150
-leviathan_count = 10
 leviathan_head_count = 5
 reward = 200
 
-[sub_resource type="Resource" id="Resource_0l2je"]
+[sub_resource type="Resource" id="Resource_hth5w"]
 script = ExtResource("5_ixk1w")
-rat_count = 150
-leviathan_count = 10
-leviathan_head_count = 10
-reward = 200
+rat_count = 100
+leviathan_count = 0
+leviathan_head_count = 8
+reward = 300
 
-[sub_resource type="Resource" id="Resource_b80m0"]
+[sub_resource type="Resource" id="Resource_lnrr1"]
+script = ExtResource("5_ixk1w")
+rat_count = 100
+leviathan_count = 20
+leviathan_head_count = 0
+reward = 250
+
+[sub_resource type="Resource" id="Resource_plxat"]
+script = ExtResource("5_ixk1w")
+rat_count = 100
+leviathan_count = 35
+leviathan_head_count = 5
+reward = 300
+
+[sub_resource type="Resource" id="Resource_le1xy"]
 script = ExtResource("5_ixk1w")
 rat_count = 200
-leviathan_count = 15
-leviathan_head_count = 15
+leviathan_count = 5
+leviathan_head_count = 20
+reward = 500
+
+[sub_resource type="Resource" id="Resource_0oleb"]
+script = ExtResource("5_ixk1w")
+rat_count = 0
+leviathan_count = 30
+leviathan_head_count = 20
+reward = 700
+
+[sub_resource type="Resource" id="Resource_ype4m"]
+script = ExtResource("5_ixk1w")
+rat_count = 400
+leviathan_count = 40
+leviathan_head_count = 25
 reward = 0
 
-[sub_resource type="Resource" id="Resource_8xlm2"]
+[sub_resource type="Resource" id="Resource_2llul"]
 script = ExtResource("4_h1r1q")
-waves = Array[ExtResource("5_ixk1w")]([SubResource("Resource_dur6u"), SubResource("Resource_aya6h"), SubResource("Resource_xsg4i"), SubResource("Resource_ujytn"), SubResource("Resource_p800a"), SubResource("Resource_54koa"), SubResource("Resource_w076o"), SubResource("Resource_i3d02"), SubResource("Resource_0l2je"), SubResource("Resource_b80m0")])
-wave_delay = 0.0
-intro_time = 0.0
+waves = Array[ExtResource("5_ixk1w")]([SubResource("Resource_f6i5k"), SubResource("Resource_gual6"), SubResource("Resource_86qdc"), SubResource("Resource_alyb1"), SubResource("Resource_hth5w"), SubResource("Resource_lnrr1"), SubResource("Resource_plxat"), SubResource("Resource_le1xy"), SubResource("Resource_0oleb"), SubResource("Resource_ype4m")])
+wave_delay = 10.0
+intro_time = 1.0
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_uh6n0"]
 vertices = PackedVector2Array(2387.03, 621, 2348.94, 721.672, 2286.96, 723.672, 2284.97, 147, 2385.03, 44.9766, 658.898, 1682, 364.156, 1682, 365.156, 1618, 656.094, 1391.93, 1234.95, 1452, 1297.12, 1452, 1299.87, 1682.04, 1071, 1682.95, 1133.94, 1454, 366, 1452.86, 366, 1390.06, 275, 1454.14, 107.023, 1618, 107.977, 1004.01, 275, 1170, 683, 1005.02, 850, 1170, 850, 787, 683, 619.938, 872.922, 618.953, 1043.95, 787, 1042.04, 366.969, 874.078, 468.961, 300.969, 365.023, 403.977, 471.039, 299.977, 814.148, 404.969, 914.07, 45.9609, 916.922, 147.031, 811.852, 43.0312, 109.992, 144.969, 213.031, 1296.04, 109, 1196.97, 209.969, 1299.04, 812, 1198.97, 914.961, 1491.96, 914.031, 1389, 812, 1489.97, 338.07, 1389, 238.023, 1747.01, 238.969, 1644.98, 336.93, 1748.02, 811.922, 1645.98, 916, 2130, 916, 2029, 814.078, 2130, 620.938, 2029, 723, 1938.85, 619.953, 1837.97, 723, 1837.03, 430.047, 1940.14, 530.953, 2028.72, 431.047, 2130.96, 531.938, 2130.03, 237, 2031.28, 338.953, 1939.14, 237, 1837.06, 339.938, 1838.93, 44.0078, 1937.86, 147, 2451.03, 621, 2452.96, 1171, 2388, 1171, 2351.06, 1068.84, 1071, 1454, 1135.93, 1134.98, 1236.05, 1235.03, 1936.07, 1134.01, 1839.15, 1232.97, 1938.91, 1489.02, 1836.85, 1389, 1490.14, 1490.02, 1389.97, 1389, 1389.03, 1682, 1488.86, 1580.99, 2388, 1682, 2284.96, 1582.01, 2286.96, 1069.84)
@@ -119,7 +119,7 @@ debug_color = Color(0.197607, 0.626753, 0.395583, 0.42)
 unique_name_in_owner = true
 position = Vector2(506, 1527)
 target = NodePath("../Target")
-spawner_resource = SubResource("Resource_8xlm2")
+spawner_resource = SubResource("Resource_2llul")
 
 [node name="Target" parent="." instance=ExtResource("5_8ps1n")]
 position = Vector2(1187, 1557)

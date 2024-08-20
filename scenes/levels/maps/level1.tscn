@@ -1,15 +1,57 @@
-[gd_scene load_steps=11 format=4 uid="uid://bljpgl8dqf8yn"]
+[gd_scene load_steps=18 format=4 uid="uid://bljpgl8dqf8yn"]
 
 [ext_resource type="Script" path="res://scenes/game/level.gd" id="1_rvkwc"]
 [ext_resource type="TileSet" uid="uid://8ifuu21pjlag" path="res://assets/images/level/terrain/level_tiles.tres" id="2_r4f5d"]
+[ext_resource type="Script" path="res://model/spawner_model.gd" id="4_acfiu"]
 [ext_resource type="PackedScene" uid="uid://b0r5b10b4kdxx" path="res://scenes/levels/objects/spawner.tscn" id="4_b7bgg"]
-[ext_resource type="Resource" uid="uid://d0ay0gknihgwi" path="res://data/levels/level_2_spawner_1.tres" id="5_pw2j2"]
+[ext_resource type="Script" path="res://model/wave_model.gd" id="5_qnjxd"]
 [ext_resource type="PackedScene" path="res://scenes/levels/objects/keep_of_the_grass.tscn" id="6_63o5l"]
 [ext_resource type="PackedScene" uid="uid://furvkvmh3lqt" path="res://scenes/levels/objects/target.tscn" id="7_gkrus"]
 [ext_resource type="Script" path="res://scenes/levels/maps/tutorial.gd" id="7_jrq1p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fui1b"]
 size = Vector2(2151, 1189)
+
+[sub_resource type="Resource" id="Resource_fyr01"]
+script = ExtResource("5_qnjxd")
+rat_count = 10
+leviathan_count = 0
+leviathan_head_count = 0
+reward = 200
+
+[sub_resource type="Resource" id="Resource_5i71h"]
+script = ExtResource("5_qnjxd")
+rat_count = 20
+leviathan_count = 1
+leviathan_head_count = 0
+reward = 200
+
+[sub_resource type="Resource" id="Resource_11821"]
+script = ExtResource("5_qnjxd")
+rat_count = 50
+leviathan_count = 3
+leviathan_head_count = 0
+reward = 300
+
+[sub_resource type="Resource" id="Resource_jh0bb"]
+script = ExtResource("5_qnjxd")
+rat_count = 80
+leviathan_count = 2
+leviathan_head_count = 2
+reward = 300
+
+[sub_resource type="Resource" id="Resource_xfhv7"]
+script = ExtResource("5_qnjxd")
+rat_count = 60
+leviathan_count = 5
+leviathan_head_count = 10
+reward = 500
+
+[sub_resource type="Resource" id="Resource_dsoc2"]
+script = ExtResource("4_acfiu")
+waves = Array[ExtResource("5_qnjxd")]([SubResource("Resource_fyr01"), SubResource("Resource_5i71h"), SubResource("Resource_11821"), SubResource("Resource_jh0bb"), SubResource("Resource_xfhv7")])
+wave_delay = 0.0
+intro_time = 0.0
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_qgfcc"]
 resource_local_to_scene = true
@@ -44,7 +86,7 @@ debug_color = Color(0.197607, 0.626753, 0.395583, 0.42)
 unique_name_in_owner = true
 position = Vector2(255, 212)
 target = NodePath("../Target")
-spawner_resource = ExtResource("5_pw2j2")
+spawner_resource = SubResource("Resource_dsoc2")
 
 [node name="Target" parent="." instance=ExtResource("7_gkrus")]
 position = Vector2(1822, 208)

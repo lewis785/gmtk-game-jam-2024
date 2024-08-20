@@ -667,7 +667,7 @@ motion_mode = 1
 script = ExtResource("1_bthj1")
 speed = 100
 acceleration = 7.0
-damage = 5
+damage = 25
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(4, 4)
@@ -682,7 +682,7 @@ shape = SubResource("CapsuleShape2D_60l6b")
 debug_color = Color(0.587233, 0.544561, 0.198447, 0.42)
 
 [node name="HealthComponent" parent="." instance=ExtResource("4_jc2q7")]
-max_health = 5000.0
+max_health = 2000.0
 
 [node name="Hitbox" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("5_sjkm5")]
 collision_layer = 2

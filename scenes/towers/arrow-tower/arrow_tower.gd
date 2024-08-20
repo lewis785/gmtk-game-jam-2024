@@ -2,7 +2,7 @@ extends BaseTower
 
 var bullet = preload("res://scenes/projectiles/bullet.tscn")
 @export var test_target : Sprite2D
-@export var number_of_simultanious_shots = 4
+@export var number_of_simultanious_shots = 1
 
 @onready var attack_range = $AttackRange
 @onready var audio_stream_player_2d_attack = $AudioStreamPlayer2DAttack

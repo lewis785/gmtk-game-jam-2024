@@ -1,13 +1,13 @@
-[gd_resource type="Resource" script_class="SpawnModel" load_steps=7 format=3 uid="uid://dt0wf2xjr1nti"]
+[gd_resource type="Resource" script_class="SpawnModel" load_steps=7 format=3 uid="uid://d0ay0gknihgwi"]
 
 [ext_resource type="Script" path="res://model/spawner_model.gd" id="1_dtos4"]
 [ext_resource type="Script" path="res://model/wave_model.gd" id="2_sdad5"]
 
 [sub_resource type="Resource" id="Resource_mp4tc"]
 script = ExtResource("2_sdad5")
-rat_count = 5
-leviathan_count = 0
-leviathan_head_count = 5
+rat_count = 1
+leviathan_count = 2
+leviathan_head_count = 0
 reward = 50
 
 [sub_resource type="Resource" id="Resource_qkmnj"]

@@ -81,7 +81,6 @@ func _on_health_component_died():
 		audio_stream_player_death.play()
 
 func _on_hitbox_area_entered(body: Node2D) -> void:
-	print("entered hotbox: " + str(body))
 	if !dead:
 		if body is Hitbox:
 			attack_timer.start()

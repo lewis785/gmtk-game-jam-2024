@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Tower" load_steps=5 format=3 uid="uid://rx2st6vlvewu"]
+[gd_resource type="Resource" script_class="Tower" load_steps=5 format=3 uid="uid://va74a37gvddm"]
 
 [ext_resource type="PackedScene" uid="uid://bx2m0or5fewoh" path="res://scenes/towers/shield-tower/shield_tower_ghost.tscn" id="1_673bx"]
 [ext_resource type="Texture2D" uid="uid://ogrv3a44fjjv" path="res://assets/images/tower/shield-tower.png" id="2_dwmyw"]
@@ -11,11 +11,11 @@ name = "Shield Tower"
 icon = ExtResource("2_dwmyw")
 scene = ExtResource("3_l466i")
 ghost_scene = ExtResource("1_673bx")
-price = 100
-attack_range = 50.0
-lower_attack_speed = 1.0
-upper_attack_speed = 1.0
+price = 30
+attack_range = 0.0
+lower_attack_speed = 0.0
+upper_attack_speed = 0.0
 lower_damage = 0.0
 upper_damage = 0.0
-lower_max_health = 100.0
-upper_max_health = 500.0
+lower_max_health = 200.0
+upper_max_health = 300.0

@@ -8,11 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://bwwt0xhf0yydw" path="res://assets/images/enemies/rat/rat-move-right-sheet.png" id="4_26nr4"]
 [ext_resource type="Texture2D" uid="uid://72yffd1untpk" path="res://assets/images/enemies/rat/rat-move-up-sheet.png" id="5_nq22l"]
 [ext_resource type="PackedScene" uid="uid://bekel8al0ejto" path="res://scenes/components/health_component.tscn" id="6_1lonb"]
-[ext_resource type="PackedScene" path="res://scenes/components/hitbox.tscn" id="7_x745i"]
+[ext_resource type="PackedScene" uid="uid://b1qedipcdvfcc" path="res://scenes/components/hitbox.tscn" id="7_x745i"]
 [ext_resource type="AudioStream" uid="uid://dyah5huq6ntdd" path="res://assets/sounds/enemies/rats/RatAttack2.mp3" id="9_jtm00"]
-[ext_resource type="PackedScene" uid="uid://bkse0eqj68f5n" path="res://scenes/components/on_hit_flash.tscn" id="12_4qn13"]
+[ext_resource type="PackedScene" path="res://scenes/components/on_hit_flash.tscn" id="12_4qn13"]
 [ext_resource type="AudioStream" uid="uid://bja0p382m2606" path="res://assets/sounds/enemies/rats/RatDeath1.mp3" id="12_l8gi7"]
-[ext_resource type="PackedScene" path="res://scenes/enemies/blood_spurt.tscn" id="13_r5egy"]
+[ext_resource type="PackedScene" uid="uid://bdhuu4rlab3fn" path="res://scenes/enemies/blood_spurt.tscn" id="13_r5egy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_40hcg"]
 atlas = ExtResource("1_qn8ad")
@@ -206,7 +206,7 @@ damage = 5
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_7rx85")
-animation = &"move_down"
+animation = &"move_up"
 autoplay = "move_down"
 speed_scale = 5.0
 

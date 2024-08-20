@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://bx2m0or5fewoh"]
+
+[ext_resource type="Script" path="res://scenes/towers/tower_ghost.gd" id="1_63h4d"]
+[ext_resource type="Shader" uid="uid://sgr6eh0505ts" path="res://scenes/towers/placement_ghost.tres" id="2_i60h4"]
+[ext_resource type="Texture2D" uid="uid://ogrv3a44fjjv" path="res://assets/images/tower/shield-tower.png" id="3_0k2yf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yypoh"]
+resource_local_to_scene = true
+size = Vector2(71, 78)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_755rp"]
+shader = ExtResource("2_i60h4")
+shader_parameter/IsUnaffordable = false
+shader_parameter/IsInvalidPlacement = false
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_67n06"]
+atlas = ExtResource("3_0k2yf")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2iwxu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_67n06")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="TowerGhost" type="Area2D"]
+visibility_layer = 3
+z_index = 1
+collision_layer = 0
+collision_mask = 23
+script = ExtResource("1_63h4d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, 17)
+shape = SubResource("RectangleShape2D_yypoh")
+debug_color = Color(0.868573, 0.293213, 0.508281, 0.42)
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_755rp")
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_2iwxu")

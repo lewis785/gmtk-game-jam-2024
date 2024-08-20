@@ -1,0 +1,103 @@
+[gd_scene load_steps=15 format=3 uid="uid://dr7nj7un4cwmh"]
+
+[ext_resource type="Script" path="res://scenes/towers/shield-tower/shield_tower.gd" id="1_74klt"]
+[ext_resource type="Texture2D" uid="uid://ogrv3a44fjjv" path="res://assets/images/tower/shield-tower.png" id="2_hivq6"]
+[ext_resource type="PackedScene" uid="uid://bekel8al0ejto" path="res://scenes/components/health_component.tscn" id="3_2i1g6"]
+[ext_resource type="PackedScene" path="res://scenes/components/hitbox.tscn" id="4_lv5lm"]
+[ext_resource type="PackedScene" path="res://scenes/components/health_bar.tscn" id="5_3bs51"]
+[ext_resource type="AudioStream" uid="uid://d4j4jgfgfvlfy" path="res://assets/sounds/towers/TowerBeamAttack1.mp3" id="6_4osgx"]
+[ext_resource type="PackedScene" uid="uid://bkse0eqj68f5n" path="res://scenes/components/on_hit_flash.tscn" id="7_a7lmk"]
+[ext_resource type="Shader" uid="uid://brqjaqb8uif4s" path="res://scenes/enemies/enemy_damage.tres" id="8_qt73h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_op8g7"]
+atlas = ExtResource("2_hivq6")
+region = Rect2(0, 0, 256, 329)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qmvdx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_op8g7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jpt5e"]
+resource_local_to_scene = true
+size = Vector2(71, 68)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xmrch"]
+resource_local_to_scene = true
+radius = 94.1116
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lrd8k"]
+resource_local_to_scene = true
+size = Vector2(84, 80)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xkocj"]
+resource_local_to_scene = true
+shader = ExtResource("8_qt73h")
+shader_parameter/Hit = false
+shader_parameter/FlashBrightness = 0.2
+
+[node name="ShieldTower" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_74klt")
+
+[node name="Node2D" type="Node2D" parent="."]
+scale = Vector2(0.5, 0.5)
+
+[node name="Sprite" type="AnimatedSprite2D" parent="Node2D"]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_qmvdx")
+
+[node name="TowerCollisionShape" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_jpt5e")
+debug_color = Color(0.868573, 0.293213, 0.508281, 0.42)
+
+[node name="AttackRange" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="AttackRangeCollisionShape" type="CollisionShape2D" parent="AttackRange"]
+unique_name_in_owner = true
+shape = SubResource("CircleShape2D_xmrch")
+debug_color = Color(0.494882, 0.585997, 0.3142, 0.42)
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="HealthComponent" parent="." instance=ExtResource("3_2i1g6")]
+unique_name_in_owner = true
+max_health = 100.0
+
+[node name="Hitbox" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_lv5lm")]
+health_component = NodePath("../HealthComponent")
+
+[node name="HitboxCollisionShape" type="CollisionShape2D" parent="Hitbox"]
+unique_name_in_owner = true
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_lrd8k")
+
+[node name="HealthBar" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("5_3bs51")]
+position = Vector2(-1, -92)
+health_component = NodePath("../HealthComponent")
+
+[node name="AudioStreamPlayer2DAttack" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_4osgx")
+max_distance = 500.0
+bus = &"Fx"
+
+[node name="OnHitFlash" parent="." node_paths=PackedStringArray("animated_sprite", "health_component") instance=ExtResource("7_a7lmk")]
+material = SubResource("ShaderMaterial_xkocj")
+animated_sprite = NodePath("../Node2D/Sprite")
+health_component = NodePath("../HealthComponent")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="damaged" from="HealthComponent" to="." method="_on_health_component_damaged"]
+[connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]

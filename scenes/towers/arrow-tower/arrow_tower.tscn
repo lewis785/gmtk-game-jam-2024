@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=3 uid="uid://c01peygpfgfh8"]
 
 [ext_resource type="Script" path="res://scenes/towers/arrow-tower/arrow_tower.gd" id="1_hmn3u"]
-[ext_resource type="Shader" uid="uid://cuiqrvshpwut5" path="res://scenes/enemies/enemy_damage.tres" id="2_c82sq"]
+[ext_resource type="Shader" uid="uid://brqjaqb8uif4s" path="res://scenes/enemies/enemy_damage.tres" id="2_c82sq"]
 [ext_resource type="Texture2D" uid="uid://duhd1dupd8s0r" path="res://assets/images/tower/arrow-tower/arrow-tower-shooting-sheet.png" id="2_jnobj"]
 [ext_resource type="PackedScene" uid="uid://bekel8al0ejto" path="res://scenes/components/health_component.tscn" id="3_1u6n7"]
 [ext_resource type="Texture2D" uid="uid://btjh655kufkfs" path="res://assets/images/tower/arrow-tower/arrow-tower.png" id="3_jhtyc"]
@@ -79,7 +79,7 @@ shader = ExtResource("2_c82sq")
 shader_parameter/Hit = false
 shader_parameter/FlashBrightness = 0.2
 
-[node name="Tower" type="RigidBody2D"]
+[node name="Tower" type="RigidBody2D" groups=["towers"]]
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("1_hmn3u")
@@ -113,6 +113,7 @@ unique_name_in_owner = true
 max_health = 100.0
 
 [node name="Hitbox" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_vuwh2")]
+collision_layer = 5
 health_component = NodePath("../HealthComponent")
 
 [node name="HitboxCollisionShape" type="CollisionShape2D" parent="Hitbox"]

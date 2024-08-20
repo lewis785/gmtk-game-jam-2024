@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" path="res://scenes/components/health_bar.tscn" id="5_00140"]
 [ext_resource type="AudioStream" uid="uid://cgg4b6v4tu0cr" path="res://assets/sounds/towers/TowerBombAttack3.mp3" id="6_r8yxe"]
 [ext_resource type="PackedScene" uid="uid://bkse0eqj68f5n" path="res://scenes/components/on_hit_flash.tscn" id="7_blekg"]
-[ext_resource type="Shader" uid="uid://cuiqrvshpwut5" path="res://scenes/enemies/enemy_damage.tres" id="8_oxmdy"]
+[ext_resource type="Shader" uid="uid://brqjaqb8uif4s" path="res://scenes/enemies/enemy_damage.tres" id="8_oxmdy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4gu5b"]
 atlas = ExtResource("2_7pv8w")
@@ -157,7 +157,7 @@ shader = ExtResource("8_oxmdy")
 shader_parameter/Hit = false
 shader_parameter/FlashBrightness = 0.2
 
-[node name="BombTower" type="RigidBody2D"]
+[node name="BombTower" type="RigidBody2D" groups=["towers"]]
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("1_cslg4")
@@ -196,6 +196,8 @@ max_health = 300.0
 
 [node name="Hitbox" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_v44a4")]
 position = Vector2(0, -9)
+collision_layer = 5
+collision_mask = 0
 health_component = NodePath("../HealthComponent")
 
 [node name="HitboxCollisionShape" type="CollisionShape2D" parent="Hitbox"]

@@ -21,12 +21,12 @@ func _on_timer_timeout() -> void:
 
 		var new_bomb : Bomb = bomb.instantiate()
 		#print("Global: ", global_position, " Spawn: ", projectile_spawn_point.global_position )
-		new_bomb.position = projectile_spawn_point.position
+		new_bomb.global_position = projectile_spawn_point.global_position
 		new_bomb.target = collisions[0].global_position - projectile_spawn_point.global_position
 		new_bomb.damage = damage
 		new_bomb.find_child("Area2D").scale = Vector2(tower_scale, tower_scale)
 		audio_stream_player_2d_attack.play()
-		add_child(new_bomb)
+		get_parent().add_child(new_bomb)
 	else:
 		if open:
 			open = false

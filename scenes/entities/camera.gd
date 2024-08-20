@@ -4,6 +4,7 @@ class_name Camera
 
 
 @export var zoom_factor : float = 0.1
+@export var smooth_zoom_factor : float = 1.0
 @export var zoom_duration : float = 0.2
 @export var speed: int = 1000
 
@@ -47,6 +48,11 @@ func _process(delta):
 		if (position.y < 0 and movement.y < 0) or (position.y > resolution.y and movement.y > 0):
 			movement.y = 0
 		position = position + movement
+		if Input.is_action_pressed("ZoomCamInSmooth"):
+			ZoomManager.zoom_level += smooth_zoom_factor * delta * ZoomManager.zoom_level
+		if Input.is_action_pressed("ZoomCamOutSmooth"):
+			ZoomManager.zoom_level -= smooth_zoom_factor * delta * ZoomManager.zoom_level
+		
 
 func set_camera_zoom(zoom_level : float):
 	zoom = Vector2(zoom_level, zoom_level)

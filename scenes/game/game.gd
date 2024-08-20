@@ -11,3 +11,5 @@ func change_level(level: PackedScene):
 		level_select.queue_free()
 
 	hud.visible = true
+	var music_player = $MusicPlayer
+	music_player.play()

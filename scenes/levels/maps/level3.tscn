@@ -48,10 +48,12 @@ spawner_resource = ExtResource("4_uk4un")
 position = Vector2(1187, 1557)
 
 [node name="NavigationRegion2DLevi" type="NavigationRegion2D" parent="."]
+visible = false
 navigation_polygon = SubResource("NavigationPolygon_uh6n0")
 navigation_layers = 64
 
 [node name="NavigationRegion2DRat" type="NavigationRegion2D" parent="."]
+visible = false
 navigation_polygon = SubResource("NavigationPolygon_2m65j")
 navigation_layers = 128
 

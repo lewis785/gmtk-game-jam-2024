@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="LevelModel" load_steps=4 format=3 uid="uid://bfdbcwwpwxy6j"]
 
-[ext_resource type="Texture2D" uid="uid://csdynh80y1g2m" path="res://icon.svg" id="1_dc64f"]
+[ext_resource type="Texture2D" uid="uid://dlt5qw4cku0t" path="res://assets/images/level/minimap/level-2-mini.png" id="1_5euub"]
 [ext_resource type="PackedScene" uid="uid://n71g8bv1n62s" path="res://scenes/levels/maps/level2.tscn" id="1_gbbdq"]
 [ext_resource type="Script" path="res://model/level_model.gd" id="1_t3u7j"]
 
@@ -8,6 +8,6 @@
 script = ExtResource("1_t3u7j")
 name = "Rat Race"
 scene = ExtResource("1_gbbdq")
-img = ExtResource("1_dc64f")
+img = ExtResource("1_5euub")
 start_gold = 50
 health = 200

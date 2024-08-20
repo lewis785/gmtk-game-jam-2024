@@ -4,11 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://bekel8al0ejto" path="res://scenes/components/health_component.tscn" id="2_1bcm2"]
 [ext_resource type="Texture2D" uid="uid://sp5nvc8ceu3q" path="res://assets/images/level/objects/target/crystal-idle-sheet.png" id="2_6kukr"]
 [ext_resource type="Texture2D" uid="uid://nu3y5l0ybnv0" path="res://assets/images/level/objects/target/crystal-death-sheet.png" id="3_725bw"]
-[ext_resource type="PackedScene" path="res://scenes/components/hitbox.tscn" id="4_a4bnx"]
+[ext_resource type="PackedScene" uid="uid://b1qedipcdvfcc" path="res://scenes/components/hitbox.tscn" id="4_a4bnx"]
 [ext_resource type="AudioStream" uid="uid://b8abdfk3jb5cw" path="res://assets/sounds/crystal/CrystalDamage.mp3" id="6_pap8s"]
 [ext_resource type="AudioStream" uid="uid://dsb7kxjbchmy0" path="res://assets/sounds/crystal/CrystalDeath.mp3" id="7_5p60y"]
-[ext_resource type="PackedScene" uid="uid://bkse0eqj68f5n" path="res://scenes/components/on_hit_flash.tscn" id="8_bu3p7"]
-[ext_resource type="Shader" uid="uid://cuiqrvshpwut5" path="res://scenes/enemies/enemy_damage.tres" id="9_rbggc"]
+[ext_resource type="PackedScene" path="res://scenes/components/on_hit_flash.tscn" id="8_bu3p7"]
+[ext_resource type="Shader" uid="uid://brqjaqb8uif4s" path="res://scenes/enemies/enemy_damage.tres" id="9_rbggc"]
 [ext_resource type="PackedScene" uid="uid://b1jrmfbkbqpct" path="res://scenes/entities/flickering_light.tscn" id="10_qaceh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jw6al"]
@@ -225,6 +225,8 @@ max_health = 200.0
 
 [node name="Hitbox" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_a4bnx")]
 visible = false
+collision_layer = 5
+collision_mask = 0
 health_component = NodePath("../HealthComponent")
 
 [node name="HitboxCollision" type="CollisionShape2D" parent="Hitbox"]

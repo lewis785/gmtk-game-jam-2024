@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/enemies/leviathan.gd" id="1_bthj1"]
 [ext_resource type="Texture2D" uid="uid://bgdynl2yle2x0" path="res://assets/images/enemies/leviathan/leviathan.png" id="2_it5h1"]
-[ext_resource type="Shader" uid="uid://cuiqrvshpwut5" path="res://scenes/enemies/enemy_damage.tres" id="2_vuqi0"]
+[ext_resource type="Shader" uid="uid://brqjaqb8uif4s" path="res://scenes/enemies/enemy_damage.tres" id="2_vuqi0"]
 [ext_resource type="Texture2D" uid="uid://cwydo6msqajxc" path="res://assets/images/enemies/leviathan/leviathan-death-sheet.png" id="3_0cyho"]
 [ext_resource type="PackedScene" uid="uid://bekel8al0ejto" path="res://scenes/components/health_component.tscn" id="4_jc2q7"]
 [ext_resource type="PackedScene" path="res://scenes/components/hitbox.tscn" id="5_sjkm5"]
@@ -84,12 +84,13 @@ collision_layer = 3
 collision_mask = 20
 motion_mode = 1
 script = ExtResource("1_bthj1")
-speed = 10
-damage = 200
+speed = 100
+acceleration = 7.0
+damage = 5
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_bv24m")
-animation = &"die"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

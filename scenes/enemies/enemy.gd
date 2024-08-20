@@ -84,12 +84,16 @@ func _on_hitbox_area_entered(body: Node2D) -> void:
 			_deal_attack_damage(body)
 
 func _on_attack_timer_timeout() -> void:
-	if !dead:
-		var bodies = hitbox.get_overlapping_areas()
-		for body in bodies:
-			if body is Hitbox:
-				_deal_attack_damage(body)
-				return
+	if dead:
+		attack_timer.stop()
+		return
+
+	var bodies = hitbox.get_overlapping_areas()
+	for body in bodies:
+		if body is Hitbox:
+			_deal_attack_damage(body)
+			return
+	
 	attack_timer.stop()
 
 func _deal_attack_damage(body: Hitbox):

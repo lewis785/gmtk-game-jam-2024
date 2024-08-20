@@ -14,7 +14,7 @@ Play a variety of levels of wave defence. Use size to modify your towers and def
 ## Technologies
 
 - Game Engine - [Godot](https://godotengine.org/)
-- Pixal Art - [Aseprite](https://www.aseprite.org/)
+- Pixel Art - [Aseprite](https://www.aseprite.org/)
 
 
 ## Contributors

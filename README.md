@@ -25,6 +25,6 @@ Play a variety of levels of wave defence. Use size to modify your towers and def
 
 ### Duncan Cameron (_Programming_) - [GitHub](https://github.com/dc950)
 
-### Gulins (_Programming_) - [GitHub](https://github.com/gulins)
+### Gulen (_Programming_) - [GitHub](https://github.com/gulins)
 
 ### Sean Robertson (_Artwork_, _Music_)

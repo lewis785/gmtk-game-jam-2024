@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://7vrwvfpixvs0"]
 
 [ext_resource type="Script" path="res://scenes/menus/start_menu.gd" id="1_kc3cv"]
-[ext_resource type="Theme" path="res://ui_theme.tres" id="2_ja1jl"]
+[ext_resource type="Theme" uid="uid://yub5acxtpnjx" path="res://ui_theme.tres" id="2_ja1jl"]
 
 [node name="StartMenu" type="ColorRect"]
 anchors_preset = 15
@@ -34,11 +34,6 @@ theme = ExtResource("2_ja1jl")
 theme_override_font_sizes/font_size = 64
 text = "Start Game"
 
-[node name="HowToButton" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 64
-text = "How To Play"
-
 [node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 64
@@ -46,5 +41,4 @@ text = "Quit
 "
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/HowToButton" to="." method="_on_how_to_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

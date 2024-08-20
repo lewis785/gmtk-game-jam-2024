@@ -1,9 +1,9 @@
-[gd_scene load_steps=9 format=4 uid="uid://bd7r2bhglk1ou"]
+[gd_scene load_steps=9 format=4 uid="uid://cltmssxvrs4ih"]
 
 [ext_resource type="Script" path="res://scenes/game/level.gd" id="1_vb7os"]
 [ext_resource type="TileSet" uid="uid://8ifuu21pjlag" path="res://assets/images/level/terrain/level_tiles.tres" id="2_7744k"]
 [ext_resource type="PackedScene" uid="uid://b0r5b10b4kdxx" path="res://scenes/levels/objects/spawner.tscn" id="3_tle6s"]
-[ext_resource type="Resource" uid="uid://d0ay0gknihgwi" path="res://data/levels/level_2_spawner_1.tres" id="4_uk4un"]
+[ext_resource type="Resource" uid="uid://dt0wf2xjr1nti" path="res://data/levels/level_2_spawner_1.tres" id="4_uk4un"]
 [ext_resource type="PackedScene" uid="uid://furvkvmh3lqt" path="res://scenes/levels/objects/target.tscn" id="5_8ps1n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fui1b"]

@@ -741,8 +741,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_60l6b"]
-radius = 59.0
-height = 210.0
+radius = 54.0
+height = 108.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1x5va"]
 radius = 75.0
@@ -766,14 +766,11 @@ damage = 25
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_bv24m")
-animation = &"die"
+animation = &"idle"
 autoplay = "move_down"
-frame = 18
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 40)
-rotation = 1.5708
 shape = SubResource("CapsuleShape2D_60l6b")
 debug_color = Color(0.587233, 0.544561, 0.198447, 0.42)
 
@@ -794,6 +791,7 @@ debug_color = Color(0.669779, 0.462112, 0.579049, 0.42)
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 navigation_layers = 64
 path_postprocessing = 1
+debug_enabled = true
 
 [node name="AttackTimer" type="Timer" parent="."]
 

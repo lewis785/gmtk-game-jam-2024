@@ -1,13 +1,90 @@
-[gd_scene load_steps=9 format=4 uid="uid://cltmssxvrs4ih"]
+[gd_scene load_steps=21 format=4 uid="uid://bd7r2bhglk1ou"]
 
 [ext_resource type="Script" path="res://scenes/game/level.gd" id="1_vb7os"]
 [ext_resource type="TileSet" uid="uid://8ifuu21pjlag" path="res://assets/images/level/terrain/level_tiles.tres" id="2_7744k"]
 [ext_resource type="PackedScene" uid="uid://b0r5b10b4kdxx" path="res://scenes/levels/objects/spawner.tscn" id="3_tle6s"]
-[ext_resource type="Resource" uid="uid://dt0wf2xjr1nti" path="res://data/levels/level_2_spawner_1.tres" id="4_uk4un"]
+[ext_resource type="Script" path="res://model/spawner_model.gd" id="4_h1r1q"]
 [ext_resource type="PackedScene" uid="uid://furvkvmh3lqt" path="res://scenes/levels/objects/target.tscn" id="5_8ps1n"]
+[ext_resource type="Script" path="res://model/wave_model.gd" id="5_ixk1w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fui1b"]
 size = Vector2(2622, 1825)
+
+[sub_resource type="Resource" id="Resource_dur6u"]
+script = ExtResource("5_ixk1w")
+rat_count = 10
+leviathan_count = 2
+leviathan_head_count = 0
+reward = 100
+
+[sub_resource type="Resource" id="Resource_aya6h"]
+script = ExtResource("5_ixk1w")
+rat_count = 20
+leviathan_count = 2
+leviathan_head_count = 1
+reward = 100
+
+[sub_resource type="Resource" id="Resource_xsg4i"]
+script = ExtResource("5_ixk1w")
+rat_count = 300
+leviathan_count = 0
+leviathan_head_count = 0
+reward = 150
+
+[sub_resource type="Resource" id="Resource_ujytn"]
+script = ExtResource("5_ixk1w")
+rat_count = 100
+leviathan_count = 5
+leviathan_head_count = 3
+reward = 150
+
+[sub_resource type="Resource" id="Resource_p800a"]
+script = ExtResource("5_ixk1w")
+rat_count = 0
+leviathan_count = 6
+leviathan_head_count = 6
+reward = 150
+
+[sub_resource type="Resource" id="Resource_54koa"]
+script = ExtResource("5_ixk1w")
+rat_count = 100
+leviathan_count = 10
+leviathan_head_count = 0
+reward = 200
+
+[sub_resource type="Resource" id="Resource_w076o"]
+script = ExtResource("5_ixk1w")
+rat_count = 100
+leviathan_count = 0
+leviathan_head_count = 10
+reward = 200
+
+[sub_resource type="Resource" id="Resource_i3d02"]
+script = ExtResource("5_ixk1w")
+rat_count = 150
+leviathan_count = 10
+leviathan_head_count = 5
+reward = 200
+
+[sub_resource type="Resource" id="Resource_0l2je"]
+script = ExtResource("5_ixk1w")
+rat_count = 150
+leviathan_count = 10
+leviathan_head_count = 10
+reward = 200
+
+[sub_resource type="Resource" id="Resource_b80m0"]
+script = ExtResource("5_ixk1w")
+rat_count = 200
+leviathan_count = 15
+leviathan_head_count = 15
+reward = 0
+
+[sub_resource type="Resource" id="Resource_8xlm2"]
+script = ExtResource("4_h1r1q")
+waves = Array[ExtResource("5_ixk1w")]([SubResource("Resource_dur6u"), SubResource("Resource_aya6h"), SubResource("Resource_xsg4i"), SubResource("Resource_ujytn"), SubResource("Resource_p800a"), SubResource("Resource_54koa"), SubResource("Resource_w076o"), SubResource("Resource_i3d02"), SubResource("Resource_0l2je"), SubResource("Resource_b80m0")])
+wave_delay = 0.0
+intro_time = 0.0
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_uh6n0"]
 vertices = PackedVector2Array(2387.03, 621, 2348.94, 721.672, 2286.96, 723.672, 2284.97, 147, 2385.03, 44.9766, 658.898, 1682, 364.156, 1682, 365.156, 1618, 656.094, 1391.93, 1234.95, 1452, 1297.12, 1452, 1299.87, 1682.04, 1071, 1682.95, 1133.94, 1454, 366, 1452.86, 366, 1390.06, 275, 1454.14, 107.023, 1618, 107.977, 1004.01, 275, 1170, 683, 1005.02, 850, 1170, 850, 787, 683, 619.938, 872.922, 618.953, 1043.95, 787, 1042.04, 366.969, 874.078, 468.961, 300.969, 365.023, 403.977, 471.039, 299.977, 814.148, 404.969, 914.07, 45.9609, 916.922, 147.031, 811.852, 43.0312, 109.992, 144.969, 213.031, 1296.04, 109, 1196.97, 209.969, 1299.04, 812, 1198.97, 914.961, 1491.96, 914.031, 1389, 812, 1489.97, 338.07, 1389, 238.023, 1747.01, 238.969, 1644.98, 336.93, 1748.02, 811.922, 1645.98, 916, 2130, 916, 2029, 814.078, 2130, 620.938, 2029, 723, 1938.85, 619.953, 1837.97, 723, 1837.03, 430.047, 1940.14, 530.953, 2028.72, 431.047, 2130.96, 531.938, 2130.03, 237, 2031.28, 338.953, 1939.14, 237, 1837.06, 339.938, 1838.93, 44.0078, 1937.86, 147, 2451.03, 621, 2452.96, 1171, 2388, 1171, 2351.06, 1068.84, 1071, 1454, 1135.93, 1134.98, 1236.05, 1235.03, 1936.07, 1134.01, 1839.15, 1232.97, 1938.91, 1489.02, 1836.85, 1389, 1490.14, 1490.02, 1389.97, 1389, 1389.03, 1682, 1488.86, 1580.99, 2388, 1682, 2284.96, 1582.01, 2286.96, 1069.84)
@@ -42,7 +119,7 @@ debug_color = Color(0.197607, 0.626753, 0.395583, 0.42)
 unique_name_in_owner = true
 position = Vector2(506, 1527)
 target = NodePath("../Target")
-spawner_resource = ExtResource("4_uk4un")
+spawner_resource = SubResource("Resource_8xlm2")
 
 [node name="Target" parent="." instance=ExtResource("5_8ps1n")]
 position = Vector2(1187, 1557)

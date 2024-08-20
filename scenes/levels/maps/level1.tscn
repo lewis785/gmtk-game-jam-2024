@@ -45,7 +45,7 @@ reward = 300
 script = ExtResource("5_qnjxd")
 rat_count = 60
 leviathan_count = 5
-leviathan_head_count = 10
+leviathan_head_count = 5
 reward = 500
 
 [sub_resource type="Resource" id="Resource_dsoc2"]

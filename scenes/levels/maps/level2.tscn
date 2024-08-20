@@ -1,14 +1,91 @@
-[gd_scene load_steps=10 format=4 uid="uid://n71g8bv1n62s"]
+[gd_scene load_steps=22 format=4 uid="uid://n71g8bv1n62s"]
 
 [ext_resource type="Script" path="res://scenes/game/level.gd" id="1_rvkwc"]
 [ext_resource type="TileSet" uid="uid://8ifuu21pjlag" path="res://assets/images/level/terrain/level_tiles.tres" id="2_r4f5d"]
 [ext_resource type="PackedScene" uid="uid://b0r5b10b4kdxx" path="res://scenes/levels/objects/spawner.tscn" id="4_b7bgg"]
-[ext_resource type="Resource" uid="uid://dt0wf2xjr1nti" path="res://data/levels/level_2_spawner_1.tres" id="5_pw2j2"]
+[ext_resource type="Script" path="res://model/spawner_model.gd" id="4_nwool"]
+[ext_resource type="Script" path="res://model/wave_model.gd" id="5_1ayxc"]
 [ext_resource type="PackedScene" path="res://scenes/levels/objects/keep_of_the_grass.tscn" id="6_63o5l"]
 [ext_resource type="PackedScene" uid="uid://furvkvmh3lqt" path="res://scenes/levels/objects/target.tscn" id="7_gkrus"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fui1b"]
 size = Vector2(2622, 1645)
+
+[sub_resource type="Resource" id="Resource_mp4tc"]
+script = ExtResource("5_1ayxc")
+rat_count = 30
+leviathan_count = 2
+leviathan_head_count = 0
+reward = 150
+
+[sub_resource type="Resource" id="Resource_qkmnj"]
+script = ExtResource("5_1ayxc")
+rat_count = 40
+leviathan_count = 2
+leviathan_head_count = 2
+reward = 200
+
+[sub_resource type="Resource" id="Resource_f0bxp"]
+script = ExtResource("5_1ayxc")
+rat_count = 200
+leviathan_count = 0
+leviathan_head_count = 0
+reward = 100
+
+[sub_resource type="Resource" id="Resource_yuj5g"]
+script = ExtResource("5_1ayxc")
+rat_count = 100
+leviathan_count = 5
+leviathan_head_count = 5
+reward = 100
+
+[sub_resource type="Resource" id="Resource_x4fhv"]
+script = ExtResource("5_1ayxc")
+rat_count = 100
+leviathan_count = 0
+leviathan_head_count = 10
+reward = 150
+
+[sub_resource type="Resource" id="Resource_ka86e"]
+script = ExtResource("5_1ayxc")
+rat_count = 100
+leviathan_count = 15
+leviathan_head_count = 0
+reward = 150
+
+[sub_resource type="Resource" id="Resource_ak5tp"]
+script = ExtResource("5_1ayxc")
+rat_count = 1
+leviathan_count = 20
+leviathan_head_count = 0
+reward = 100
+
+[sub_resource type="Resource" id="Resource_twekn"]
+script = ExtResource("5_1ayxc")
+rat_count = 1
+leviathan_count = 1
+leviathan_head_count = 15
+reward = 100
+
+[sub_resource type="Resource" id="Resource_vecq8"]
+script = ExtResource("5_1ayxc")
+rat_count = 200
+leviathan_count = 15
+leviathan_head_count = 15
+reward = 200
+
+[sub_resource type="Resource" id="Resource_xtcao"]
+script = ExtResource("5_1ayxc")
+rat_count = 200
+leviathan_count = 20
+leviathan_head_count = 20
+reward = 0
+
+[sub_resource type="Resource" id="Resource_g5up4"]
+script = ExtResource("4_nwool")
+waves = Array[ExtResource("5_1ayxc")]([SubResource("Resource_mp4tc"), SubResource("Resource_qkmnj"), SubResource("Resource_f0bxp"), SubResource("Resource_yuj5g"), SubResource("Resource_x4fhv"), SubResource("Resource_ka86e"), SubResource("Resource_ak5tp"), SubResource("Resource_twekn"), SubResource("Resource_vecq8"), SubResource("Resource_xtcao")])
+wave_delay = 10.0
+intro_time = 1.0
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_qgfcc"]
 resource_local_to_scene = true
@@ -45,7 +122,7 @@ debug_color = Color(0.197607, 0.626753, 0.395583, 0.42)
 unique_name_in_owner = true
 position = Vector2(154, 141)
 target = NodePath("../Target")
-spawner_resource = ExtResource("5_pw2j2")
+spawner_resource = SubResource("Resource_g5up4")
 
 [node name="Target" parent="." instance=ExtResource("7_gkrus")]
 position = Vector2(2278, 125)

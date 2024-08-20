@@ -6,10 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://cjsd0oimewuss" path="res://assets/images/ui/coins.png" id="3_4m7of"]
 [ext_resource type="Texture2D" uid="uid://dpvrvvanrieql" path="res://assets/images/ui/heart.png" id="3_p8ku2"]
 [ext_resource type="Resource" uid="uid://0svs62c6bbu0" path="res://data/towers/bomb_tower.tres" id="5_h26er"]
-[ext_resource type="Resource" uid="uid://rx2st6vlvewu" path="res://data/towers/shield_tower.tres" id="6_4fqy3"]
+[ext_resource type="Resource" path="res://data/towers/shield_tower.tres" id="6_4fqy3"]
 [ext_resource type="PackedScene" uid="uid://brdhhffb4o5v0" path="res://scenes/menus/pause_menu.tscn" id="8_c5q0g"]
 [ext_resource type="PackedScene" uid="uid://dwqmshnau2qnv" path="res://scenes/menus/game_over_menu.tscn" id="9_1vmeh"]
-[ext_resource type="Theme" uid="uid://yub5acxtpnjx" path="res://ui_theme.tres" id="10_63rqm"]
+[ext_resource type="Theme" path="res://ui_theme.tres" id="10_63rqm"]
 [ext_resource type="Script" path="res://scenes/ui/wave_indicator.gd" id="10_s2uv0"]
 
 [node name="Hud" type="CanvasLayer"]
@@ -79,6 +79,7 @@ size_flags_vertical = 3
 
 [node name="ZoomLabel" type="Label" parent="."]
 unique_name_in_owner = true
+visible = false
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0

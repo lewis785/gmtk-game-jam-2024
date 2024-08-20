@@ -68,7 +68,7 @@ func is_valid_to_place(event: InputEvent) -> bool:
 	return MoneyCoordinator.can_afford(selected_tower.price)
 
 func update_health_bar(_damage: float):
-	health_amount.text = str(min(target.health_component.health, 0))
+	health_amount.text = str(max(target.health_component.health, 0))
 	
 func update_coin_amount(_amount: int):
 	coin_amount.text = str(MoneyCoordinator.gold)

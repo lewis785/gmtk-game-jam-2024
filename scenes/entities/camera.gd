@@ -5,7 +5,7 @@ class_name Camera
 
 @export var zoom_factor : float = 0.1
 @export var zoom_duration : float = 0.2
-@export var speed: int = 10
+@export var speed: int = 1000
 
 var level : Level
 
@@ -29,19 +29,19 @@ func _input(event):
 	if event.is_action_pressed("ZoomCamOut"):
 		ZoomManager.zoom_level -= zoom_factor 
 
-func _process(_delta):
+func _process(delta):
 	if level and !set_up_done:
 		setup()
 	elif set_up_done:
 		var movement = Vector2(0,0)
 		if Input.is_action_pressed("MoveCamLeft"):
-			movement.x -= speed
+			movement.x -= speed * delta / ZoomManager.zoom_level
 		if Input.is_action_pressed("MoveCamRight"):
-			movement.x += speed
+			movement.x += speed * delta / ZoomManager.zoom_level
 		if Input.is_action_pressed("MoveCamUp"):
-			movement.y -= speed
+			movement.y -= speed * delta / ZoomManager.zoom_level
 		if Input.is_action_pressed("MoveCamDown"):
-			movement.y += speed
+			movement.y += speed * delta / ZoomManager.zoom_level
 		if (position.x < 0 and movement.x < 0) or (position.x > resolution.x and movement.x > 0):
 			movement.x = 0
 		if (position.y < 0 and movement.y < 0) or (position.y > resolution.y and movement.y > 0):

@@ -5,6 +5,8 @@ class_name Bullet
 @export var speed: float = 200.0
 @export var damage : float = 20.0
 
+var hitting_target = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
@@ -14,7 +16,8 @@ func _process(delta: float) -> void:
 	position += (Vector2.RIGHT.rotated(rotation) * speed * delta)
 
 func _on_area_entered(body: Area2D) -> void:
-	if body is Hitbox:
+	if body is Hitbox and !hitting_target:
+		hitting_target = true
 		var attack : Attack = Attack.new()
 		attack.damage = damage
 		body.damage(attack)

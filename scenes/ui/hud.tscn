@@ -6,10 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://cjsd0oimewuss" path="res://assets/images/ui/coins.png" id="3_4m7of"]
 [ext_resource type="Texture2D" uid="uid://dpvrvvanrieql" path="res://assets/images/ui/heart.png" id="3_p8ku2"]
 [ext_resource type="Resource" uid="uid://0svs62c6bbu0" path="res://data/towers/bomb_tower.tres" id="5_h26er"]
-[ext_resource type="Resource" path="res://data/towers/shield_tower.tres" id="6_4fqy3"]
+[ext_resource type="Resource" uid="uid://rx2st6vlvewu" path="res://data/towers/shield_tower.tres" id="6_4fqy3"]
 [ext_resource type="PackedScene" uid="uid://brdhhffb4o5v0" path="res://scenes/menus/pause_menu.tscn" id="8_c5q0g"]
 [ext_resource type="PackedScene" uid="uid://dwqmshnau2qnv" path="res://scenes/menus/game_over_menu.tscn" id="9_1vmeh"]
-[ext_resource type="Theme" path="res://ui_theme.tres" id="10_63rqm"]
+[ext_resource type="Theme" uid="uid://yub5acxtpnjx" path="res://ui_theme.tres" id="10_63rqm"]
 [ext_resource type="Script" path="res://scenes/ui/wave_indicator.gd" id="10_s2uv0"]
 
 [node name="Hud" type="CanvasLayer"]
@@ -115,3 +115,15 @@ theme_override_constants/margin_right = 20
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
 text = "Wave 1"
+
+[node name="PauseButton" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.01
+anchor_top = 0.01
+anchor_right = 0.06
+anchor_bottom = 0.05
+theme = ExtResource("10_63rqm")
+theme_override_font_sizes/font_size = 32
+text = "PAUSE"
+
+[connection signal="pressed" from="PauseButton" to="PauseMenu" method="_on_pause_button_pressed"]

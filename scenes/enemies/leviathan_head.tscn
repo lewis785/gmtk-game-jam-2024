@@ -1,0 +1,201 @@
+[gd_scene load_steps=28 format=3 uid="uid://c1oi56wl67188"]
+
+[ext_resource type="Script" path="res://scenes/enemies/leviathan_head.gd" id="1_x4ej1"]
+[ext_resource type="Texture2D" uid="uid://dif7sdneyt86w" path="res://assets/images/enemies/leviathan-head/leviathan-head-movement.-sheet.png" id="2_ww8s7"]
+[ext_resource type="PackedScene" uid="uid://bekel8al0ejto" path="res://scenes/components/health_component.tscn" id="3_fvye0"]
+[ext_resource type="PackedScene" path="res://scenes/components/hitbox.tscn" id="4_f6lv3"]
+[ext_resource type="AudioStream" uid="uid://c3tumviadpv61" path="res://assets/sounds/enemies/leviathans/LeviathanDamage2.mp3" id="5_uqunw"]
+[ext_resource type="AudioStream" uid="uid://c5cinnc8lhoym" path="res://assets/sounds/enemies/leviathans/LeviathanDeath.mp3" id="6_3gpj2"]
+[ext_resource type="PackedScene" uid="uid://bkse0eqj68f5n" path="res://scenes/components/on_hit_flash.tscn" id="7_lv34f"]
+[ext_resource type="Shader" uid="uid://brqjaqb8uif4s" path="res://scenes/enemies/enemy_damage.tres" id="8_4asr2"]
+[ext_resource type="PackedScene" path="res://scenes/components/health_bar.tscn" id="9_c5ygg"]
+[ext_resource type="PackedScene" path="res://scenes/enemies/blood_spurt.tscn" id="10_dsdxn"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xs2sb"]
+radius = 31.0
+height = 94.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5aeu7"]
+atlas = ExtResource("2_ww8s7")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4l8cr"]
+atlas = ExtResource("2_ww8s7")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_baqco"]
+atlas = ExtResource("2_ww8s7")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4uegi"]
+atlas = ExtResource("2_ww8s7")
+region = Rect2(768, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5o07l"]
+atlas = ExtResource("2_ww8s7")
+region = Rect2(1024, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m22bb"]
+atlas = ExtResource("2_ww8s7")
+region = Rect2(1280, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mmiyo"]
+atlas = ExtResource("2_ww8s7")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4hm0w"]
+atlas = ExtResource("2_ww8s7")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aotp2"]
+atlas = ExtResource("2_ww8s7")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0j6a"]
+atlas = ExtResource("2_ww8s7")
+region = Rect2(768, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8pxfl"]
+atlas = ExtResource("2_ww8s7")
+region = Rect2(1024, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gws70"]
+atlas = ExtResource("2_ww8s7")
+region = Rect2(1280, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_747bm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5aeu7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4l8cr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_baqco")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4uegi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5o07l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m22bb")
+}],
+"loop": false,
+"name": &"die",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mmiyo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4hm0w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aotp2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f0j6a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8pxfl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gws70")
+}],
+"loop": true,
+"name": &"moving",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kd7vi"]
+size = Vector2(106, 116)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7whui"]
+resource_local_to_scene = true
+shader = ExtResource("8_4asr2")
+shader_parameter/Hit = false
+shader_parameter/FlashBrightness = 0.2
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_siwgd"]
+radius = 256.0
+
+[node name="LeviathanHead" type="CharacterBody2D" groups=["enemies"]]
+collision_layer = 2
+collision_mask = 20
+script = ExtResource("1_x4ej1")
+speed = 300
+acceleration = 7.0
+damage = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_xs2sb")
+debug_color = Color(0.587233, 0.544561, 0.198447, 0.42)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 26)
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_747bm")
+animation = &"moving"
+autoplay = "moving"
+
+[node name="Hitbox" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_f6lv3")]
+collision_layer = 2
+health_component = NodePath("../HealthComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_kd7vi")
+debug_color = Color(0.669779, 0.462112, 0.579049, 0.42)
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+navigation_layers = 64
+path_postprocessing = 1
+
+[node name="AttackTimer" type="Timer" parent="."]
+
+[node name="HealthComponent" parent="." instance=ExtResource("3_fvye0")]
+max_health = 2000.0
+
+[node name="OnHitFlash" parent="." node_paths=PackedStringArray("animated_sprite", "health_component") instance=ExtResource("7_lv34f")]
+material = SubResource("ShaderMaterial_7whui")
+animated_sprite = NodePath("../AnimatedSprite2D")
+health_component = NodePath("../HealthComponent")
+
+[node name="HealthBar" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("9_c5ygg")]
+position = Vector2(0, -52)
+health_component = NodePath("../HealthComponent")
+
+[node name="BloodSpurter" parent="." node_paths=PackedStringArray("health_component", "collider") instance=ExtResource("10_dsdxn")]
+health_component = NodePath("../HealthComponent")
+collider = NodePath("../Hitbox/CollisionShape2D")
+lower_damage_blood = 25.0
+upper_damage_blood = 200.0
+
+[node name="AudioStreamPlayerAttack" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_uqunw")
+max_distance = 500.0
+bus = &"Fx"
+
+[node name="AudioStreamPlayerDeath" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_3gpj2")
+max_distance = 500.0
+bus = &"Fx"
+
+[node name="AttackRange" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="AttackRangeCollisionShape" type="CollisionShape2D" parent="AttackRange"]
+shape = SubResource("CircleShape2D_siwgd")
+debug_color = Color(0.311604, 0.608571, 0.428213, 0.42)
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
+[connection signal="damaged" from="HealthComponent" to="." method="_on_health_component_damaged"]
+[connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]
+[connection signal="area_entered" from="AttackRange" to="." method="_on_attack_range_area_entered"]

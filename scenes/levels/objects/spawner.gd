@@ -8,6 +8,7 @@ signal all_waves_complete()
 
 @onready var rat : PackedScene = preload("res://scenes/enemies/rat.tscn")
 @onready var leviathan : PackedScene = preload("res://scenes/enemies/leviathan.tscn")
+@onready var leviathan_head: PackedScene = preload("res://scenes/enemies/leviathan_head.tscn")
 
 ## TODO: move spawn_rates etc. into Wave resource
 
@@ -49,6 +50,7 @@ func _setup_wave(wave_index : int):
 	# the array when needed
 	var wave = waves[wave_index]
 	for i in range(0, wave.leviathan_count): _add_enemy(leviathan)
+	for i in range(0, wave.leviathan_head_count): _add_enemy(leviathan_head)
 	for i in range(0, wave.rat_count): _add_enemy(rat)
 	enemies_left_in_wave = wave_entites.size()
 
@@ -71,8 +73,7 @@ func spawn():
 		entity.position = entity.position + spawn_offset + Vector2(rand_offset_x, rand_offset_y)
 		self.add_child(entity)
 		if entity.is_in_group('enemies'):
-			var enemy : Enemy = entity
-			enemy.set_target(target)
+			(entity as Enemy).set_target(target)
 
 func wave_started() -> void:
 	wave_start.emit(wave_index)

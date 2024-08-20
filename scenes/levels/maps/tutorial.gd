@@ -8,10 +8,11 @@ var tip_index = 0
 @onready var skip_button: Button = %SkipButton
 @onready var ok_button: Button = %OkButton
 @onready var tutorial: CanvasLayer = %Tutorial
+@onready var spawner: Spawner = %Spawner
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	get_tree().paused = true
+	spawner.rest_timer.paused = true
 	if tips.size() >= 1:
 		show_tip()
 	else:
@@ -19,7 +20,7 @@ func _ready() -> void:
 
 func end_tutorial():
 	tutorial.hide()
-	get_tree().paused = false
+	spawner.rest_timer.paused = false
 
 func _on_skip_button_pressed() -> void:
 	end_tutorial()

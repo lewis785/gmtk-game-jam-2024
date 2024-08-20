@@ -9,5 +9,3 @@ script = ExtResource("1_t3u7j")
 name = "Rat Race"
 scene = ExtResource("1_gbbdq")
 img = ExtResource("1_5euub")
-start_gold = 250
-health = 500

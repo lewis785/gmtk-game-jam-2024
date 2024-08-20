@@ -9,5 +9,3 @@ script = ExtResource("3_h53aj")
 name = "Tutorial"
 scene = ExtResource("2_fo7ct")
 img = ExtResource("1_0kuer")
-start_gold = 250
-health = 500

@@ -9,5 +9,3 @@ script = ExtResource("2_0j4nx")
 name = "Long Way Around"
 scene = ExtResource("1_d5emh")
 img = ExtResource("1_qhmhj")
-start_gold = 250
-health = 300

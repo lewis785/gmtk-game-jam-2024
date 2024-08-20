@@ -22,6 +22,7 @@ extends CharacterBody2D
 @export var dead:bool = false
 
 var direction:Vector2 = Vector2()
+var rotate_collision = false
 
 
 # Called when the node enters the scene tree for the first time.
@@ -48,8 +49,9 @@ func set_sprite_direction(direction: Vector2):
 		if direction.length() > 0.3:
 			if abs(direction.x) > abs(direction.y):
 				# Horizontal movement
-				hitbox.set_rotation(PI/2)
-				collisionbox.set_rotation(PI/2)
+				if rotate_collision:
+					hitbox.set_rotation(PI/2)
+					collisionbox.set_rotation(PI/2)
 				
 				if direction.x > 0:
 					animated_sprite.play("move_right")
@@ -57,8 +59,9 @@ func set_sprite_direction(direction: Vector2):
 					animated_sprite.play("move_left")
 			else:
 				# Vertical movement
-				hitbox.set_rotation(PI)
-				collisionbox.set_rotation(PI)
+				if rotate_collision:
+					hitbox.set_rotation(PI)
+					collisionbox.set_rotation(PI)
 				
 				if direction.y > 0:
 					animated_sprite.play("move_down")
@@ -78,6 +81,7 @@ func _on_health_component_died():
 		audio_stream_player_death.play()
 
 func _on_hitbox_area_entered(body: Node2D) -> void:
+	print("entered hotbox: " + str(body))
 	if !dead:
 		if body is Hitbox:
 			attack_timer.start()

@@ -19,12 +19,12 @@ Play a variety of levels of wave defence. Use size to modify your towers and def
 
 ## Contributors
 
-### Lewis McNeill (_Programming_, _Artwork_) - [GitHub](https://github.com/lewis785)
-
-### Nicholas Robinson (_Programming_) - [GitHub](https://github.com/nkrobinson)
-
 ### Duncan Cameron (_Programming_) - [GitHub](https://github.com/dc950)
 
 ### Gulen (_Programming_) - [GitHub](https://github.com/gulins)
+
+### Lewis McNeill (_Programming_, _Artwork_) - [GitHub](https://github.com/lewis785)
+
+### Nicholas Robinson (_Programming_) - [GitHub](https://github.com/nkrobinson)
 
 ### Sean Robertson (_Artwork_, _Music_)
